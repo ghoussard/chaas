@@ -6,13 +6,20 @@
   "scripts": {
     "dev": "concurrently yarn:firestore vite",
     "build": "tsc -b && vite build",
-    "firestore": "firebase emulators:start --only firestore --import .firestore --export-on-exit .firestore",
+    "firestore": "firebase emulators:start --project chaas-local --only firestore --import .firestore --export-on-exit .firestore",
+    "fixtures": "firebase emulators:exec --project chaas-local --only firestore --import .firestore --export-on-exit .firestore fixtures/load.cjs",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "firebase": "^10.13.2",
+    "framer-motion": "^11.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
