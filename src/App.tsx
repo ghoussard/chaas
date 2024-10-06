@@ -1,5 +1,5 @@
-function App() {
-  return <div>Hello world!</div>;
-}
+import {AccountGrid} from './components';
 
-export default App;
+export const App = () => {
+  return <AccountGrid />;
+};

@@ -1,6 +1,10 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
-import App from './App.tsx';
+import {ChakraProvider} from '@chakra-ui/react';
+import {StoreContext, createStoreContextValue} from './contexts';
+import {createFirebaseApp} from './firebase';
+import {App} from './App';
+import {getFirestore} from 'firebase/firestore';
 
 const root = document.getElementById('root');
 
@@ -8,8 +12,16 @@ if (root === null) {
   throw new Error('Root element not found');
 }
 
+const app = createFirebaseApp();
+const firestore = getFirestore(app);
+const storeContextValue = createStoreContextValue(firestore);
+
 createRoot(root).render(
   <StrictMode>
-    <App />
+    <ChakraProvider>
+      <StoreContext.Provider value={storeContextValue}>
+        <App />
+      </StoreContext.Provider>
+    </ChakraProvider>
   </StrictMode>,
 );
