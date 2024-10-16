@@ -5,7 +5,7 @@ export default defineWorkspace([
     extends: './vite.config.ts',
     test: {
       name: 'unit',
-      include: ['**/*.unit.test.ts(x)'],
+      include: ['**/*.unit.test.ts?(x)'],
       environment: 'jsdom',
     },
   },
@@ -13,7 +13,7 @@ export default defineWorkspace([
     extends: './vite.config.ts',
     test: {
       name: 'integration',
-      include: ['**/*.integration.test.ts(x)'],
+      include: ['**/*.integration.test.ts?(x)'],
       environment: 'jsdom',
     },
   },

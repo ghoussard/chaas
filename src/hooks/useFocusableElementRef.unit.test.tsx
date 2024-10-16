@@ -19,7 +19,7 @@ beforeEach(() => {
 });
 
 describe('useFocusableElementRef hook', () => {
-  it('throws an error when the context has not been initialized', () => {
+  it('throws an error when the context or its value has not been initialized', () => {
     const expectedErrorMessage =
       'Focusable element ref has not been initialized';
 
@@ -34,7 +34,7 @@ describe('useFocusableElementRef hook', () => {
     ).toThrowError(expectedErrorMessage);
   });
 
-  it('it provides the ref object in the context', () => {
+  it('it provides a ref object from the context', () => {
     const ref: RefObject<FocusableElement> = {
       current: null,
     };
