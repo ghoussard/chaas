@@ -2,7 +2,7 @@ import {createContext} from 'react';
 import {Firestore} from 'firebase/firestore';
 import {createAccountStore, AccountStore} from '../store';
 
-type StoreContextValue = {
+export type StoreContextValue = {
   account: AccountStore | null;
 };
 
