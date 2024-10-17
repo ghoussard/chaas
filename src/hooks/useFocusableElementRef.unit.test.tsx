@@ -34,7 +34,7 @@ describe('useFocusableElementRef hook', () => {
     ).toThrowError(expectedErrorMessage);
   });
 
-  it('it provides a ref object from the context', () => {
+  it('provides a ref object from the context', () => {
     const ref: RefObject<FocusableElement> = {
       current: null,
     };

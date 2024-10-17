@@ -10,6 +10,8 @@ const {
   collection,
 } = require('firebase/firestore');
 
+// @todo Use typescript and fixtures helpers in this file
+
 function connectToFirestore() {
   const app = initializeApp({projectId: 'chaas-local'});
   const firestore = getFirestore(app);
