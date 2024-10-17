@@ -2,7 +2,7 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import {ChakraProvider} from '@chakra-ui/react';
 import {StoreContext, createStoreContextValue} from './contexts';
-import {createFirebaseApp} from './firebase';
+import {createFirebaseApp, Env} from './firebase';
 import {App} from './App';
 import {getFirestore} from 'firebase/firestore';
 
@@ -12,7 +12,8 @@ if (root === null) {
   throw new Error('Root element not found');
 }
 
-const app = createFirebaseApp();
+const env = import.meta.env.PROD ? Env.PROD : Env.DEV;
+const app = createFirebaseApp(env);
 const firestore = getFirestore(app);
 const storeContextValue = createStoreContextValue(firestore);
 

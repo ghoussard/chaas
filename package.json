@@ -6,15 +6,17 @@
   "scripts": {
     "dev": "concurrently yarn:firestore vite",
     "build": "tsc -b && vite build",
-    "firestore": "firebase emulators:start --project chaas-local --only firestore --import .firestore --export-on-exit .firestore",
-    "fixtures": "firebase emulators:exec --project chaas-local --only firestore --import .firestore --export-on-exit .firestore fixtures/load.cjs",
+    "firestore": "firebase emulators:start --project chaas-dev --only firestore --import .firestore --export-on-exit .firestore",
+    "fixtures": "firebase emulators:exec --project chaas-dev --only firestore --import .firestore --export-on-exit .firestore fixtures/load.cjs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "preview": "vite preview",
     "test:unit": "vitest run --project unit",
-    "test:unit:watch": "vitest watch --project unit"
+    "test:unit:watch": "vitest watch --project unit",
+    "test:integration": "firebase emulators:exec --project chaas-test --only firestore 'vitest run --project integration'",
+    "test:integration:watch": "firebase emulators:exec --project chaas-test --only firestore 'vitest watch --project integration'"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -33,6 +35,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitest/eslint-plugin": "^1.1.7",
     "concurrently": "^9.0.1",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",

@@ -33,7 +33,7 @@ describe('useAccountStore hook', () => {
     ).toThrowError(expectedErrorMessage);
   });
 
-  it('it provides an account store from the context', () => {
+  it('provides an account store from the context', () => {
     const accountStore: AccountStore = {
       subscribe: vi.fn(),
       snapshot: vi.fn(),
