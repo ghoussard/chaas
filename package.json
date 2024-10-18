@@ -7,7 +7,7 @@
     "dev": "concurrently yarn:firestore vite",
     "build": "tsc -b && vite build",
     "firestore": "firebase emulators:start --project chaas-dev --only firestore --import .firestore --export-on-exit .firestore",
-    "fixtures": "firebase emulators:exec --project chaas-dev --only firestore --import .firestore --export-on-exit .firestore fixtures/load.cjs",
+    "fixtures": "firebase emulators:exec --project chaas-dev --only firestore --import .firestore --export-on-exit .firestore 'tsx bin/fixtures'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
@@ -19,6 +19,8 @@
     "test:integration:watch": "firebase emulators:exec --project chaas-test --only firestore 'vitest watch --project integration'"
   },
   "dependencies": {
+    "@chaas/common": "0.0.0",
+    "@chaas/utils": "0.0.0",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -45,9 +47,13 @@
     "globals": "^15.9.0",
     "jsdom": "^25.0.1",
     "prettier": "^3.3.3",
+    "tsx": "^4.19.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vitest": "^2.1.2"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
