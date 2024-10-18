@@ -9,6 +9,11 @@ jobs:
         with:
           node-version: 22
           cache: yarn
+          cache-dependency-path: yarn.lock
+      - run: yarn global add firebase-tools
       - run: yarn install --frozen-lockfile
       - run: yarn prettier
       - run: yarn lint
+      - run: yarn test:unit
+      - run: yarn test:integration
+      - run: yarn build
