@@ -3,7 +3,7 @@ import {deleteApp} from 'firebase/app';
 import {doc, Firestore, getFirestore, setDoc} from 'firebase/firestore';
 import {createAccountStore} from './account';
 import {Dataset, loadAccounts} from '../fixtures';
-import {createFirebaseApp, Env} from '../firebase';
+import {createFirebaseApp, Env} from '@chaas/utils';
 
 // eslint-disable-next-line vitest/valid-title
 const it = base.extend<{firestore: Firestore}>({

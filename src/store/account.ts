@@ -7,7 +7,7 @@ import {
   query,
   QueryDocumentSnapshot,
 } from 'firebase/firestore';
-import {Account} from '../models';
+import {Account} from '@chaas/common';
 
 const ACCOUNT_COLLECTION_NAME = 'accounts';
 

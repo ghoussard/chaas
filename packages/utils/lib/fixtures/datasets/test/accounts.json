@@ -1,0 +1,38 @@
+[
+  {
+    "id": "U219077M86B",
+    "name": "Claire Johnson",
+    "username": "claire.johnson",
+    "pictureUrl": "https://placehold.co/150",
+    "activity": {
+      "totalPursached": 150,
+      "totalPaid": 100,
+      "lastPursacheTimestamp": 1700195501,
+      "lastPaymentTimestamp": 1710946962
+    }
+  },
+  {
+    "id": "U431091T83K",
+    "name": "Luc Bernard",
+    "username": "luc.bernard",
+    "pictureUrl": "https://placehold.co/150",
+    "activity": {
+      "totalPursached": 300,
+      "totalPaid": 225,
+      "lastPursacheTimestamp": 1662310314,
+      "lastPaymentTimestamp": 1713842769
+    }
+  },
+  {
+    "id": "U423755R39B",
+    "name": "Louis Moreau",
+    "username": "louis.moreau",
+    "pictureUrl": "https://placehold.co/150",
+    "activity": {
+      "totalPursached": 225,
+      "totalPaid": 175,
+      "lastPursacheTimestamp": 1689924105,
+      "lastPaymentTimestamp": 1706894383
+    }
+  }
+]

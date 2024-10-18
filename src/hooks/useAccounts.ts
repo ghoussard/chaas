@@ -1,6 +1,6 @@
 import {useSyncExternalStore} from 'react';
 import {useAccountStore} from './useAccountStore';
-import {Account} from '../models';
+import {Account} from '@chaas/common';
 
 export const useAccounts = (searchValue: string): Account[] | null => {
   const {subscribe, snapshot} = useAccountStore();
