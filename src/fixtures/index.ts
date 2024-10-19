@@ -6,7 +6,7 @@ export enum Dataset {
   TEST = 'test',
 }
 
-const getData = async <T>(name: string, dataset: Dataset) => {
+const getData = async <T>(name: string, dataset: Dataset): Promise<T> => {
   const {default: data} = (await import(
     `./datasets/${dataset}/${name}.json`
   )) as {default: T};
