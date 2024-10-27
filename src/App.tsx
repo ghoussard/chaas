@@ -1,5 +1,8 @@
-import {AccountGrid} from './components';
+import {useAuth} from './hooks';
+import {AccountGrid, Login} from './pages';
 
 export const App = () => {
-  return <AccountGrid />;
+  const {isLoggedIn} = useAuth();
+
+  return isLoggedIn ? <AccountGrid /> : <Login />;
 };

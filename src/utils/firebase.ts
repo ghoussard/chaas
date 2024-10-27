@@ -1,4 +1,5 @@
 import {FirebaseApp, FirebaseOptions, initializeApp} from 'firebase/app';
+import {connectAuthEmulator, getAuth} from 'firebase/auth';
 import {connectFirestoreEmulator, getFirestore} from 'firebase/firestore';
 
 export enum Env {
@@ -12,10 +13,12 @@ const getFirebaseAppOptions = (env: Env): FirebaseOptions => {
     case Env.DEV:
       return {
         projectId: 'chaas-dev',
+        apiKey: 'fakeApiKey',
       };
     case Env.TEST:
       return {
         projectId: 'chaas-test',
+        apiKey: 'fakeApiKey',
       };
     case Env.PROD:
       return {
@@ -35,7 +38,9 @@ export const createFirebaseApp = (env: Env): FirebaseApp => {
 
   if (env !== Env.PROD) {
     const firestore = getFirestore(app);
-    connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
+    connectFirestoreEmulator(firestore, 'localhost', 8080);
+    const auth = getAuth(app);
+    connectAuthEmulator(auth, 'http://localhost:9099');
   }
 
   return app;
