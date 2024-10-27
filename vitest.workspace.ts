@@ -7,6 +7,7 @@ export default defineWorkspace([
       name: 'unit',
       include: ['**/*.unit.test.ts?(x)'],
       environment: 'jsdom',
+      setupFiles: ['vitest.setup.unit.ts'],
     },
   },
   {

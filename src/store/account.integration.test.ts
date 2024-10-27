@@ -1,9 +1,9 @@
 import {describe, expect, it as base, vi} from 'vitest';
 import {deleteApp} from 'firebase/app';
-import {doc, Firestore, getFirestore, setDoc} from 'firebase/firestore';
+import {doc, Firestore, getFirestore, updateDoc} from 'firebase/firestore';
 import {createAccountStore} from './account';
-import {Dataset, loadAccounts} from '../fixtures';
-import {createFirebaseApp, Env} from '../firebase';
+import {Dataset, loadAccounts} from '../utils/fixtures';
+import {createFirebaseApp, Env} from '../utils/firebase';
 
 // eslint-disable-next-line vitest/valid-title
 const it = base.extend<{firestore: Firestore}>({
@@ -38,6 +38,21 @@ describe('Account store', () => {
     expect(accountStore.snapshot()).toBeNull();
   });
 
+  it('fetches snapshot ordered by totalPurchased descendant', async ({
+    firestore,
+  }) => {
+    const accountStore = createAccountStore(firestore);
+
+    const onSnapshotChange = vi.fn();
+
+    const unsubscribe = accountStore.subscribe(onSnapshotChange);
+    await expect.poll(() => onSnapshotChange).toBeCalled();
+    expect((accountStore.snapshot() ?? [])[0].name).toBe('Luc Bernard');
+
+    unsubscribe();
+    expect(accountStore.snapshot()).toBeNull();
+  });
+
   it('notifies when snapshot has changed', async ({firestore}) => {
     const accountStore = createAccountStore(firestore);
 
@@ -47,11 +62,12 @@ describe('Account store', () => {
     await expect.poll(() => onSnapshotChange).toBeCalled();
     expect(accountStore.snapshot()).not.toBeNull();
 
-    await setDoc(doc(firestore, 'accounts', 'U431091T83K'), {
+    await updateDoc(doc(firestore, 'accounts', 'U431091T83K'), {
       name: 'Luc Bernar',
     });
 
     await expect.poll(() => onSnapshotChange).toBeCalledTimes(2);
+    expect((accountStore.snapshot() ?? [])[0].name).toBe('Luc Bernar');
 
     unsubscribe();
     expect(accountStore.snapshot()).toBeNull();

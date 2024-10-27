@@ -31,7 +31,12 @@ export const AccountCard = memo(function Hello({
 
   return (
     <>
-      <Card size={'sm'} cursor={'pointer'} onClick={onOpen}>
+      <Card
+        size={'sm'}
+        cursor={'pointer'}
+        onClick={onOpen}
+        data-testid={'account-card'}
+      >
         <Image boxSize={300} objectFit={'cover'} src={pictureUrl} alt={name} />
         <CardFooter justifyContent={'space-between'} alignItems={'center'}>
           <Text fontSize={'xl'} verticalAlign={'middle'}>

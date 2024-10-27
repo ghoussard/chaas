@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import {useFocusableElementRef} from '../hooks';
 
-type AccountDrawerProps = {
+export type AccountDrawerProps = {
   isOpen: boolean;
   onClose: () => void;
   name: string;

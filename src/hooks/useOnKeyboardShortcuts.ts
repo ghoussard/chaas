@@ -1,6 +1,6 @@
 import {useCallback, useEffect} from 'react';
 
-type ShortcutHandlers = Record<string, () => void>;
+export type ShortcutHandlers = Record<string, () => void>;
 
 export const useOnKeyboardShortcuts = (handlers: ShortcutHandlers): void => {
   const onKeyDown = useCallback(

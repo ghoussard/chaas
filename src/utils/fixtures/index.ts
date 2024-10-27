@@ -1,5 +1,5 @@
 import {collection, doc, Firestore, setDoc} from 'firebase/firestore';
-import {Account} from '../models';
+import {Account} from '../../models';
 
 export enum Dataset {
   DEV = 'dev',
