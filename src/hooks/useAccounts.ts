@@ -7,11 +7,12 @@ export const useAccounts = (searchValue: string): Account[] | null => {
   const accounts = useSyncExternalStore(subscribe, snapshot);
 
   if (accounts === null) {
-    return null;
+    return accounts;
   }
 
   return accounts.filter(
     ({name, username}) =>
-      name.includes(searchValue) || username.includes(searchValue),
+      name.toLowerCase().includes(searchValue.toLowerCase()) ||
+      username.toLowerCase().includes(searchValue.toLowerCase()),
   );
 };

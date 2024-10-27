@@ -33,6 +33,7 @@ export const AccountSearchInput = forwardRef<
 
   return (
     <Input
+      data-testid={'account-search-input'}
       autoFocus={true}
       ref={innerRef}
       placeholder={'Who wants a drink?'}

@@ -48,7 +48,7 @@ class FirestoreAccountStore implements AccountStore {
     const unsubscribe = onSnapshot(
       query(
         collectionReference,
-        orderBy('activity.totalPursached'),
+        orderBy('activity.totalPursached', 'desc'),
       ).withConverter(accountConverter),
       (querySnapshot) => {
         this.accounts = querySnapshot.docs.map((document) => document.data());

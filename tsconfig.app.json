@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["bin", "src"]
+  "include": ["bin", "src", "vitest.setup.unit.ts"]
 }
