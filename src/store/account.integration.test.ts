@@ -2,8 +2,9 @@ import {describe, expect, it as base, vi} from 'vitest';
 import {deleteApp} from 'firebase/app';
 import {doc, Firestore, getFirestore, updateDoc} from 'firebase/firestore';
 import {createAccountStore} from './account';
-import {Dataset, loadAccounts} from '../utils/fixtures';
+import {createUser, Dataset, loadAccounts} from '../utils/fixtures';
 import {createFirebaseApp, Env} from '../utils/firebase';
+import {getAuth} from 'firebase/auth';
 
 // eslint-disable-next-line vitest/valid-title
 const it = base.extend<{firestore: Firestore}>({
@@ -11,6 +12,8 @@ const it = base.extend<{firestore: Firestore}>({
   firestore: async ({}, use) => {
     const app = createFirebaseApp(Env.TEST);
     const firestore = getFirestore(app);
+    const auth = getAuth(app);
+    await createUser(auth, 'admin@example.com', 'admin123');
     await loadAccounts(firestore, Dataset.TEST);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     await use(firestore);
