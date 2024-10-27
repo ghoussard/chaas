@@ -26,4 +26,4 @@ dist-ssr
 
 # Firebase
 .firebaserc
-.firestore
+.emulators

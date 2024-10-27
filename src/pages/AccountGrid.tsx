@@ -1,9 +1,7 @@
 import {useDeferredValue, useState, useRef} from 'react';
 import {Center, Spinner, VStack, SimpleGrid} from '@chakra-ui/react';
-import {AccountCard} from './AccountCard';
+import {AccountCard, AccountSearchInput, HelpModal} from '../components';
 import {useAccounts} from '../hooks';
-import {AccountSearchInput} from './AccountSearchInput';
-import {HelpModal} from './HelpModal';
 import {FocusableElement} from '../models';
 import {FocusableElementRefContext} from '../contexts';
 
