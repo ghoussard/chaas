@@ -1,7 +1,14 @@
 import {useDeferredValue, useState, useRef} from 'react';
-import {Center, Spinner, VStack, SimpleGrid} from '@chakra-ui/react';
+import {
+  Center,
+  Spinner,
+  VStack,
+  SimpleGrid,
+  Button,
+  HStack,
+} from '@chakra-ui/react';
 import {AccountCard, AccountSearchInput, HelpModal} from '../components';
-import {useAccounts} from '../hooks';
+import {useAccounts, useAuth} from '../hooks';
 import {FocusableElement} from '../models';
 import {FocusableElementRefContext} from '../contexts';
 
@@ -10,6 +17,7 @@ export const AccountGrid = () => {
   const deferredSearchValue = useDeferredValue(searchValue);
   const accounts = useAccounts(deferredSearchValue);
   const focusableElementRef = useRef<FocusableElement>(null);
+  const {logOut} = useAuth();
 
   if (accounts === null) {
     return (
@@ -22,13 +30,21 @@ export const AccountGrid = () => {
   return (
     <FocusableElementRefContext.Provider value={focusableElementRef}>
       <VStack spacing={5}>
-        <AccountSearchInput
-          value={searchValue}
-          onChange={(newValue) => {
-            setSearchValue(newValue);
-          }}
-          ref={focusableElementRef}
-        />
+        <HStack
+          w={'100vw'}
+          paddingInline={'1vw'}
+          spacing={5}
+          alignItems={'center'}
+        >
+          <AccountSearchInput
+            value={searchValue}
+            onChange={(newValue) => {
+              setSearchValue(newValue);
+            }}
+            ref={focusableElementRef}
+          />
+          <Button onClick={() => void logOut()}>Log out</Button>
+        </HStack>
         <SimpleGrid columns={6} spacing={5}>
           {accounts.map(({id, name, pictureUrl, activity}) => (
             <AccountCard
