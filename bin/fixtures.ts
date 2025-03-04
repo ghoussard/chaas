@@ -8,7 +8,7 @@ const app = createFirebaseApp(Env.DEV);
 const firestore = getFirestore(app);
 const auth = getAuth(app);
 
-await createUser(auth, 'admin@example.com', 'admin123');
+await createUser(auth, 'michel@chaquip.com', 'michel');
 await loadAccounts(firestore, Dataset.DEV);
 
 exit(0);

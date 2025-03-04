@@ -1,18 +1,17 @@
 import {useCallback, useContext, useEffect, useState} from 'react';
 import {AuthContext} from '../contexts';
-import {onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import {
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 
 type AuthResult = {
   isLoggedIn: boolean;
   isLoggingIn: boolean;
-  logIn: (password: string) => Promise<void>;
+  logIn: (login: string, password: string) => Promise<void>;
+  logOut: () => Promise<void>;
 };
-
-class UnableToLogIn extends Error {}
-
-const ADMIN_EMAIL = import.meta.env.PROD
-  ? import.meta.env.VITE_FIREBASE_ADMIN_EMAIL
-  : 'admin@example.com';
 
 export const useAuth = (): AuthResult => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,23 +31,25 @@ export const useAuth = (): AuthResult => {
   );
 
   const logIn = useCallback(
-    async (password: string) => {
+    async (login: string, password: string) => {
       try {
         setIsLoggingIn(true);
-        await signInWithEmailAndPassword(auth, ADMIN_EMAIL, password);
+        await signInWithEmailAndPassword(auth, login, password);
         setIsLoggingIn(false);
       } catch (e) {
         setIsLoggingIn(false);
-        console.error(e);
-        throw new UnableToLogIn();
+        throw e;
       }
     },
     [auth],
   );
 
+  const logOut = useCallback(() => signOut(auth), [auth]);
+
   return {
     isLoggedIn,
     isLoggingIn,
     logIn,
+    logOut,
   };
 };
