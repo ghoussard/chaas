@@ -6,7 +6,6 @@ import {createUser, Dataset, loadAccounts} from '../utils/fixtures';
 import {createFirebaseApp, Env} from '../utils/firebase';
 import {getAuth} from 'firebase/auth';
 
-// eslint-disable-next-line vitest/valid-title
 const it = base.extend<{firestore: Firestore}>({
   // eslint-disable-next-line no-empty-pattern
   firestore: async ({}, use) => {
