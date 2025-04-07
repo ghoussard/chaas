@@ -31,7 +31,7 @@ export const AccountGrid = () => {
     <FocusableElementRefContext.Provider value={focusableElementRef}>
       <VStack spacing={5}>
         <HStack
-          w={'100vw'}
+          w={'100%'}
           paddingInline={'1vw'}
           spacing={5}
           alignItems={'center'}
@@ -46,13 +46,13 @@ export const AccountGrid = () => {
           <Button onClick={() => void logOut()}>Log out</Button>
         </HStack>
         <SimpleGrid columns={6} spacing={5}>
-          {accounts.map(({id, name, pictureUrl, activity}) => (
+          {accounts.map(({id, slack: {name, pictureUrl}, activity}) => (
             <AccountCard
               key={id}
               name={name}
               pictureUrl={pictureUrl}
               totalPaid={activity.totalPaid}
-              totalPurchased={activity.totalPursached}
+              totalPurchased={activity.totalPurchased}
             />
           ))}
         </SimpleGrid>

@@ -1,0 +1,1781 @@
+[
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "type": "purchase",
+    "timestamp": 1710936015,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "type": "purchase",
+    "timestamp": 1710936115,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710936930,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710937845,
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b",
+    "amount": 5.0
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710939600,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710940515,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710941430,
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a",
+    "amount": 3.0
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710943245,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710944100,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710945015,
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8",
+    "amount": 4.0
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710946830,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710947745,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710948600,
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d",
+    "amount": 2.5
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710950415,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710951330,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710952245,
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4",
+    "amount": 4.0
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710953160,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710954075,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710954990,
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6",
+    "amount": 3.0
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710956805,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710957720,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710958635,
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8",
+    "amount": 4.0
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710960450,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710961365,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710962280,
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2",
+    "amount": 2.5
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710964095,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710965010,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710965925,
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8",
+    "amount": 4.0
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710967740,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710968655,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710969570,
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8",
+    "amount": 3.0
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710971385,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710972300,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710973215,
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f",
+    "amount": 4.0
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710975030,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710975945,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710976860,
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6",
+    "amount": 2.5
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710978675,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710979590,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710980505,
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a",
+    "amount": 4.0
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710982320,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710983235,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710984150,
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+    "amount": 3.0
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710985965,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710986880,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710987795,
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4",
+    "amount": 4.0
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710989610,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710990525,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710991440,
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b",
+    "amount": 3.0
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710993255,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710994170,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710995085,
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d",
+    "amount": 4.0
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710996900,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1710997815,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1710998730,
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2",
+    "amount": 2.5
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711000545,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711001460,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711002375,
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8",
+    "amount": 4.0
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711004190,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711005105,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711006020,
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8",
+    "amount": 3.0
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711007835,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711008750,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711009665,
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f",
+    "amount": 4.0
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711011480,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711012395,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711013310,
+    "account": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6",
+    "amount": 2.5
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711015125,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711016040,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711016955,
+    "account": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a",
+    "amount": 4.0
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711018770,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711019685,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711020600,
+    "account": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+    "amount": 3.0
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711022415,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711023330,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711024245,
+    "account": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4",
+    "amount": 4.0
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711025160,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711026075,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711026990,
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "amount": 4.0
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711028805,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711029720,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711030635,
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "amount": 3.0
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711032450,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711033365,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711034280,
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "amount": 4.0
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711036095,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711037010,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711037925,
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "amount": 2.5
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711039740,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711040655,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711041570,
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "amount": 4.0
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711043385,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711044300,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711045215,
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "amount": 3.0
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711047030,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711047945,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711048860,
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "amount": 4.0
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711050675,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711051590,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711052505,
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "amount": 2.5
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711054320,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711055235,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711056150,
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "amount": 4.0
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711057965,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711058880,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711059795,
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "amount": 3.0
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711061610,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711062525,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711063440,
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "amount": 4.0
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711065255,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711066170,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711067085,
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "amount": 3.0
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711068900,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711069815,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711070730,
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "amount": 4.0
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711072545,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711073460,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711074375,
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "amount": 2.5
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711076190,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711077105,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711078020,
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "amount": 4.0
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711079835,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711080750,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711081665,
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "amount": 3.0
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711083480,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711084395,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711085310,
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "amount": 4.0
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711087125,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711088040,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711088955,
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "amount": 2.5
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711090770,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711091685,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711092600,
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "amount": 4.0
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711094415,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711095330,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711096245,
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "amount": 3.0
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711098060,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711098975,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711099890,
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "amount": 4.0
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711101705,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711102620,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711103535,
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "amount": 3.0
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711105350,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711106265,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711107180,
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "amount": 4.0
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711109005,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711109920,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711110835,
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "amount": 2.5
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711112650,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711113565,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711114480,
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "amount": 4.0
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711116295,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711117210,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711118125,
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "amount": 3.0
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711120050,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711120965,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "0ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711121880,
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "amount": 4.0
+  },
+  {
+    "id": "1ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711123695,
+    "item": {
+      "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coca Cola",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "2ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711124610,
+    "item": {
+      "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Orange Juice",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4"
+  },
+  {
+    "id": "3ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711125525,
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "amount": 2.5
+  },
+  {
+    "id": "4ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711127340,
+    "item": {
+      "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Coffee",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "5ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711128255,
+    "item": {
+      "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Espresso",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711129170,
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "amount": 4.0
+  },
+  {
+    "id": "7ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711131095,
+    "item": {
+      "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Tea",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "8ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711132010,
+    "item": {
+      "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Milk",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3"
+  },
+  {
+    "id": "9ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711132925,
+    "account": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "amount": 3.0
+  },
+  {
+    "id": "aba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711134740,
+    "item": {
+      "id": "123e4567-e89b-12d3-a456-426614174000",
+      "name": "Blond Beer",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5"
+  },
+  {
+    "id": "bba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711135655,
+    "item": {
+      "id": "987fcdeb-51a2-43d7-9b56-254415f67890",
+      "name": "Dark Beer",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9"
+  },
+  {
+    "id": "cba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711136570,
+    "account": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "amount": 4.0
+  },
+  {
+    "id": "dba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711138385,
+    "item": {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "White Wine",
+      "price": 1.5,
+      "enabled": true
+    },
+    "account": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1"
+  },
+  {
+    "id": "eba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "purchase",
+    "timestamp": 1711139300,
+    "item": {
+      "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+      "name": "Red Wine",
+      "price": 2.5,
+      "enabled": true
+    },
+    "account": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2"
+  },
+  {
+    "id": "fba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "type": "payment",
+    "timestamp": 1711140215,
+    "account": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "amount": 2.5
+  }
+]

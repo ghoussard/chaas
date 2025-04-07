@@ -2,7 +2,14 @@ import {describe, expect, it as base, vi} from 'vitest';
 import {deleteApp} from 'firebase/app';
 import {doc, Firestore, getFirestore, updateDoc} from 'firebase/firestore';
 import {createAccountStore} from './account';
-import {createUser, Dataset, loadAccounts} from '../utils/fixtures';
+import {
+  createUser,
+  Dataset,
+  loadAccounts,
+  loadItems,
+  loadTransactions,
+  updateAccountActivity,
+} from '../utils/fixtures';
 import {createFirebaseApp, Env} from '../utils/firebase';
 import {getAuth} from 'firebase/auth';
 
@@ -14,6 +21,9 @@ const it = base.extend<{firestore: Firestore}>({
     const auth = getAuth(app);
     await createUser(auth, 'admin@example.com', 'admin123');
     await loadAccounts(firestore, Dataset.TEST);
+    await loadItems(firestore, Dataset.TEST);
+    await loadTransactions(firestore, Dataset.TEST);
+    await updateAccountActivity(firestore);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     await use(firestore);
     await deleteApp(app);
@@ -49,7 +59,7 @@ describe('Account store', () => {
 
     const unsubscribe = accountStore.subscribe(onSnapshotChange);
     await expect.poll(() => onSnapshotChange).toBeCalled();
-    expect((accountStore.snapshot() ?? [])[0].name).toBe('Luc Bernard');
+    expect((accountStore.snapshot() ?? [])[0].slack.name).toBe('Luc Bernard');
 
     unsubscribe();
     expect(accountStore.snapshot()).toBeNull();
@@ -64,12 +74,17 @@ describe('Account store', () => {
     await expect.poll(() => onSnapshotChange).toBeCalled();
     expect(accountStore.snapshot()).not.toBeNull();
 
-    await updateDoc(doc(firestore, 'accounts', 'U431091T83K'), {
-      name: 'Luc Bernar',
-    });
+    await updateDoc(
+      doc(firestore, 'accounts', 'd4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a'),
+      {
+        slack: {
+          name: 'Luc Bernar',
+        },
+      },
+    );
 
     await expect.poll(() => onSnapshotChange).toBeCalledTimes(2);
-    expect((accountStore.snapshot() ?? [])[0].name).toBe('Luc Bernar');
+    expect((accountStore.snapshot() ?? [])[0].slack.name).toBe('Luc Bernar');
 
     unsubscribe();
     expect(accountStore.snapshot()).toBeNull();

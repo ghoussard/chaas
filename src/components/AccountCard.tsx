@@ -20,7 +20,7 @@ type AccountCardProps = {
 
 const debtColor = (debt: number): string => (debt < 0 ? 'red' : 'green');
 
-export const AccountCard = memo(function Hello({
+export const AccountCard = memo(function AccountCard({
   name,
   pictureUrl,
   totalPaid,

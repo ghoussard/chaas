@@ -11,7 +11,7 @@ export const useAccounts = (searchValue: string): Account[] | null => {
   }
 
   return accounts.filter(
-    ({name, username}) =>
+    ({slack: {name, username}}) =>
       name.toLowerCase().includes(searchValue.toLowerCase()) ||
       username.toLowerCase().includes(searchValue.toLowerCase()),
   );

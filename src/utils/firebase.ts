@@ -40,7 +40,7 @@ export const createFirebaseApp = (env: Env): FirebaseApp => {
     const firestore = getFirestore(app);
     connectFirestoreEmulator(firestore, 'localhost', 8080);
     const auth = getAuth(app);
-    connectAuthEmulator(auth, 'http://localhost:9099');
+    connectAuthEmulator(auth, 'http://localhost:9099', {disableWarnings: true});
   }
 
   return app;

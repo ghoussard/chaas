@@ -5,26 +5,32 @@ import {useAccounts} from './useAccounts';
 
 const accounts: Account[] = [
   {
-    id: 'U219077M86B',
-    name: 'Claire Johnson',
-    username: 'claire.johnson',
-    pictureUrl: 'https://placehold.co/150',
+    id: '8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b',
+    slack: {
+      id: 'U219077M86B',
+      name: 'Claire Johnson',
+      username: 'claire.johnson',
+      pictureUrl: 'https://placehold.co/150',
+    },
     activity: {
-      totalPursached: 150,
+      totalPurchased: 150,
       totalPaid: 100,
-      lastPursacheTimestamp: 1700195501,
+      lastPurchaseTimestamp: 1700195501,
       lastPaymentTimestamp: 1710946962,
     },
   },
   {
-    id: 'U431091T83K',
-    name: 'Luc Bernard',
-    username: 'luc.bernard',
-    pictureUrl: 'https://placehold.co/150',
+    id: 'd4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a',
+    slack: {
+      id: 'U431091T83K',
+      name: 'Luc Bernard',
+      username: 'luc.bernard',
+      pictureUrl: 'https://placehold.co/150',
+    },
     activity: {
-      totalPursached: 300,
+      totalPurchased: 300,
       totalPaid: 225,
-      lastPursacheTimestamp: 1662310314,
+      lastPurchaseTimestamp: 1662310314,
       lastPaymentTimestamp: 1713842769,
     },
   },
