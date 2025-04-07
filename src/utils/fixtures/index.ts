@@ -101,8 +101,10 @@ export const updateAccountActivity = async (firestore: Firestore) => {
     const activity = {
       totalPurchased,
       totalPaid,
-      lastPurchaseTimestamp,
-      lastPaymentTimestamp,
+      lastPurchaseTimestamp:
+        lastPurchaseTimestamp === 0 ? null : lastPurchaseTimestamp,
+      lastPaymentTimestamp:
+        lastPaymentTimestamp === 0 ? null : lastPaymentTimestamp,
     };
     const document = doc(accountsCollection, account.id);
     await setDoc(document, {...account, activity});
