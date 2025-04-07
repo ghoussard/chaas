@@ -1,1202 +1,1502 @@
 [
   {
-    "id": "U219077M86B",
-    "name": "Claire Johnson",
-    "username": "claire.johnson",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "8f7d3b2a-1c4e-4f8d-9a6b-5c2d1e3f4a5b",
+    "slack": {
+      "id": "U219077M86B",
+      "name": "Claire Johnson",
+      "username": "claire.johnson",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 150,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1700195501,
-      "lastPaymentTimestamp": 1710946962
-    }
-  },
-  {
-    "id": "U431091T83K",
-    "name": "Luc Bernard",
-    "username": "luc.bernard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 300,
-      "totalPaid": 225,
-      "lastPursacheTimestamp": 1662310314,
-      "lastPaymentTimestamp": 1713842769
-    }
-  },
-  {
-    "id": "U423755R39B",
-    "name": "Louis Moreau",
-    "username": "louis.moreau",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 175,
-      "lastPursacheTimestamp": 1689924105,
-      "lastPaymentTimestamp": 1706894383
-    }
-  },
-  {
-    "id": "U506363M15D",
-    "name": "Elise Dupont",
-    "username": "elise.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1687913505,
-      "lastPaymentTimestamp": 1725141706
-    }
-  },
-  {
-    "id": "U420512N25E",
-    "name": "Lucas Moreau",
-    "username": "lucas.moreau",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U160527K87F",
-    "name": "Fran\u00e7ois White",
-    "username": "fran\u00e7ois.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 250,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1719093933,
-      "lastPaymentTimestamp": 1719265536
-    }
-  },
-  {
-    "id": "U695659S35R",
-    "name": "Mia Clark",
-    "username": "mia.clark",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1682611862,
-      "lastPaymentTimestamp": 1693567098
-    }
-  },
-  {
-    "id": "U848576F47I",
-    "name": "Luc Leclerc",
-    "username": "luc.leclerc",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1714192058,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U217451L30T",
-    "name": "Antoine Rodriguez",
-    "username": "antoine.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "d4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a",
+    "slack": {
+      "id": "U431091T83K",
+      "name": "Luc Bernard",
+      "username": "luc.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 250,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1668525326,
-      "lastPaymentTimestamp": 1711602459
-    }
-  },
-  {
-    "id": "U491205C17P",
-    "name": "Emily Garcia",
-    "username": "emily.garcia",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1637596310,
-      "lastPaymentTimestamp": 1666936994
-    }
-  },
-  {
-    "id": "U539891M35X",
-    "name": "Charlotte Garcia",
-    "username": "charlotte.garcia",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 50,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U585089Y47Z",
-    "name": "Paul Williams",
-    "username": "paul.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1670232860,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U620849L95E",
-    "name": "Sophia Walker",
-    "username": "sophia.walker",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "b2c3d4e5-f6a7-8b9c-1d2e-3f4a5b6c7d8",
+    "slack": {
+      "id": "U423755R39B",
+      "name": "Louis Moreau",
+      "username": "louis.moreau",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 250,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1697085694,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U456969Q11C",
-    "name": "Luc Leclerc",
-    "username": "luc.leclerc",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "a1b2c3d4-e5f6-7a8b-9c1d-2e3f4a5b6c7d",
+    "slack": {
+      "id": "U506363M15D",
+      "name": "Elise Dupont",
+      "username": "elise.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 200,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1678927253,
-      "lastPaymentTimestamp": 1691563266
-    }
-  },
-  {
-    "id": "U275290F85T",
-    "name": "Chloe Rodriguez",
-    "username": "chloe.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1719415720,
-      "lastPaymentTimestamp": 1727115663
-    }
-  },
-  {
-    "id": "U229177F62L",
-    "name": "Julien Leclerc",
-    "username": "julien.leclerc",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1653141767,
-      "lastPaymentTimestamp": 1714642322
-    }
-  },
-  {
-    "id": "U831081H67J",
-    "name": "Paul Davis",
-    "username": "paul.davis",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 250,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1641286152,
-      "lastPaymentTimestamp": 1720348357
-    }
-  },
-  {
-    "id": "U428361F76U",
-    "name": "Sophia Roux",
-    "username": "sophia.roux",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1672722196,
-      "lastPaymentTimestamp": 1723028414
-    }
-  },
-  {
-    "id": "U266772P51G",
-    "name": "Alice Dupont",
-    "username": "alice.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 50,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1664575653,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U785386X64Z",
-    "name": "Louis Davis",
-    "username": "louis.davis",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "f6a7b8c9-1d2e-3f4a-5b6c-7d8e9f0a1b2c",
+    "slack": {
+      "id": "U420512N25E",
+      "name": "Lucas Moreau",
+      "username": "lucas.moreau",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 50,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1725244626,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U807573B26C",
-    "name": "Marie Walker",
-    "username": "marie.walker",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "c3d4e5f6-a7b8-9c1d-2e3f-4a5b6c7d8e9f",
+    "slack": {
+      "id": "U160527K87F",
+      "name": "François White",
+      "username": "françois.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 125,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1636301189,
-      "lastPaymentTimestamp": 1708334157
-    }
-  },
-  {
-    "id": "U428617K48X",
-    "name": "Antoine Bernard",
-    "username": "antoine.bernard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 50,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1697551146,
-      "lastPaymentTimestamp": 1716823665
-    }
-  },
-  {
-    "id": "U750683I65V",
-    "name": "Sarah Davis",
-    "username": "sarah.davis",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U135562J86T",
-    "name": "Julien Leclerc",
-    "username": "julien.leclerc",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1718788513,
-      "lastPaymentTimestamp": 1722832255
-    }
-  },
-  {
-    "id": "U525629C80V",
-    "name": "Paul Smith",
-    "username": "paul.smith",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1665547578,
-      "lastPaymentTimestamp": 1710030197
-    }
-  },
-  {
-    "id": "U788827D56F",
-    "name": "Pierre Martin",
-    "username": "pierre.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 175,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1631571381,
-      "lastPaymentTimestamp": 1671892892
-    }
-  },
-  {
-    "id": "U792397T30J",
-    "name": "Paul Leclerc",
-    "username": "paul.leclerc",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1633324272,
-      "lastPaymentTimestamp": 1719277207
-    }
-  },
-  {
-    "id": "U449603L16D",
-    "name": "Sophia Dupont",
-    "username": "sophia.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1688423947,
-      "lastPaymentTimestamp": 1714929343
-    }
-  },
-  {
-    "id": "U823854G47F",
-    "name": "Charlotte Johnson",
-    "username": "charlotte.johnson",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1636571489,
-      "lastPaymentTimestamp": 1638027894
-    }
-  },
-  {
-    "id": "U854405U43H",
-    "name": "Mia Rodriguez",
-    "username": "mia.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1658437609,
-      "lastPaymentTimestamp": 1663383032
-    }
-  },
-  {
-    "id": "U122396U44H",
-    "name": "Alice Walker",
-    "username": "alice.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1719586511,
-      "lastPaymentTimestamp": 1728048554
-    }
-  },
-  {
-    "id": "U124826U20M",
-    "name": "Claire Dupont",
-    "username": "claire.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 300,
-      "totalPaid": 250,
-      "lastPursacheTimestamp": 1662245265,
-      "lastPaymentTimestamp": 1699532623
-    }
-  },
-  {
-    "id": "U983016C81M",
-    "name": "David Williams",
-    "username": "david.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1691992878,
-      "lastPaymentTimestamp": 1709174064
-    }
-  },
-  {
-    "id": "U469114V96M",
-    "name": "Sophia Garcia",
-    "username": "sophia.garcia",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U206037W39O",
-    "name": "Sarah Brown",
-    "username": "sarah.brown",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1718835739,
-      "lastPaymentTimestamp": 1724531412
-    }
-  },
-  {
-    "id": "U708133I31Y",
-    "name": "Jean Lefebvre",
-    "username": "jean.lefebvre",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1633101376,
-      "lastPaymentTimestamp": 1714768367
-    }
-  },
-  {
-    "id": "U751579I42W",
-    "name": "Sarah Clark",
-    "username": "sarah.clark",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1661687443,
-      "lastPaymentTimestamp": 1672471285
-    }
-  },
-  {
-    "id": "U589138B61V",
-    "name": "Marie Walker",
-    "username": "marie.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 250,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1718380958,
-      "lastPaymentTimestamp": 1727899706
-    }
-  },
-  {
-    "id": "U309484B51M",
-    "name": "Louis Bernard",
-    "username": "louis.bernard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1662443677,
-      "lastPaymentTimestamp": 1669423158
-    }
-  },
-  {
-    "id": "U708365Y15Q",
-    "name": "Mia Brown",
-    "username": "mia.brown",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U845320Z65B",
-    "name": "Lucas Williams",
-    "username": "lucas.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U644543R11X",
-    "name": "Alice Williams",
-    "username": "alice.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1696365167,
-      "lastPaymentTimestamp": 1721365911
-    }
-  },
-  {
-    "id": "U397147K79T",
-    "name": "David Nguyen",
-    "username": "david.nguyen",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 250,
-      "lastPursacheTimestamp": 1660400492,
-      "lastPaymentTimestamp": 1682240756
-    }
-  },
-  {
-    "id": "U765525M34S",
-    "name": "Claire Williams",
-    "username": "claire.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 50,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1693720195,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U844109P88T",
-    "name": "Julien Girard",
-    "username": "julien.girard",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "e5f6a7b8-9c1d-2e3f-4a5b-6c7d8e9f0a1b2",
+    "slack": {
+      "id": "U695659S35R",
+      "name": "Mia Clark",
+      "username": "mia.clark",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 200,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1701843413,
-      "lastPaymentTimestamp": 1709892269
-    }
-  },
-  {
-    "id": "U681707T85D",
-    "name": "Claire Walker",
-    "username": "claire.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1646746209,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U957711M27O",
-    "name": "Antoine Moreau",
-    "username": "antoine.moreau",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e4",
+    "slack": {
+      "id": "U848576F47I",
+      "name": "Luc Leclerc",
+      "username": "luc.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 275,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1720302541,
-      "lastPaymentTimestamp": 1726817418
-    }
-  },
-  {
-    "id": "U967273A49S",
-    "name": "Elise Walker",
-    "username": "elise.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1718726736,
-      "lastPaymentTimestamp": 1726278112
-    }
-  },
-  {
-    "id": "U872819E70Y",
-    "name": "Sophia Rodriguez",
-    "username": "sophia.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1658348514,
-      "lastPaymentTimestamp": 1719088141
-    }
-  },
-  {
-    "id": "U791690J31Q",
-    "name": "Paul Garcia",
-    "username": "paul.garcia",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 175,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1648020225,
-      "lastPaymentTimestamp": 1699718960
-    }
-  },
-  {
-    "id": "U227287T68F",
-    "name": "Chloe Bernard",
-    "username": "chloe.bernard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 300,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1664838174,
-      "lastPaymentTimestamp": 1713929440
-    }
-  },
-  {
-    "id": "U565014G61I",
-    "name": "Chloe Davis",
-    "username": "chloe.davis",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1648407993,
-      "lastPaymentTimestamp": 1661957335
-    }
-  },
-  {
-    "id": "U460180L67H",
-    "name": "Sophia Martin",
-    "username": "sophia.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1721254917,
-      "lastPaymentTimestamp": 1722518679
-    }
-  },
-  {
-    "id": "U529370E91Y",
-    "name": "Mia Davis",
-    "username": "mia.davis",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1645160575,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U966281O35T",
-    "name": "Luc Bernard",
-    "username": "luc.bernard",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5a6",
+    "slack": {
+      "id": "U217451L30T",
+      "name": "Antoine Rodriguez",
+      "username": "antoine.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 50,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U399013H43N",
-    "name": "Julien Durand",
-    "username": "julien.durand",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 175,
-      "lastPursacheTimestamp": 1651719210,
-      "lastPaymentTimestamp": 1658533207
-    }
-  },
-  {
-    "id": "U344221P28A",
-    "name": "Fran\u00e7ois Williams",
-    "username": "fran\u00e7ois.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1698050913,
-      "lastPaymentTimestamp": 1708067345
-    }
-  },
-  {
-    "id": "U897979S68S",
-    "name": "Alice Bernard",
-    "username": "alice.bernard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1693072842,
-      "lastPaymentTimestamp": 1700832289
-    }
-  },
-  {
-    "id": "U570740F89I",
-    "name": "Emily Williams",
-    "username": "emily.williams",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 175,
-      "lastPursacheTimestamp": 1686853707,
-      "lastPaymentTimestamp": 1706242821
-    }
-  },
-  {
-    "id": "U259537U36S",
-    "name": "Jean Girard",
-    "username": "jean.girard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 175,
-      "lastPursacheTimestamp": 1639634128,
-      "lastPaymentTimestamp": 1693157777
-    }
-  },
-  {
-    "id": "U719707O89U",
-    "name": "Fran\u00e7ois Brown",
-    "username": "fran\u00e7ois.brown",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1650128898,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U196888T46W",
-    "name": "Jean Lefebvre",
-    "username": "jean.lefebvre",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c8",
+    "slack": {
+      "id": "U491205C17P",
+      "name": "Emily Garcia",
+      "username": "emily.garcia",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 150,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U447584D20X",
-    "name": "Mia Smith",
-    "username": "mia.smith",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1683394988,
-      "lastPaymentTimestamp": 1724052399
-    }
-  },
-  {
-    "id": "U148996Z38G",
-    "name": "Emily White",
-    "username": "emily.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1679045576,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U514056O53N",
-    "name": "Fran\u00e7ois Walker",
-    "username": "fran\u00e7ois.walker",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "slack": {
+      "id": "U539891M35X",
+      "name": "Charlotte Garcia",
+      "username": "charlotte.garcia",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 275,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1717366424,
-      "lastPaymentTimestamp": 1724847453
-    }
-  },
-  {
-    "id": "U664516G91E",
-    "name": "Chloe Girard",
-    "username": "chloe.girard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1716612532,
-      "lastPaymentTimestamp": 1723753848
-    }
-  },
-  {
-    "id": "U495705B97W",
-    "name": "Julien Walker",
-    "username": "julien.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1699689120,
-      "lastPaymentTimestamp": 1722709704
-    }
-  },
-  {
-    "id": "U533613E45Y",
-    "name": "Alice Johnson",
-    "username": "alice.johnson",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1663841317,
-      "lastPaymentTimestamp": 1688745117
-    }
-  },
-  {
-    "id": "U725577G81P",
-    "name": "Charlotte Durand",
-    "username": "charlotte.durand",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1653791709,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U277301F99M",
-    "name": "Jean Roux",
-    "username": "jean.roux",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "slack": {
+      "id": "U585089Y47Z",
+      "name": "Paul Williams",
+      "username": "paul.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 75,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1706628374,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U131016A76X",
-    "name": "Sophia Rodriguez",
-    "username": "sophia.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "slack": {
+      "id": "U620849L95E",
+      "name": "Sophia Walker",
+      "username": "sophia.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 275,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1635346746,
-      "lastPaymentTimestamp": 1670361676
-    }
-  },
-  {
-    "id": "U124884F11W",
-    "name": "Sarah Garcia",
-    "username": "sarah.garcia",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1629850035,
-      "lastPaymentTimestamp": 1677728567
-    }
-  },
-  {
-    "id": "U473997K25N",
-    "name": "Pierre Martin",
-    "username": "pierre.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1665862132,
-      "lastPaymentTimestamp": 1719910164
-    }
-  },
-  {
-    "id": "U262564H18F",
-    "name": "Marie Roux",
-    "username": "marie.roux",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 300,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1631634240,
-      "lastPaymentTimestamp": 1681723304
-    }
-  },
-  {
-    "id": "U559466E73J",
-    "name": "Antoine White",
-    "username": "antoine.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1650520811,
-      "lastPaymentTimestamp": 1719544097
-    }
-  },
-  {
-    "id": "U193175S29E",
-    "name": "Lucas Leclerc",
-    "username": "lucas.leclerc",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1709492507,
-      "lastPaymentTimestamp": 1719701123
-    }
-  },
-  {
-    "id": "U651274U89K",
-    "name": "Sophia Clark",
-    "username": "sophia.clark",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 200,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1661702681,
-      "lastPaymentTimestamp": 1707136205
-    }
-  },
-  {
-    "id": "U285420Y89W",
-    "name": "Charlotte Clark",
-    "username": "charlotte.clark",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 250,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1688947607,
-      "lastPaymentTimestamp": 1695177175
-    }
-  },
-  {
-    "id": "U134899V50Y",
-    "name": "Marie Durand",
-    "username": "marie.durand",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 150,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1696307266,
-      "lastPaymentTimestamp": 1721238498
-    }
-  },
-  {
-    "id": "U669193Q64N",
-    "name": "Sophia White",
-    "username": "sophia.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 175,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1726936075,
-      "lastPaymentTimestamp": 1727433608
-    }
-  },
-  {
-    "id": "U813012P14D",
-    "name": "Luc Walker",
-    "username": "luc.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 50,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1724154132,
-      "lastPaymentTimestamp": 1725977947
-    }
-  },
-  {
-    "id": "U591682W90J",
-    "name": "Chloe Smith",
-    "username": "chloe.smith",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 175,
-      "totalPaid": 150,
-      "lastPursacheTimestamp": 1692365496,
-      "lastPaymentTimestamp": 1709917478
-    }
-  },
-  {
-    "id": "U954125K75M",
-    "name": "Lucas Girard",
-    "username": "lucas.girard",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1680585566,
-      "lastPaymentTimestamp": 1721122952
-    }
-  },
-  {
-    "id": "U601211A76V",
-    "name": "David Dupont",
-    "username": "david.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1668820380,
-      "lastPaymentTimestamp": 1669856020
-    }
-  },
-  {
-    "id": "U612673C85S",
-    "name": "Elise White",
-    "username": "elise.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 200,
-      "lastPursacheTimestamp": 1726707075,
-      "lastPaymentTimestamp": 1728017427
-    }
-  },
-  {
-    "id": "U613877X43X",
-    "name": "Julien White",
-    "username": "julien.white",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1679193574,
-      "lastPaymentTimestamp": 1705568530
-    }
-  },
-  {
-    "id": "U179110C39V",
-    "name": "Elise Dupont",
-    "username": "elise.dupont",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U396356D86Y",
-    "name": "Lucas Walker",
-    "username": "lucas.walker",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 75,
-      "lastPursacheTimestamp": 1647217569,
-      "lastPaymentTimestamp": 1651124175
-    }
-  },
-  {
-    "id": "U346138W46W",
-    "name": "Alice Moreau",
-    "username": "alice.moreau",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 125,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
-    }
-  },
-  {
-    "id": "U740428U23G",
-    "name": "Marie Clark",
-    "username": "marie.clark",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 250,
-      "totalPaid": 225,
-      "lastPursacheTimestamp": 1726573462,
-      "lastPaymentTimestamp": 1726831122
-    }
-  },
-  {
-    "id": "U678797L59L",
-    "name": "Mia Martin",
-    "username": "mia.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 275,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1681865313,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U540632X38V",
-    "name": "Fran\u00e7ois Lefebvre",
-    "username": "fran\u00e7ois.lefebvre",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "slack": {
+      "id": "U456969Q11C",
+      "name": "Luc Leclerc",
+      "username": "luc.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 50,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1678975151,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U411788O35C",
-    "name": "Chloe Leclerc",
-    "username": "chloe.leclerc",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "slack": {
+      "id": "U275290F85T",
+      "name": "Chloe Rodriguez",
+      "username": "chloe.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 300,
-      "totalPaid": 175,
-      "lastPursacheTimestamp": 1656086916,
-      "lastPaymentTimestamp": 1668140082
-    }
-  },
-  {
-    "id": "U274832T81F",
-    "name": "Charlotte Martin",
-    "username": "charlotte.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 225,
-      "totalPaid": 100,
-      "lastPursacheTimestamp": 1682316191,
-      "lastPaymentTimestamp": 1702479375
-    }
-  },
-  {
-    "id": "U315988P62G",
-    "name": "Louis Johnson",
-    "username": "louis.johnson",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 75,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1717815323,
-      "lastPaymentTimestamp": 1722167280
-    }
-  },
-  {
-    "id": "U639216M76V",
-    "name": "Alice Martin",
-    "username": "alice.martin",
-    "pictureUrl": "https://placehold.co/150",
-    "activity": {
-      "totalPursached": 100,
+      "totalPurchased": 0,
       "totalPaid": 0,
-      "lastPursacheTimestamp": 1705671727,
+      "lastPurchaseTimestamp": null,
       "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U968159C51W",
-    "name": "Pierre Johnson",
-    "username": "pierre.johnson",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "slack": {
+      "id": "U229177F62L",
+      "name": "Julien Leclerc",
+      "username": "julien.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 225,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1656848289,
-      "lastPaymentTimestamp": 1662227024
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U515574H59H",
-    "name": "Fran\u00e7ois Martin",
-    "username": "fran\u00e7ois.martin",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "slack": {
+      "id": "U831081H67J",
+      "name": "Paul Davis",
+      "username": "paul.davis",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 250,
-      "totalPaid": 50,
-      "lastPursacheTimestamp": 1715156501,
-      "lastPaymentTimestamp": 1716951467
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U415224N70K",
-    "name": "Claire Rodriguez",
-    "username": "claire.rodriguez",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "b0c1d2e3-f4a5-6b7c-8d9e-0f1a2b3c4d5e6",
+    "slack": {
+      "id": "U428361F76U",
+      "name": "Sophia Roux",
+      "username": "sophia.roux",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 150,
-      "totalPaid": 25,
-      "lastPursacheTimestamp": 1669175508,
-      "lastPaymentTimestamp": 1694189857
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
     }
   },
   {
-    "id": "U925856G16X",
-    "name": "Alice Bernard",
-    "username": "alice.bernard",
-    "pictureUrl": "https://placehold.co/150",
+    "id": "c1d2e3f4-a5b6-7c8d-9e0f-1a2b3c4d5e6f7",
+    "slack": {
+      "id": "U266772P51G",
+      "name": "Alice Dupont",
+      "username": "alice.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
     "activity": {
-      "totalPursached": 125,
-      "totalPaid": 125,
-      "lastPursacheTimestamp": 1728121086,
-      "lastPaymentTimestamp": 1728121086
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d2e3f4a5-b6c7-8d9e-0f1a-2b3c4d5e6f7a8",
+    "slack": {
+      "id": "U785386X64Z",
+      "name": "Louis Davis",
+      "username": "louis.davis",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e3f4a5b6-c7d8-9e0f-1a2b-3c4d5e6f7a8b9",
+    "slack": {
+      "id": "U807573B26C",
+      "name": "Marie Walker",
+      "username": "marie.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f4a5b6c7-d8e9-0f1a-2b3c-4d5e6f7a8b9c0",
+    "slack": {
+      "id": "U428617K48X",
+      "name": "Antoine Bernard",
+      "username": "antoine.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a5b6c7d8-e9f0-1a2b-3c4d-5e6f7a8b9c0d1",
+    "slack": {
+      "id": "U750683I65V",
+      "name": "Sarah Davis",
+      "username": "sarah.davis",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b6c7d8e9-f0a1-2b3c-4d5e-6f7a8b9c0d1e2",
+    "slack": {
+      "id": "U135562J86T",
+      "name": "Julien Leclerc",
+      "username": "julien.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c7d8e9f0-a1b2-3c4d-5e6f-7a8b9c0d1e2f3",
+    "slack": {
+      "id": "U525629C80V",
+      "name": "Paul Smith",
+      "username": "paul.smith",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d8e9f0a1-b2c3-4d5e-6f7a-8b9c0d1e2f3a4",
+    "slack": {
+      "id": "U788827D56F",
+      "name": "Pierre Martin",
+      "username": "pierre.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e9f0a1b2-c3d4-5e6f-7a8b-9c0d1e2f3a4b5",
+    "slack": {
+      "id": "U792397T30J",
+      "name": "Paul Leclerc",
+      "username": "paul.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f0a1b2c3-d4e5-6f7a-8b9c-0d1e2f3a4b5c6",
+    "slack": {
+      "id": "U449603L16D",
+      "name": "Sophia Dupont",
+      "username": "sophia.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d7",
+    "slack": {
+      "id": "U823854G47F",
+      "name": "Charlotte Johnson",
+      "username": "charlotte.johnson",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e8",
+    "slack": {
+      "id": "U854405U43H",
+      "name": "Mia Rodriguez",
+      "username": "mia.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f9",
+    "slack": {
+      "id": "U122396U44H",
+      "name": "Alice Walker",
+      "username": "alice.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a0",
+    "slack": {
+      "id": "U124826U20M",
+      "name": "Claire Dupont",
+      "username": "claire.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b1",
+    "slack": {
+      "id": "U983016C81M",
+      "name": "David Williams",
+      "username": "david.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2f3a-4b5c-6d7e8f9a0b1c2",
+    "slack": {
+      "id": "U469114V96M",
+      "name": "Sophia Garcia",
+      "username": "sophia.garcia",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d3",
+    "slack": {
+      "id": "U206037W39O",
+      "name": "Sarah Brown",
+      "username": "sarah.brown",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e4",
+    "slack": {
+      "id": "U708133I31Y",
+      "name": "Jean Lefebvre",
+      "username": "jean.lefebvre",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c9d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f5",
+    "slack": {
+      "id": "U751579I42W",
+      "name": "Sarah Clark",
+      "username": "sarah.clark",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d0e1f2a3-b4c5-6d7e-8f9a-0b1c2d3e4f5a6",
+    "slack": {
+      "id": "U589138B61V",
+      "name": "Marie Walker",
+      "username": "marie.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e1f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b7",
+    "slack": {
+      "id": "U309484B51M",
+      "name": "Louis Bernard",
+      "username": "louis.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f2a3b4c5-d6e7-8f9a-0b1c-2d3e4f5a6b7c8",
+    "slack": {
+      "id": "U708365Y15Q",
+      "name": "Mia Brown",
+      "username": "mia.brown",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "slack": {
+      "id": "U845320Z65B",
+      "name": "Lucas Williams",
+      "username": "lucas.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "slack": {
+      "id": "U644543R11X",
+      "name": "Alice Williams",
+      "username": "alice.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "slack": {
+      "id": "U397147K79T",
+      "name": "David Nguyen",
+      "username": "david.nguyen",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "slack": {
+      "id": "U765525M34S",
+      "name": "Claire Williams",
+      "username": "claire.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "slack": {
+      "id": "U844109P88T",
+      "name": "Julien Girard",
+      "username": "julien.girard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "slack": {
+      "id": "U681707T85D",
+      "name": "Claire Walker",
+      "username": "claire.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "slack": {
+      "id": "U957711M27O",
+      "name": "Antoine Moreau",
+      "username": "antoine.moreau",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b0c1d2e3-f4a5-6b7c-8d9e-0f1a2b3c4d5e6",
+    "slack": {
+      "id": "U967273A49S",
+      "name": "Elise Walker",
+      "username": "elise.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c1d2e3f4-a5b6-7c8d-9e0f-1a2b3c4d5e6f7",
+    "slack": {
+      "id": "U872819E70Y",
+      "name": "Sophia Rodriguez",
+      "username": "sophia.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d2e3f4a5-b6c7-8d9e-0f1a-2b3c4d5e6f7a8",
+    "slack": {
+      "id": "U791690J31Q",
+      "name": "Paul Garcia",
+      "username": "paul.garcia",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e3f4a5b6-c7d8-9e0f-1a2b-3c4d5e6f7a8b9",
+    "slack": {
+      "id": "U227287T68F",
+      "name": "Chloe Bernard",
+      "username": "chloe.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f4a5b6c7-d8e9-0f1a-2b3c-4d5e6f7a8b9c0",
+    "slack": {
+      "id": "U565014G61I",
+      "name": "Chloe Davis",
+      "username": "chloe.davis",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a5b6c7d8-e9f0-1a2b-3c4d-5e6f7a8b9c0d1",
+    "slack": {
+      "id": "U460180L67H",
+      "name": "Sophia Martin",
+      "username": "sophia.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b6c7d8e9-f0a1-2b3c-4d5e-6f7a8b9c0d1e2",
+    "slack": {
+      "id": "U529370E91Y",
+      "name": "Mia Davis",
+      "username": "mia.davis",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c7d8e9f0-a1b2-3c4d-5e6f-7a8b9c0d1e2f3",
+    "slack": {
+      "id": "U966281O35T",
+      "name": "Luc Bernard",
+      "username": "luc.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d8e9f0a1-b2c3-4d5e-6f7a-8b9c0d1e2f3a4",
+    "slack": {
+      "id": "U399013H43N",
+      "name": "Julien Durand",
+      "username": "julien.durand",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e9f0a1b2-c3d4-5e6f-7a8b-9c0d1e2f3a4b5",
+    "slack": {
+      "id": "U344221P28A",
+      "name": "François Williams",
+      "username": "françois.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f0a1b2c3-d4e5-6f7a-8b9c-0d1e2f3a4b5c6",
+    "slack": {
+      "id": "U897979S68S",
+      "name": "Alice Bernard",
+      "username": "alice.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d7",
+    "slack": {
+      "id": "U570740F89I",
+      "name": "Emily Williams",
+      "username": "emily.williams",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e8",
+    "slack": {
+      "id": "U259537U36S",
+      "name": "Jean Lefebvre",
+      "username": "jean.lefebvre",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f9",
+    "slack": {
+      "id": "U719707O89U",
+      "name": "François Brown",
+      "username": "françois.brown",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a0",
+    "slack": {
+      "id": "U196888T46W",
+      "name": "Jean Lefebvre",
+      "username": "jean.lefebvre",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b1",
+    "slack": {
+      "id": "U447584D20X",
+      "name": "Mia Smith",
+      "username": "mia.smith",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2f3a-4b5c-6d7e8f9a0b1c2",
+    "slack": {
+      "id": "U148996Z38G",
+      "name": "Emily White",
+      "username": "emily.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d3",
+    "slack": {
+      "id": "U514056O53N",
+      "name": "François Walker",
+      "username": "françois.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e4",
+    "slack": {
+      "id": "U664516G91E",
+      "name": "Chloe Girard",
+      "username": "chloe.girard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c9d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f5",
+    "slack": {
+      "id": "U495705B97W",
+      "name": "Julien Walker",
+      "username": "julien.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d0e1f2a3-b4c5-6d7e-8f9a-0b1c2d3e4f5a6",
+    "slack": {
+      "id": "U533613E45Y",
+      "name": "Alice Johnson",
+      "username": "alice.johnson",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e1f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b7",
+    "slack": {
+      "id": "U725577G81P",
+      "name": "Charlotte Durand",
+      "username": "charlotte.durand",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f2a3b4c5-d6e7-8f9a-0b1c-2d3e4f5a6b7c8",
+    "slack": {
+      "id": "U277301F99M",
+      "name": "Jean Roux",
+      "username": "jean.roux",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a3b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d9",
+    "slack": {
+      "id": "U131016A76X",
+      "name": "Sophia Rodriguez",
+      "username": "sophia.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b4c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e0",
+    "slack": {
+      "id": "U124884F11W",
+      "name": "Sarah Garcia",
+      "username": "sarah.garcia",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c5d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f1",
+    "slack": {
+      "id": "U473997K25N",
+      "name": "Pierre Martin",
+      "username": "pierre.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d6e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a2",
+    "slack": {
+      "id": "U262564H18F",
+      "name": "Marie Roux",
+      "username": "marie.roux",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e7f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b3",
+    "slack": {
+      "id": "U559466E73J",
+      "name": "Antoine White",
+      "username": "antoine.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f8a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c4",
+    "slack": {
+      "id": "U193175S29E",
+      "name": "Lucas Leclerc",
+      "username": "lucas.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a9b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d5",
+    "slack": {
+      "id": "U651274U89K",
+      "name": "Sophia Clark",
+      "username": "sophia.clark",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b0c1d2e3-f4a5-6b7c-8d9e-0f1a2b3c4d5e6",
+    "slack": {
+      "id": "U285420Y89W",
+      "name": "Charlotte Clark",
+      "username": "charlotte.clark",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c1d2e3f4-a5b6-7c8d-9e0f-1a2b3c4d5e6f7",
+    "slack": {
+      "id": "U134899V50Y",
+      "name": "Marie Durand",
+      "username": "marie.durand",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d2e3f4a5-b6c7-8d9e-0f1a-2b3c4d5e6f7a8",
+    "slack": {
+      "id": "U669193Q64N",
+      "name": "Sophia White",
+      "username": "sophia.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e3f4a5b6-c7d8-9e0f-1a2b-3c4d5e6f7a8b9",
+    "slack": {
+      "id": "U540632X38V",
+      "name": "Luc Walker",
+      "username": "luc.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f4a5b6c7-d8e9-0f1a-2b3c-4d5e6f7a8b9c0",
+    "slack": {
+      "id": "U954125K75M",
+      "name": "Chloe Smith",
+      "username": "chloe.smith",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a5b6c7d8-e9f0-1a2b-3c4d-5e6f7a8b9c0d1",
+    "slack": {
+      "id": "U968159C51W",
+      "name": "Lucas Girard",
+      "username": "lucas.girard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b6c7d8e9-f0a1-2b3c-4d5e-6f7a8b9c0d1e2",
+    "slack": {
+      "id": "U601211A76V",
+      "name": "David Dupont",
+      "username": "david.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c7d8e9f0-a1b2-3c4d-5e6f-7a8b9c0d1e2f3",
+    "slack": {
+      "id": "U612673C85S",
+      "name": "Elise White",
+      "username": "elise.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d8e9f0a1-b2c3-4d5e-6f7a-8b9c0d1e2f3a4",
+    "slack": {
+      "id": "U613877X43X",
+      "name": "Julien White",
+      "username": "julien.white",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e9f0a1b2-c3d4-5e6f-7a8b-9c0d1e2f3a4b5",
+    "slack": {
+      "id": "U179110C39V",
+      "name": "Elise Dupont",
+      "username": "elise.dupont",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f0a1b2c3-d4e5-6f7a-8b9c-0d1e2f3a4b5c6",
+    "slack": {
+      "id": "U396356D86Y",
+      "name": "Lucas Walker",
+      "username": "lucas.walker",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d7",
+    "slack": {
+      "id": "U346138W46W",
+      "name": "Alice Moreau",
+      "username": "alice.moreau",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e8",
+    "slack": {
+      "id": "U740428U23G",
+      "name": "Marie Clark",
+      "username": "marie.clark",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f9",
+    "slack": {
+      "id": "U708133I31Y",
+      "name": "Mia Martin",
+      "username": "mia.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a0",
+    "slack": {
+      "id": "U540632X38V",
+      "name": "François Lefebvre",
+      "username": "françois.lefebvre",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b1",
+    "slack": {
+      "id": "U411788O35C",
+      "name": "Chloe Leclerc",
+      "username": "chloe.leclerc",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2f3a-4b5c-6d7e8f9a0b1c2",
+    "slack": {
+      "id": "U274832T81F",
+      "name": "Charlotte Martin",
+      "username": "charlotte.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "a7b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d3",
+    "slack": {
+      "id": "U315988P62G",
+      "name": "Louis Johnson",
+      "username": "louis.johnson",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "b8c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e4",
+    "slack": {
+      "id": "U639216M76V",
+      "name": "Alice Martin",
+      "username": "alice.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "c9d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f5",
+    "slack": {
+      "id": "U968159C51W",
+      "name": "Pierre Johnson",
+      "username": "pierre.johnson",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "d0e1f2a3-b4c5-6d7e-8f9a-0b1c2d3e4f5a6",
+    "slack": {
+      "id": "U515574H59H",
+      "name": "François Martin",
+      "username": "françois.martin",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "e1f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b7",
+    "slack": {
+      "id": "U415224N70K",
+      "name": "Claire Rodriguez",
+      "username": "claire.rodriguez",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
+    }
+  },
+  {
+    "id": "f2a3b4c5-d6e7-8f9a-0b1c-2d3e4f5a6b7c8",
+    "slack": {
+      "id": "U925856G16X",
+      "name": "Alice Bernard",
+      "username": "alice.bernard",
+      "pictureUrl": "https://placehold.co/150"
+    },
+    "activity": {
+      "totalPurchased": 0,
+      "totalPaid": 0,
+      "lastPurchaseTimestamp": null,
+      "lastPaymentTimestamp": null
     }
   }
 ]

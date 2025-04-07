@@ -21,7 +21,7 @@ export const AccountDrawer = ({isOpen, onClose, name}: AccountDrawerProps) => {
       isOpen={isOpen}
       placement={'right'}
       onClose={onClose}
-      size={'xl'}
+      size={'full'}
       finalFocusRef={focusableElementRef}
     >
       <DrawerOverlay />
