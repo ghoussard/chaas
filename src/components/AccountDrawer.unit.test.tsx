@@ -4,6 +4,18 @@ import {renderWithChakra} from '../utils/tests';
 import {FocusableElementRefContext} from '../contexts';
 import {AccountDrawer} from './AccountDrawer';
 
+vi.mock('../hooks', async () => {
+  const actual = await vi.importActual('../hooks');
+  return {
+    ...actual,
+    useItems: () => [],
+  };
+});
+
+vi.mock('firebase/firestore', () => ({
+  getFirestore: vi.fn(),
+}));
+
 const renderWithProviders = (children: ReactNode) =>
   renderWithChakra(
     <FocusableElementRefContext.Provider value={createRef()}>
@@ -11,12 +23,22 @@ const renderWithProviders = (children: ReactNode) =>
     </FocusableElementRefContext.Provider>,
   );
 
+const accountId = 'test-account-id';
 const name = 'Luc Bernard';
+const totalPaid = 20;
+const totalPurchased = 10;
 
 describe('AccountDrawer component', () => {
   it('is closed', () => {
     const {queryByText} = renderWithProviders(
-      <AccountDrawer isOpen={false} name={name} onClose={vi.fn()} />,
+      <AccountDrawer
+        isOpen={false}
+        accountId={accountId}
+        name={name}
+        totalPaid={totalPaid}
+        totalPurchased={totalPurchased}
+        onClose={vi.fn()}
+      />,
     );
 
     expect(queryByText(name)).not.toBeInTheDocument();
@@ -24,7 +46,14 @@ describe('AccountDrawer component', () => {
 
   it('is open', () => {
     const {getByText} = renderWithProviders(
-      <AccountDrawer isOpen={true} name={name} onClose={vi.fn()} />,
+      <AccountDrawer
+        isOpen={true}
+        accountId={accountId}
+        name={name}
+        totalPaid={totalPaid}
+        totalPurchased={totalPurchased}
+        onClose={vi.fn()}
+      />,
     );
 
     expect(getByText(name)).toBeInTheDocument();

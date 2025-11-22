@@ -19,6 +19,7 @@
     "test:integration:watch": "firebase emulators:exec --project chaas-test --only firestore,auth 'vitest watch --project integration'"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
