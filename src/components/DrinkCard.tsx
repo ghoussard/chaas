@@ -47,7 +47,7 @@ export const DrinkCard = ({
       )}
       <CardBody>
         <Image
-          src={`https://via.placeholder.com/300x200?text=${encodeURIComponent(item.name)}`}
+          src={`https://placehold.co/300x200?text=${encodeURIComponent(item.name)}`}
           alt={item.name}
           borderRadius={'lg'}
           cursor={'pointer'}
