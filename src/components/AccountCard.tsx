@@ -12,6 +12,7 @@ import {
 import {AccountDrawer} from './AccountDrawer';
 
 type AccountCardProps = {
+  id: string;
   name: string;
   pictureUrl: string;
   totalPaid: number;
@@ -21,6 +22,7 @@ type AccountCardProps = {
 const debtColor = (debt: number): string => (debt < 0 ? 'red' : 'green');
 
 export const AccountCard = memo(function AccountCard({
+  id,
   name,
   pictureUrl,
   totalPaid,
@@ -48,7 +50,14 @@ export const AccountCard = memo(function AccountCard({
           </Stat>
         </CardFooter>
       </Card>
-      <AccountDrawer isOpen={isOpen} onClose={onClose} name={name} />
+      <AccountDrawer
+        isOpen={isOpen}
+        onClose={onClose}
+        accountId={id}
+        name={name}
+        totalPaid={totalPaid}
+        totalPurchased={totalPurchased}
+      />
     </>
   );
 });
