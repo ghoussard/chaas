@@ -9,6 +9,7 @@ vi.mock('./AccountDrawer', () => ({
     isOpen && <div>Account of {name}</div>,
 }));
 
+const id = 'test-account-id';
 const name = 'Luc Bernard';
 const pictureUrl = 'https://placehold.co/150';
 const totalPaid = 10;
@@ -18,6 +19,7 @@ describe('AccountCard component', () => {
   it('displays account details', () => {
     const {getByText} = renderWithChakra(
       <AccountCard
+        id={id}
         name={name}
         pictureUrl={pictureUrl}
         totalPaid={totalPaid}
@@ -34,6 +36,7 @@ describe('AccountCard component', () => {
 
     const {getByTestId, getByText} = renderWithChakra(
       <AccountCard
+        id={id}
         name={name}
         pictureUrl={pictureUrl}
         totalPaid={totalPaid}

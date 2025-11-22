@@ -49,6 +49,7 @@ export const AccountGrid = () => {
           {accounts.map(({id, slack: {name, pictureUrl}, activity}) => (
             <AccountCard
               key={id}
+              id={id}
               name={name}
               pictureUrl={pictureUrl}
               totalPaid={activity.totalPaid}

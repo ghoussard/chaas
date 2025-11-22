@@ -1,7 +1,12 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import {ChakraProvider} from '@chakra-ui/react';
-import {StoreContext, createStoreContextValue, AuthContext} from './contexts';
+import {
+  StoreContext,
+  createStoreContextValue,
+  AuthContext,
+  ItemsProvider,
+} from './contexts';
 import {createFirebaseApp, Env} from './utils/firebase';
 import {App} from './App';
 import {getFirestore} from 'firebase/firestore';
@@ -23,9 +28,11 @@ createRoot(root).render(
   <StrictMode>
     <ChakraProvider>
       <AuthContext.Provider value={auth}>
-        <StoreContext.Provider value={storeContextValue}>
-          <App />
-        </StoreContext.Provider>
+        <ItemsProvider firestore={firestore}>
+          <StoreContext.Provider value={storeContextValue}>
+            <App />
+          </StoreContext.Provider>
+        </ItemsProvider>
       </AuthContext.Provider>
     </ChakraProvider>
   </StrictMode>,
