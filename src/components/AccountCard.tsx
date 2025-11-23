@@ -4,9 +4,6 @@ import {
   Card,
   CardFooter,
   Text,
-  Stat,
-  StatLabel,
-  StatNumber,
   useDisclosure,
 } from '@chakra-ui/react';
 import {AccountDrawer} from './AccountDrawer';
@@ -38,16 +35,23 @@ export const AccountCard = memo(function AccountCard({
         cursor={'pointer'}
         onClick={onOpen}
         data-testid={'account-card'}
+        borderRadius={'xl'}
+        boxShadow={'md'}
+        overflow={'hidden'}
+        transition={'all 0.2s'}
+        _hover={{
+          transform: 'translateY(-4px)',
+          boxShadow: 'xl',
+        }}
       >
         <Image boxSize={300} objectFit={'cover'} src={pictureUrl} alt={name} />
-        <CardFooter justifyContent={'space-between'} alignItems={'center'}>
-          <Text fontSize={'xl'} verticalAlign={'middle'}>
+        <CardFooter justifyContent={'space-between'} alignItems={'center'} py={4}>
+          <Text fontSize={'lg'} fontWeight={'medium'} verticalAlign={'middle'}>
             {name}
           </Text>
-          <Stat textAlign={'right'}>
-            <StatLabel>Debt</StatLabel>
-            <StatNumber color={debtColor(debt)}>{debt}€</StatNumber>
-          </Stat>
+          <Text fontSize={'xl'} fontWeight={'bold'} color={debtColor(debt)}>
+            {debt >= 0 ? '+' : ''}{debt}€
+          </Text>
         </CardFooter>
       </Card>
       <AccountDrawer

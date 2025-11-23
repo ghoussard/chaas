@@ -42,6 +42,14 @@ export const AccountSearchInput = forwardRef<
       onChange={(e) => {
         onChange(e.target.value);
       }}
+      bg={'white'}
+      borderRadius={'12px'}
+      border={'1px solid'}
+      borderColor={'gray.200'}
+      _focus={{
+        borderColor: 'blue.400',
+        boxShadow: '0 0 0 1px var(--chakra-colors-blue-400)',
+      }}
     />
   );
 });
