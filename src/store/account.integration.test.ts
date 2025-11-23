@@ -3,6 +3,7 @@ import {deleteApp} from 'firebase/app';
 import {doc, Firestore, getFirestore, updateDoc} from 'firebase/firestore';
 import {createAccountStore} from './account';
 import {
+  clearFirestoreData,
   createUser,
   Dataset,
   loadAccounts,
@@ -20,6 +21,7 @@ const it = base.extend<{firestore: Firestore}>({
     const firestore = getFirestore(app);
     const auth = getAuth(app);
     await createUser(auth, 'admin@example.com', 'admin123');
+    await clearFirestoreData(firestore);
     await loadAccounts(firestore, Dataset.TEST);
     await loadItems(firestore, Dataset.TEST);
     await loadTransactions(firestore, Dataset.TEST);
