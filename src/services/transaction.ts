@@ -5,7 +5,7 @@ import {
   writeBatch,
   increment,
 } from 'firebase/firestore';
-import {Item} from '../models';
+import {Item, Transaction} from '../models';
 
 export async function chargePurchase(
   firestore: Firestore,
@@ -87,6 +87,31 @@ export async function addPayment(
     'activity.totalPaid': increment(amount),
     'activity.lastPaymentTimestamp': timestamp,
   });
+
+  await batch.commit();
+}
+
+export async function deleteTransaction(
+  firestore: Firestore,
+  transaction: Transaction,
+): Promise<void> {
+  const batch = writeBatch(firestore);
+  const transactionRef = doc(firestore, 'transactions', transaction.id);
+  const accountRef = doc(firestore, 'accounts', transaction.account);
+
+  // Delete the transaction document
+  batch.delete(transactionRef);
+
+  // Reverse the account activity changes
+  if (transaction.type === 'purchase') {
+    batch.update(accountRef, {
+      'activity.totalPurchased': increment(-transaction.item.price),
+    });
+  } else {
+    batch.update(accountRef, {
+      'activity.totalPaid': increment(-transaction.amount),
+    });
+  }
 
   await batch.commit();
 }

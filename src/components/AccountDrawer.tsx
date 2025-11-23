@@ -1,4 +1,4 @@
-import {useState, useCallback, useEffect} from 'react';
+import {useState, useCallback, useEffect, useRef} from 'react';
 import {
   Drawer,
   DrawerHeader,
@@ -24,11 +24,23 @@ import {
   Input,
   InputGroup,
   InputRightAddon,
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  useDisclosure,
 } from '@chakra-ui/react';
 import {useFocusableElementRef, useItems} from '../hooks';
 import {DrinkCard, TransactionList} from './';
 import {Item, Transaction} from '../models';
-import {chargePurchase, chargePurchases, addPayment} from '../services';
+import {
+  chargePurchase,
+  chargePurchases,
+  addPayment,
+  deleteTransaction,
+} from '../services';
 import {loadAccountTransactions} from '../store';
 import {getFirestore} from 'firebase/firestore';
 
@@ -63,6 +75,10 @@ export const AccountDrawer = ({
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[] | null>(null);
   const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
+  const [transactionToDelete, setTransactionToDelete] =
+    useState<Transaction | null>(null);
+  const {isOpen: isDeleteDialogOpen, onOpen: onDeleteDialogOpen, onClose: onDeleteDialogClose} = useDisclosure();
+  const cancelRef = useRef<HTMLButtonElement>(null);
 
   const resetQuantities = useCallback(() => {
     setQuantities(new Map());
@@ -206,6 +222,41 @@ export const AccountDrawer = ({
     }
   }, [paymentAmount, firestore, accountId, onClose, toast]);
 
+  const handleInitiateDelete = useCallback((transaction: Transaction) => {
+    setTransactionToDelete(transaction);
+    onDeleteDialogOpen();
+  }, [onDeleteDialogOpen]);
+
+  const handleConfirmDelete = useCallback(async () => {
+    if (!transactionToDelete) return;
+
+    try {
+      await deleteTransaction(firestore, transactionToDelete);
+
+      // Refresh transactions
+      const updatedTransactions = await loadAccountTransactions(firestore, accountId);
+      setTransactions(updatedTransactions);
+
+      toast({
+        title: 'Transaction deleted',
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      });
+    } catch (error) {
+      toast({
+        title: 'Error deleting transaction',
+        description: error instanceof Error ? error.message : 'Unknown error',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setTransactionToDelete(null);
+      onDeleteDialogClose();
+    }
+  }, [transactionToDelete, firestore, accountId, toast, onDeleteDialogClose]);
+
   const paymentAmountValue = parseFloat(paymentAmount) || 0;
   const newBalance = totalPaid + paymentAmountValue - totalPurchased;
 
@@ -333,12 +384,41 @@ export const AccountDrawer = ({
                 <TransactionList
                   transactions={transactions}
                   isLoading={isLoadingTransactions}
+                  onDelete={handleInitiateDelete}
                 />
               </TabPanel>
             </TabPanels>
           </Tabs>
         </DrawerBody>
       </DrawerContent>
+
+      <AlertDialog
+        isOpen={isDeleteDialogOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onDeleteDialogClose}
+      >
+        <AlertDialogOverlay>
+          <AlertDialogContent>
+            <AlertDialogHeader fontSize={'lg'} fontWeight={'bold'}>
+              Delete Transaction
+            </AlertDialogHeader>
+
+            <AlertDialogBody>
+              Are you sure you want to delete this transaction? This action
+              cannot be undone and will reverse the account balance changes.
+            </AlertDialogBody>
+
+            <AlertDialogFooter>
+              <Button ref={cancelRef} onClick={onDeleteDialogClose}>
+                Cancel
+              </Button>
+              <Button colorScheme={'red'} onClick={handleConfirmDelete} ml={3}>
+                Delete
+              </Button>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialogOverlay>
+      </AlertDialog>
     </Drawer>
   );
 };
