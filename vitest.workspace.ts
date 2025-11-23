@@ -16,6 +16,12 @@ export default defineWorkspace([
       name: 'integration',
       include: ['**/*.integration.test.ts?(x)'],
       environment: 'jsdom',
+      pool: 'forks',
+      poolOptions: {
+        forks: {
+          singleFork: true,
+        },
+      },
     },
   },
 ]);
