@@ -1,4 +1,4 @@
-import {collection, doc, Firestore, getDocs, setDoc} from 'firebase/firestore';
+import {collection, doc, Firestore, getDocs, setDoc, writeBatch, query, limit} from 'firebase/firestore';
 import {Account, Item, Transaction} from '../../models';
 import {
   Auth,
@@ -11,6 +11,32 @@ export enum Dataset {
   DEV = 'dev',
   TEST = 'test',
 }
+
+export const clearFirestoreData = async (firestore: Firestore) => {
+  const collections = ['accounts', 'items', 'transactions'];
+
+  for (const collectionName of collections) {
+    let hasMore = true;
+    while (hasMore) {
+      const snapshot = await getDocs(
+        query(collection(firestore, collectionName), limit(100))
+      );
+
+      if (snapshot.empty) {
+        hasMore = false;
+        break;
+      }
+
+      const batch = writeBatch(firestore);
+      snapshot.docs.forEach((document) => {
+        batch.delete(doc(firestore, collectionName, document.id));
+      });
+      await batch.commit();
+
+      hasMore = snapshot.docs.length === 100;
+    }
+  }
+};
 
 const getData = async <T>(name: string, dataset: Dataset): Promise<T> => {
   const {default: data} = (await import(
