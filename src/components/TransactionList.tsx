@@ -4,7 +4,6 @@ import {
   HStack,
   Text,
   Badge,
-  Divider,
   Spinner,
   Center,
   IconButton,
@@ -53,9 +52,19 @@ export const TransactionList = ({
   }
 
   return (
-    <VStack spacing={3} align={'stretch'}>
+    <VStack spacing={4} align={'stretch'}>
       {transactions.map((transaction) => (
-        <Box key={transaction.id}>
+        <Box
+          key={transaction.id}
+          p={4}
+          bg={'white'}
+          borderRadius={'lg'}
+          boxShadow={'sm'}
+          transition={'all 0.2s'}
+          _hover={{
+            boxShadow: 'md',
+          }}
+        >
           <HStack justify={'space-between'} align={'start'}>
             <VStack align={'start'} spacing={1} flex={1}>
               <HStack>
@@ -64,6 +73,7 @@ export const TransactionList = ({
                     transaction.type === 'payment' ? 'green' : 'blue'
                   }
                   fontSize={'sm'}
+                  borderRadius={'md'}
                 >
                   {transaction.type === 'payment' ? 'Payment' : 'Purchase'}
                 </Badge>
@@ -81,7 +91,7 @@ export const TransactionList = ({
               <Text
                 fontSize={'lg'}
                 fontWeight={'bold'}
-                color={transaction.type === 'payment' ? 'green.500' : 'blue.500'}
+                color={transaction.type === 'payment' ? 'green.600' : 'blue.600'}
               >
                 {transaction.type === 'payment' ? '+' : '-'}
                 {transaction.type === 'payment'
@@ -97,11 +107,11 @@ export const TransactionList = ({
                   colorScheme={'red'}
                   variant={'ghost'}
                   onClick={() => onDelete(transaction)}
+                  borderRadius={'md'}
                 />
               )}
             </HStack>
           </HStack>
-          <Divider mt={3} />
         </Box>
       ))}
     </VStack>

@@ -1,5 +1,6 @@
 import {useState, useCallback, useEffect, useRef} from 'react';
 import {
+  Box,
   Drawer,
   DrawerHeader,
   DrawerOverlay,
@@ -52,8 +53,6 @@ export type AccountDrawerProps = {
   totalPaid: number;
   totalPurchased: number;
 };
-
-const debtColor = (debt: number): string => (debt < 0 ? 'red' : 'green');
 
 export const AccountDrawer = ({
   isOpen,
@@ -269,12 +268,20 @@ export const AccountDrawer = ({
       finalFocusRef={focusableElementRef}
     >
       <DrawerOverlay />
-      <DrawerContent>
+      <DrawerContent bg={'gray.50'}>
         <DrawerCloseButton />
-        <DrawerHeader>
-          <VStack align={'start'} spacing={2}>
+        <DrawerHeader p={8} bg={'white'} borderBottom={'1px solid'} borderColor={'gray.200'}>
+          <VStack align={'start'} spacing={4}>
             <Heading size={'lg'}>{name}</Heading>
-            <Text fontSize={'xl'} color={debtColor(balance)}>
+            <Text
+              fontSize={'lg'}
+              fontWeight={'bold'}
+              color={balance >= 0 ? 'green.700' : 'red.700'}
+              bg={balance >= 0 ? 'green.100' : 'red.100'}
+              px={4}
+              py={2}
+              borderRadius={'full'}
+            >
               Balance: {balance >= 0 ? '+' : ''}
               {balance}€
             </Text>
@@ -282,7 +289,7 @@ export const AccountDrawer = ({
         </DrawerHeader>
 
         <DrawerBody>
-          <Tabs defaultIndex={0}>
+          <Tabs defaultIndex={0} variant={'line'}>
             <TabList>
               <Tab>Charge Drinks</Tab>
               <Tab>Add Payment</Tab>
@@ -290,14 +297,14 @@ export const AccountDrawer = ({
             </TabList>
 
             <TabPanels>
-              <TabPanel>
+              <TabPanel p={4}>
                 {isCharging ? (
                   <Center py={10}>
                     <Spinner size={'xl'} />
                   </Center>
                 ) : (
-                  <VStack spacing={6}>
-                    <SimpleGrid columns={3} spacing={5}>
+                  <VStack spacing={4}>
+                    <SimpleGrid columns={3} spacing={4}>
                       {items.map((item) => (
                         <DrinkCard
                           key={item.id}
@@ -315,13 +322,18 @@ export const AccountDrawer = ({
                       width={'full'}
                       onClick={handleBatchCharge}
                       isDisabled={totalQuantity === 0}
+                      transition={'all 0.2s'}
+                      _hover={{
+                        transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                      }}
                     >
                       Charge ({totalQuantity} item{totalQuantity !== 1 ? 's' : ''})
                     </Button>
                   </VStack>
                 )}
               </TabPanel>
-              <TabPanel>
+              <TabPanel p={6}>
                 {isProcessingPayment ? (
                   <Center py={10}>
                     <Spinner size={'xl'} />
@@ -329,12 +341,15 @@ export const AccountDrawer = ({
                 ) : (
                   <VStack spacing={6} align={'stretch'}>
                     {totalPurchased > totalPaid && (
-                      <Text fontSize={'lg'}>
-                        Current debt:{' '}
-                        <Text as={'span'} fontWeight={'bold'} color={'red'}>
-                          {totalPurchased - totalPaid}€
+                      <Box
+                        bg={'red.50'}
+                        p={4}
+                        borderRadius={'lg'}
+                      >
+                        <Text fontSize={'lg'} fontWeight={'bold'} color={'red.700'}>
+                          Current debt: {totalPurchased - totalPaid}€
                         </Text>
-                      </Text>
+                      </Box>
                     )}
 
                     <FormControl>
@@ -347,23 +362,33 @@ export const AccountDrawer = ({
                           placeholder={'0'}
                           min={0}
                           step={0.01}
+                          bg={'white'}
+                          border={'1px solid'}
+                          borderColor={'gray.200'}
+                          _focus={{
+                            borderColor: 'blue.400',
+                            boxShadow: '0 0 0 1px var(--chakra-colors-blue-400)',
+                          }}
                         />
-                        <InputRightAddon>€</InputRightAddon>
+                        <InputRightAddon bg={'white'}>€</InputRightAddon>
                       </InputGroup>
                     </FormControl>
 
                     {paymentAmountValue > 0 && (
-                      <Text fontSize={'lg'}>
-                        New balance:{' '}
+                      <Box
+                        bg={newBalance >= 0 ? 'green.50' : 'red.50'}
+                        p={4}
+                        borderRadius={'lg'}
+                      >
                         <Text
-                          as={'span'}
+                          fontSize={'lg'}
                           fontWeight={'bold'}
-                          color={debtColor(newBalance)}
+                          color={newBalance >= 0 ? 'green.700' : 'red.700'}
                         >
-                          {newBalance >= 0 ? '+' : ''}
+                          New balance: {newBalance >= 0 ? '+' : ''}
                           {newBalance}€
                         </Text>
-                      </Text>
+                      </Box>
                     )}
 
                     <Button
@@ -374,6 +399,11 @@ export const AccountDrawer = ({
                       isDisabled={
                         !paymentAmount || paymentAmountValue <= 0
                       }
+                      transition={'all 0.2s'}
+                      _hover={{
+                        transform: 'translateY(-2px)',
+                        boxShadow: 'lg',
+                      }}
                     >
                       Add Payment
                     </Button>
@@ -398,7 +428,7 @@ export const AccountDrawer = ({
         onClose={onDeleteDialogClose}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent>
+          <AlertDialogContent borderRadius={'xl'}>
             <AlertDialogHeader fontSize={'lg'} fontWeight={'bold'}>
               Delete Transaction
             </AlertDialogHeader>
@@ -409,10 +439,23 @@ export const AccountDrawer = ({
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onDeleteDialogClose}>
+              <Button
+                ref={cancelRef}
+                onClick={onDeleteDialogClose}
+                variant={'ghost'}
+              >
                 Cancel
               </Button>
-              <Button colorScheme={'red'} onClick={handleConfirmDelete} ml={3}>
+              <Button
+                colorScheme={'red'}
+                onClick={handleConfirmDelete}
+                ml={3}
+                transition={'all 0.2s'}
+                _hover={{
+                  transform: 'translateY(-2px)',
+                  boxShadow: 'lg',
+                }}
+              >
                 Delete
               </Button>
             </AlertDialogFooter>
