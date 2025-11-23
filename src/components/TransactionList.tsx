@@ -91,7 +91,9 @@ export const TransactionList = ({
               <Text
                 fontSize={'lg'}
                 fontWeight={'bold'}
-                color={transaction.type === 'payment' ? 'green.600' : 'blue.600'}
+                color={
+                  transaction.type === 'payment' ? 'green.600' : 'blue.600'
+                }
               >
                 {transaction.type === 'payment' ? '+' : '-'}
                 {transaction.type === 'payment'
