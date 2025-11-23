@@ -283,7 +283,7 @@ export const AccountDrawer = ({
               borderRadius={'full'}
             >
               Balance: {balance >= 0 ? '+' : ''}
-              {balance}€
+              {balance.toFixed(2)}€
             </Text>
           </VStack>
         </DrawerHeader>
@@ -347,7 +347,7 @@ export const AccountDrawer = ({
                         borderRadius={'lg'}
                       >
                         <Text fontSize={'lg'} fontWeight={'bold'} color={'red.700'}>
-                          Current debt: {totalPurchased - totalPaid}€
+                          Current debt: {(totalPurchased - totalPaid).toFixed(2)}€
                         </Text>
                       </Box>
                     )}
@@ -356,12 +356,15 @@ export const AccountDrawer = ({
                       <FormLabel fontSize={'lg'}>Payment amount:</FormLabel>
                       <InputGroup size={'lg'}>
                         <Input
-                          type={'number'}
+                          type={'text'}
+                          inputMode={'decimal'}
                           value={paymentAmount}
-                          onChange={(e) => setPaymentAmount(e.target.value)}
+                          onChange={(e) => {
+                            // Replace comma with period to normalize decimal separator
+                            const normalized = e.target.value.replace(/,/g, '.');
+                            setPaymentAmount(normalized);
+                          }}
                           placeholder={'0'}
-                          min={0}
-                          step={0.01}
                           bg={'white'}
                           border={'1px solid'}
                           borderColor={'gray.200'}
@@ -386,7 +389,7 @@ export const AccountDrawer = ({
                           color={newBalance >= 0 ? 'green.700' : 'red.700'}
                         >
                           New balance: {newBalance >= 0 ? '+' : ''}
-                          {newBalance}€
+                          {newBalance.toFixed(2)}€
                         </Text>
                       </Box>
                     )}
