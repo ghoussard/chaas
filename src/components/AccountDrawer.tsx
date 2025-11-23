@@ -265,7 +265,7 @@ export const AccountDrawer = ({
       isOpen={isOpen}
       placement={'right'}
       onClose={onClose}
-      size={'full'}
+      size={'lg'}
       finalFocusRef={focusableElementRef}
     >
       <DrawerOverlay />
