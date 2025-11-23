@@ -22,9 +22,7 @@ const itemConverter: FirestoreDataConverter<Item> = {
   },
 };
 
-export async function loadEnabledItems(
-  firestore: Firestore,
-): Promise<Item[]> {
+export async function loadEnabledItems(firestore: Firestore): Promise<Item[]> {
   const collectionReference = collection(firestore, ITEM_COLLECTION_NAME);
 
   const querySnapshot = await getDocs(

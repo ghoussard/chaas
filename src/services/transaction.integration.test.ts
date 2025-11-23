@@ -91,7 +91,9 @@ describe('Transaction service', () => {
       const updatedTotalPurchased =
         updatedAccount.data()?.activity?.totalPurchased ?? 0;
 
-      expect(updatedTotalPurchased).toBe(initialTotalPurchased + testItem.price);
+      expect(updatedTotalPurchased).toBe(
+        initialTotalPurchased + testItem.price,
+      );
     });
 
     it('updates account lastPurchaseTimestamp', async ({firestore}) => {
@@ -122,7 +124,10 @@ describe('Transaction service', () => {
 
       const items = [
         {item: testItem, quantity: 2},
-        {item: {...testItem, id: 'item-2', name: 'Tea', price: 1.5}, quantity: 1},
+        {
+          item: {...testItem, id: 'item-2', name: 'Tea', price: 1.5},
+          quantity: 1,
+        },
       ];
 
       await chargePurchases(firestore, testAccountId, items);
@@ -147,7 +152,10 @@ describe('Transaction service', () => {
 
       const items = [
         {item: testItem, quantity: 2}, // 2 * 2.5 = 5
-        {item: {...testItem, id: 'item-2', name: 'Tea', price: 1.5}, quantity: 1}, // 1.5
+        {
+          item: {...testItem, id: 'item-2', name: 'Tea', price: 1.5},
+          quantity: 1,
+        }, // 1.5
       ];
       const expectedTotal = 5 + 1.5;
 
@@ -249,7 +257,9 @@ describe('Transaction service', () => {
       expect(transactionsAfter.size).toBe(countBefore - 1);
     });
 
-    it('reverses totalPurchased when deleting purchase', async ({firestore}) => {
+    it('reverses totalPurchased when deleting purchase', async ({
+      firestore,
+    }) => {
       const accountRef = doc(firestore, 'accounts', testAccountId);
 
       // First create a purchase
@@ -348,9 +358,7 @@ describe('Transaction service', () => {
       const totalPaidAfterDelete =
         accountAfterDelete.data()?.activity?.totalPaid ?? 0;
 
-      expect(totalPaidAfterDelete).toBe(
-        totalPaidAfterPayment - paymentAmount,
-      );
+      expect(totalPaidAfterDelete).toBe(totalPaidAfterPayment - paymentAmount);
     });
   });
 });

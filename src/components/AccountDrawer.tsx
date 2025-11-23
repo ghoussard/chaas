@@ -76,7 +76,11 @@ export const AccountDrawer = ({
   const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
   const [transactionToDelete, setTransactionToDelete] =
     useState<Transaction | null>(null);
-  const {isOpen: isDeleteDialogOpen, onOpen: onDeleteDialogOpen, onClose: onDeleteDialogClose} = useDisclosure();
+  const {
+    isOpen: isDeleteDialogOpen,
+    onOpen: onDeleteDialogOpen,
+    onClose: onDeleteDialogClose,
+  } = useDisclosure();
   const cancelRef = useRef<HTMLButtonElement>(null);
 
   const resetQuantities = useCallback(() => {
@@ -182,7 +186,15 @@ export const AccountDrawer = ({
     } finally {
       setIsCharging(false);
     }
-  }, [items, quantities, firestore, accountId, resetQuantities, onClose, toast]);
+  }, [
+    items,
+    quantities,
+    firestore,
+    accountId,
+    resetQuantities,
+    onClose,
+    toast,
+  ]);
 
   const totalQuantity = Array.from(quantities.values()).reduce(
     (sum, qty) => sum + qty,
@@ -221,10 +233,13 @@ export const AccountDrawer = ({
     }
   }, [paymentAmount, firestore, accountId, onClose, toast]);
 
-  const handleInitiateDelete = useCallback((transaction: Transaction) => {
-    setTransactionToDelete(transaction);
-    onDeleteDialogOpen();
-  }, [onDeleteDialogOpen]);
+  const handleInitiateDelete = useCallback(
+    (transaction: Transaction) => {
+      setTransactionToDelete(transaction);
+      onDeleteDialogOpen();
+    },
+    [onDeleteDialogOpen],
+  );
 
   const handleConfirmDelete = useCallback(async () => {
     if (!transactionToDelete) return;
@@ -233,7 +248,10 @@ export const AccountDrawer = ({
       await deleteTransaction(firestore, transactionToDelete);
 
       // Refresh transactions
-      const updatedTransactions = await loadAccountTransactions(firestore, accountId);
+      const updatedTransactions = await loadAccountTransactions(
+        firestore,
+        accountId,
+      );
       setTransactions(updatedTransactions);
 
       toast({
@@ -270,7 +288,12 @@ export const AccountDrawer = ({
       <DrawerOverlay />
       <DrawerContent bg={'gray.50'}>
         <DrawerCloseButton />
-        <DrawerHeader p={8} bg={'white'} borderBottom={'1px solid'} borderColor={'gray.200'}>
+        <DrawerHeader
+          p={8}
+          bg={'white'}
+          borderBottom={'1px solid'}
+          borderColor={'gray.200'}
+        >
           <VStack align={'start'} spacing={4}>
             <Heading size={'lg'}>{name}</Heading>
             <Text
@@ -328,7 +351,8 @@ export const AccountDrawer = ({
                         boxShadow: 'lg',
                       }}
                     >
-                      Charge ({totalQuantity} item{totalQuantity !== 1 ? 's' : ''})
+                      Charge ({totalQuantity} item
+                      {totalQuantity !== 1 ? 's' : ''})
                     </Button>
                   </VStack>
                 )}
@@ -341,13 +365,14 @@ export const AccountDrawer = ({
                 ) : (
                   <VStack spacing={6} align={'stretch'}>
                     {totalPurchased > totalPaid && (
-                      <Box
-                        bg={'red.50'}
-                        p={4}
-                        borderRadius={'lg'}
-                      >
-                        <Text fontSize={'lg'} fontWeight={'bold'} color={'red.700'}>
-                          Current debt: {(totalPurchased - totalPaid).toFixed(2)}€
+                      <Box bg={'red.50'} p={4} borderRadius={'lg'}>
+                        <Text
+                          fontSize={'lg'}
+                          fontWeight={'bold'}
+                          color={'red.700'}
+                        >
+                          Current debt:{' '}
+                          {(totalPurchased - totalPaid).toFixed(2)}€
                         </Text>
                       </Box>
                     )}
@@ -361,7 +386,10 @@ export const AccountDrawer = ({
                           value={paymentAmount}
                           onChange={(e) => {
                             // Replace comma with period to normalize decimal separator
-                            const normalized = e.target.value.replace(/,/g, '.');
+                            const normalized = e.target.value.replace(
+                              /,/g,
+                              '.',
+                            );
                             setPaymentAmount(normalized);
                           }}
                           placeholder={'0'}
@@ -370,7 +398,8 @@ export const AccountDrawer = ({
                           borderColor={'gray.200'}
                           _focus={{
                             borderColor: 'blue.400',
-                            boxShadow: '0 0 0 1px var(--chakra-colors-blue-400)',
+                            boxShadow:
+                              '0 0 0 1px var(--chakra-colors-blue-400)',
                           }}
                         />
                         <InputRightAddon bg={'white'}>€</InputRightAddon>
@@ -399,9 +428,7 @@ export const AccountDrawer = ({
                       size={'lg'}
                       width={'full'}
                       onClick={handleAddPayment}
-                      isDisabled={
-                        !paymentAmount || paymentAmountValue <= 0
-                      }
+                      isDisabled={!paymentAmount || paymentAmountValue <= 0}
                       transition={'all 0.2s'}
                       _hover={{
                         transform: 'translateY(-2px)',

@@ -29,7 +29,13 @@ export const Login = () => {
   }, [login, password, logIn]);
 
   return (
-    <Box h={'100vh'} bg={'gray.50'} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+    <Box
+      h={'100vh'}
+      bg={'gray.50'}
+      display={'flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+    >
       <Box
         bg={'white'}
         p={10}

@@ -1,4 +1,13 @@
-import {collection, doc, Firestore, getDocs, setDoc, writeBatch, query, limit} from 'firebase/firestore';
+import {
+  collection,
+  doc,
+  Firestore,
+  getDocs,
+  setDoc,
+  writeBatch,
+  query,
+  limit,
+} from 'firebase/firestore';
 import {Account, Item, Transaction} from '../../models';
 import {
   Auth,
@@ -19,7 +28,7 @@ export const clearFirestoreData = async (firestore: Firestore) => {
     let hasMore = true;
     while (hasMore) {
       const snapshot = await getDocs(
-        query(collection(firestore, collectionName), limit(100))
+        query(collection(firestore, collectionName), limit(100)),
       );
 
       if (snapshot.empty) {
