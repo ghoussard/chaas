@@ -82,14 +82,18 @@ describe('Transaction service', () => {
     it('updates account totalPurchased', async ({firestore}) => {
       const accountRef = doc(firestore, 'accounts', testAccountId);
       const initialAccount = await getDoc(accountRef);
-      const initialTotalPurchased =
-        initialAccount.data()?.activity?.totalPurchased ?? 0;
+      const initialData = initialAccount.data() as {
+        activity?: {totalPurchased?: number};
+      };
+      const initialTotalPurchased = initialData.activity?.totalPurchased ?? 0;
 
       await chargePurchase(firestore, testAccountId, testItem);
 
       const updatedAccount = await getDoc(accountRef);
-      const updatedTotalPurchased =
-        updatedAccount.data()?.activity?.totalPurchased ?? 0;
+      const updatedData = updatedAccount.data() as {
+        activity?: {totalPurchased?: number};
+      };
+      const updatedTotalPurchased = updatedData.activity?.totalPurchased ?? 0;
 
       expect(updatedTotalPurchased).toBe(
         initialTotalPurchased + testItem.price,
@@ -104,8 +108,10 @@ describe('Transaction service', () => {
       const afterTimestamp = Date.now();
 
       const updatedAccount = await getDoc(accountRef);
-      const lastPurchaseTimestamp =
-        updatedAccount.data()?.activity?.lastPurchaseTimestamp;
+      const updatedData = updatedAccount.data() as {
+        activity?: {lastPurchaseTimestamp?: number};
+      };
+      const lastPurchaseTimestamp = updatedData.activity?.lastPurchaseTimestamp;
 
       expect(lastPurchaseTimestamp).toBeGreaterThanOrEqual(beforeTimestamp);
       expect(lastPurchaseTimestamp).toBeLessThanOrEqual(afterTimestamp);
@@ -147,8 +153,10 @@ describe('Transaction service', () => {
     }) => {
       const accountRef = doc(firestore, 'accounts', testAccountId);
       const initialAccount = await getDoc(accountRef);
-      const initialTotalPurchased =
-        initialAccount.data()?.activity?.totalPurchased ?? 0;
+      const initialData = initialAccount.data() as {
+        activity?: {totalPurchased?: number};
+      };
+      const initialTotalPurchased = initialData.activity?.totalPurchased ?? 0;
 
       const items = [
         {item: testItem, quantity: 2}, // 2 * 2.5 = 5
@@ -162,8 +170,10 @@ describe('Transaction service', () => {
       await chargePurchases(firestore, testAccountId, items);
 
       const updatedAccount = await getDoc(accountRef);
-      const updatedTotalPurchased =
-        updatedAccount.data()?.activity?.totalPurchased ?? 0;
+      const updatedData = updatedAccount.data() as {
+        activity?: {totalPurchased?: number};
+      };
+      const updatedTotalPurchased = updatedData.activity?.totalPurchased ?? 0;
 
       expect(updatedTotalPurchased).toBe(initialTotalPurchased + expectedTotal);
     });
@@ -196,13 +206,19 @@ describe('Transaction service', () => {
     it('updates account totalPaid', async ({firestore}) => {
       const accountRef = doc(firestore, 'accounts', testAccountId);
       const initialAccount = await getDoc(accountRef);
-      const initialTotalPaid = initialAccount.data()?.activity?.totalPaid ?? 0;
+      const initialData = initialAccount.data() as {
+        activity?: {totalPaid?: number};
+      };
+      const initialTotalPaid = initialData.activity?.totalPaid ?? 0;
 
       const paymentAmount = 10;
       await addPayment(firestore, testAccountId, paymentAmount);
 
       const updatedAccount = await getDoc(accountRef);
-      const updatedTotalPaid = updatedAccount.data()?.activity?.totalPaid ?? 0;
+      const updatedData = updatedAccount.data() as {
+        activity?: {totalPaid?: number};
+      };
+      const updatedTotalPaid = updatedData.activity?.totalPaid ?? 0;
 
       expect(updatedTotalPaid).toBe(initialTotalPaid + paymentAmount);
     });
@@ -215,8 +231,10 @@ describe('Transaction service', () => {
       const afterTimestamp = Date.now();
 
       const updatedAccount = await getDoc(accountRef);
-      const lastPaymentTimestamp =
-        updatedAccount.data()?.activity?.lastPaymentTimestamp;
+      const updatedData = updatedAccount.data() as {
+        activity?: {lastPaymentTimestamp?: number};
+      };
+      const lastPaymentTimestamp = updatedData.activity?.lastPaymentTimestamp;
 
       expect(lastPaymentTimestamp).toBeGreaterThanOrEqual(beforeTimestamp);
       expect(lastPaymentTimestamp).toBeLessThanOrEqual(afterTimestamp);
@@ -266,8 +284,11 @@ describe('Transaction service', () => {
       await chargePurchase(firestore, testAccountId, testItem);
 
       const accountAfterPurchase = await getDoc(accountRef);
+      const purchaseData = accountAfterPurchase.data() as {
+        activity?: {totalPurchased?: number};
+      };
       const totalPurchasedAfterPurchase =
-        accountAfterPurchase.data()?.activity?.totalPurchased ?? 0;
+        purchaseData.activity?.totalPurchased ?? 0;
 
       // Get the created transaction
       const transactions = await getDocs(
@@ -286,8 +307,11 @@ describe('Transaction service', () => {
 
       // Verify totalPurchased is reversed
       const accountAfterDelete = await getDoc(accountRef);
+      const deleteData = accountAfterDelete.data() as {
+        activity?: {totalPurchased?: number};
+      };
       const totalPurchasedAfterDelete =
-        accountAfterDelete.data()?.activity?.totalPurchased ?? 0;
+        deleteData.activity?.totalPurchased ?? 0;
 
       expect(totalPurchasedAfterDelete).toBe(
         totalPurchasedAfterPurchase - testItem.price,
@@ -335,8 +359,10 @@ describe('Transaction service', () => {
       await addPayment(firestore, testAccountId, paymentAmount);
 
       const accountAfterPayment = await getDoc(accountRef);
-      const totalPaidAfterPayment =
-        accountAfterPayment.data()?.activity?.totalPaid ?? 0;
+      const paymentData = accountAfterPayment.data() as {
+        activity?: {totalPaid?: number};
+      };
+      const totalPaidAfterPayment = paymentData.activity?.totalPaid ?? 0;
 
       // Get the created transaction
       const transactions = await getDocs(
@@ -355,8 +381,10 @@ describe('Transaction service', () => {
 
       // Verify totalPaid is reversed
       const accountAfterDelete = await getDoc(accountRef);
-      const totalPaidAfterDelete =
-        accountAfterDelete.data()?.activity?.totalPaid ?? 0;
+      const deleteData = accountAfterDelete.data() as {
+        activity?: {totalPaid?: number};
+      };
+      const totalPaidAfterDelete = deleteData.activity?.totalPaid ?? 0;
 
       expect(totalPaidAfterDelete).toBe(totalPaidAfterPayment - paymentAmount);
     });

@@ -108,7 +108,9 @@ export const TransactionList = ({
                   size={'sm'}
                   colorScheme={'red'}
                   variant={'ghost'}
-                  onClick={() => onDelete(transaction)}
+                  onClick={() => {
+                    onDelete(transaction);
+                  }}
                   borderRadius={'md'}
                 />
               )}

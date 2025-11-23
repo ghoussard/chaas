@@ -16,7 +16,7 @@ import {Item} from '../models';
 export type DrinkCardProps = {
   item: Item;
   quantity: number;
-  onQuickCharge: (item: Item) => void;
+  onQuickCharge: (item: Item) => void | Promise<void>;
   onIncrement: (item: Item) => void;
   onDecrement: (item: Item) => void;
 };
@@ -58,7 +58,9 @@ export const DrinkCard = ({
           alt={item.name}
           borderRadius={'lg'}
           cursor={'pointer'}
-          onClick={() => onQuickCharge(item)}
+          onClick={() => {
+            void onQuickCharge(item);
+          }}
           h={'120px'}
           w={'full'}
           objectFit={'cover'}
@@ -76,7 +78,9 @@ export const DrinkCard = ({
             <IconButton
               aria-label={'Decrease quantity'}
               icon={<MinusIcon />}
-              onClick={() => onDecrement(item)}
+              onClick={() => {
+                onDecrement(item);
+              }}
               isDisabled={quantity === 0}
               size={'md'}
               variant={'ghost'}
@@ -93,7 +97,9 @@ export const DrinkCard = ({
             <IconButton
               aria-label={'Increase quantity'}
               icon={<AddIcon />}
-              onClick={() => onIncrement(item)}
+              onClick={() => {
+                onIncrement(item);
+              }}
               size={'md'}
               variant={'ghost'}
               borderRadius={'full'}

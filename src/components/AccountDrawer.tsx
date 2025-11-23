@@ -102,7 +102,7 @@ export const AccountDrawer = ({
         .then((loadedTransactions) => {
           setTransactions(loadedTransactions);
         })
-        .catch((error) => {
+        .catch((error: unknown) => {
           console.error('Error loading transactions:', error);
           toast({
             title: 'Error loading transactions',
@@ -143,7 +143,7 @@ export const AccountDrawer = ({
   const handleIncrement = useCallback((item: Item) => {
     setQuantities((prev) => {
       const newMap = new Map(prev);
-      const current = newMap.get(item.id) || 0;
+      const current = newMap.get(item.id) ?? 0;
       newMap.set(item.id, current + 1);
       return newMap;
     });
@@ -152,7 +152,7 @@ export const AccountDrawer = ({
   const handleDecrement = useCallback((item: Item) => {
     setQuantities((prev) => {
       const newMap = new Map(prev);
-      const current = newMap.get(item.id) || 0;
+      const current = newMap.get(item.id) ?? 0;
       if (current > 0) {
         newMap.set(item.id, current - 1);
       }
@@ -164,7 +164,7 @@ export const AccountDrawer = ({
     const itemsToCharge = items
       .map((item) => ({
         item,
-        quantity: quantities.get(item.id) || 0,
+        quantity: quantities.get(item.id) ?? 0,
       }))
       .filter(({quantity}) => quantity > 0);
 
@@ -332,7 +332,7 @@ export const AccountDrawer = ({
                         <DrinkCard
                           key={item.id}
                           item={item}
-                          quantity={quantities.get(item.id) || 0}
+                          quantity={quantities.get(item.id) ?? 0}
                           onQuickCharge={handleQuickCharge}
                           onIncrement={handleIncrement}
                           onDecrement={handleDecrement}
@@ -343,7 +343,9 @@ export const AccountDrawer = ({
                       colorScheme={'blue'}
                       size={'lg'}
                       width={'full'}
-                      onClick={handleBatchCharge}
+                      onClick={() => {
+                        void handleBatchCharge();
+                      }}
                       isDisabled={totalQuantity === 0}
                       transition={'all 0.2s'}
                       _hover={{
@@ -427,7 +429,9 @@ export const AccountDrawer = ({
                       colorScheme={'green'}
                       size={'lg'}
                       width={'full'}
-                      onClick={handleAddPayment}
+                      onClick={() => {
+                        void handleAddPayment();
+                      }}
                       isDisabled={!paymentAmount || paymentAmountValue <= 0}
                       transition={'all 0.2s'}
                       _hover={{
@@ -478,7 +482,9 @@ export const AccountDrawer = ({
               </Button>
               <Button
                 colorScheme={'red'}
-                onClick={handleConfirmDelete}
+                onClick={() => {
+                  void handleConfirmDelete();
+                }}
                 ml={3}
                 transition={'all 0.2s'}
                 _hover={{
