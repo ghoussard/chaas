@@ -20,23 +20,27 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ### Component Structure
 
 **AccountDrawer Enhancement:**
+
 - Becomes the main POS interface
 - Two tabs using Chakra Tabs component:
   - "Charge Drinks" (default, `index={0}`)
   - "Add Payment" (`index={1}`)
 
 **New Components:**
+
 - `DrinkCard` - Individual drink item with image, +/- buttons, quantity display
 
 ### State Management
 
 **Items Context (New):**
+
 - New context provider in `src/contexts/ItemsContext.ts`
 - Fetches enabled items once on app mount
 - Provides items via `useItems()` hook
 - Pattern matches existing `AccountStore` / `useAccountStore()`
 
 **Drawer Local State:**
+
 - Current tab index
 - Drink quantities (Map of itemId → count)
 - Payment amount (controlled input)
@@ -74,6 +78,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ```
 
 **Interactions:**
+
 - **Click drink image**: Immediately writes 1x Purchase, closes drawer (fast path)
 - **+/- buttons**: Increment/decrement local quantity state (min: 0)
 - **Count badge**: Shows quantity when > 0
@@ -106,6 +111,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ```
 
 **Interactions:**
+
 - **Default value**: Pre-fills with current debt amount (`Math.abs(totalPurchased - totalPaid)`) if debt exists, otherwise empty
 - **Live calculation**: Show "New balance: X€" as user types (green if positive, red if negative)
 - **Add Payment button**: Writes Payment transaction, closes drawer on success
@@ -117,6 +123,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ### Items Loading
 
 **ItemStore (`src/store/item.ts`):**
+
 ```typescript
 export type ItemStore = {
   items: Item[] | null;
@@ -126,11 +133,13 @@ export type ItemStore = {
 ```
 
 **Implementation:**
+
 - Fetch enabled items once on mount: `query(collection, where('enabled', '==', true), orderBy('name'))`
 - No subscription needed (reload page if drinks change)
 - Wrap app in ItemsContext.Provider in `main.tsx`
 
 **Loading States:**
+
 - While loading: Show spinner in drinks tab
 - Error: Show error message, disable charging
 - Empty: Show "No drinks configured"
@@ -146,22 +155,22 @@ export type ItemStore = {
 async function chargePurchase(
   firestore: Firestore,
   accountId: string,
-  item: Item
-): Promise<void>
+  item: Item,
+): Promise<void>;
 
 // Batch purchases (using +/- buttons)
 async function chargePurchases(
   firestore: Firestore,
   accountId: string,
-  items: Array<{item: Item, quantity: number}>
-): Promise<void>
+  items: Array<{item: Item; quantity: number}>,
+): Promise<void>;
 
 // Payment
 async function addPayment(
   firestore: Firestore,
   accountId: string,
-  amount: number
-): Promise<void>
+  amount: number,
+): Promise<void>;
 ```
 
 **Implementation Pattern (example for chargePurchase):**
@@ -177,24 +186,26 @@ batch.set(transactionRef, {
   type: 'purchase',
   item,
   account: accountId,
-  timestamp
+  timestamp,
 });
 
 batch.update(accountRef, {
   'activity.totalPurchased': increment(item.price),
-  'activity.lastPurchaseTimestamp': timestamp
+  'activity.lastPurchaseTimestamp': timestamp,
 });
 
 await batch.commit();
 ```
 
 **Why Batch + Increment:**
+
 - Atomic: Transaction and account update happen together
 - Fast: No queries needed
 - Scales: Works with any number of accounts
 - Real-time: AccountStore subscription triggers immediately
 
 **Error Handling:**
+
 - Let errors bubble up to caller
 - Drawer catches errors and shows toast with Chakra useToast
 - Drawer stays open for manual retry
@@ -219,6 +230,7 @@ await batch.commit();
 ### Unit Tests
 
 1. **AccountDrawer.unit.test.tsx**
+
    - Two tabs render, "Charge Drinks" is default
    - Balance displays correctly (color coding)
    - Drink cards render from mocked items
@@ -227,6 +239,7 @@ await batch.commit();
    - Payment input validation
 
 2. **DrinkCard.unit.test.tsx**
+
    - Renders item details
    - Click image triggers quick charge
    - +/- buttons update quantity

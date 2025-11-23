@@ -82,7 +82,12 @@ export const DrinkCard = ({
               variant={'ghost'}
               borderRadius={'full'}
             />
-            <Text fontSize={'md'} fontWeight={'bold'} minW={'30px'} textAlign={'center'}>
+            <Text
+              fontSize={'md'}
+              fontWeight={'bold'}
+              minW={'30px'}
+              textAlign={'center'}
+            >
               {quantity}
             </Text>
             <IconButton
