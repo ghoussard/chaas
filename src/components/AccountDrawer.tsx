@@ -26,9 +26,10 @@ import {
   InputRightAddon,
 } from '@chakra-ui/react';
 import {useFocusableElementRef, useItems} from '../hooks';
-import {DrinkCard} from './DrinkCard';
-import {Item} from '../models';
+import {DrinkCard, TransactionList} from './';
+import {Item, Transaction} from '../models';
 import {chargePurchase, chargePurchases, addPayment} from '../services';
+import {loadAccountTransactions} from '../store';
 import {getFirestore} from 'firebase/firestore';
 
 export type AccountDrawerProps = {
@@ -60,6 +61,8 @@ export const AccountDrawer = ({
   const [isCharging, setIsCharging] = useState(false);
   const [paymentAmount, setPaymentAmount] = useState<string>('');
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [transactions, setTransactions] = useState<Transaction[] | null>(null);
+  const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
 
   const resetQuantities = useCallback(() => {
     setQuantities(new Map());
@@ -73,8 +76,29 @@ export const AccountDrawer = ({
       } else {
         setPaymentAmount('');
       }
+
+      // Load transactions
+      setIsLoadingTransactions(true);
+      loadAccountTransactions(firestore, accountId)
+        .then((loadedTransactions) => {
+          setTransactions(loadedTransactions);
+        })
+        .catch((error) => {
+          console.error('Error loading transactions:', error);
+          toast({
+            title: 'Error loading transactions',
+            description:
+              error instanceof Error ? error.message : 'Unknown error',
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+          });
+        })
+        .finally(() => {
+          setIsLoadingTransactions(false);
+        });
     }
-  }, [isOpen, totalPaid, totalPurchased]);
+  }, [isOpen, totalPaid, totalPurchased, firestore, accountId, toast]);
 
   const handleQuickCharge = useCallback(
     async (item: Item) => {
@@ -211,6 +235,7 @@ export const AccountDrawer = ({
             <TabList>
               <Tab>Charge Drinks</Tab>
               <Tab>Add Payment</Tab>
+              <Tab>Transactions</Tab>
             </TabList>
 
             <TabPanels>
@@ -303,6 +328,12 @@ export const AccountDrawer = ({
                     </Button>
                   </VStack>
                 )}
+              </TabPanel>
+              <TabPanel>
+                <TransactionList
+                  transactions={transactions}
+                  isLoading={isLoadingTransactions}
+                />
               </TabPanel>
             </TabPanels>
           </Tabs>
