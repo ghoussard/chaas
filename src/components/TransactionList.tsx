@@ -7,12 +7,15 @@ import {
   Divider,
   Spinner,
   Center,
+  IconButton,
 } from '@chakra-ui/react';
+import {DeleteIcon} from '@chakra-ui/icons';
 import {Transaction} from '../models';
 
 export type TransactionListProps = {
   transactions: Transaction[] | null;
   isLoading: boolean;
+  onDelete?: (transaction: Transaction) => void;
 };
 
 const formatDate = (timestamp: number): string => {
@@ -29,6 +32,7 @@ const formatDate = (timestamp: number): string => {
 export const TransactionList = ({
   transactions,
   isLoading,
+  onDelete,
 }: TransactionListProps) => {
   if (isLoading) {
     return (
@@ -73,17 +77,29 @@ export const TransactionList = ({
                 </Text>
               )}
             </VStack>
-            <Text
-              fontSize={'lg'}
-              fontWeight={'bold'}
-              color={transaction.type === 'payment' ? 'green.500' : 'blue.500'}
-            >
-              {transaction.type === 'payment' ? '+' : '-'}
-              {transaction.type === 'payment'
-                ? transaction.amount
-                : transaction.item.price}
-              €
-            </Text>
+            <HStack spacing={3}>
+              <Text
+                fontSize={'lg'}
+                fontWeight={'bold'}
+                color={transaction.type === 'payment' ? 'green.500' : 'blue.500'}
+              >
+                {transaction.type === 'payment' ? '+' : '-'}
+                {transaction.type === 'payment'
+                  ? transaction.amount
+                  : transaction.item.price}
+                €
+              </Text>
+              {onDelete && (
+                <IconButton
+                  aria-label={'Delete transaction'}
+                  icon={<DeleteIcon />}
+                  size={'sm'}
+                  colorScheme={'red'}
+                  variant={'ghost'}
+                  onClick={() => onDelete(transaction)}
+                />
+              )}
+            </HStack>
           </HStack>
           <Divider mt={3} />
         </Box>
