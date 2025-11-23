@@ -12,8 +12,21 @@ vi.mock('../hooks', async () => {
   };
 });
 
+vi.mock('../store', async () => {
+  const actual = await vi.importActual('../store');
+  return {
+    ...actual,
+    loadAccountTransactions: vi.fn().mockResolvedValue([]),
+  };
+});
+
 vi.mock('firebase/firestore', () => ({
   getFirestore: vi.fn(),
+  collection: vi.fn(),
+  getDocs: vi.fn(),
+  query: vi.fn(),
+  where: vi.fn(),
+  orderBy: vi.fn(),
 }));
 
 const renderWithProviders = (children: ReactNode) =>
