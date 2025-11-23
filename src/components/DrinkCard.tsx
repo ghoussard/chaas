@@ -29,54 +29,69 @@ export const DrinkCard = ({
   onDecrement,
 }: DrinkCardProps) => {
   return (
-    <Card maxW={'sm'} position={'relative'}>
+    <Card
+      maxW={'sm'}
+      position={'relative'}
+      borderRadius={'xl'}
+      boxShadow={'md'}
+      overflow={'hidden'}
+      transition={'all 0.2s'}
+    >
       {quantity > 0 && (
         <Badge
           position={'absolute'}
           top={2}
           right={2}
           colorScheme={'blue'}
-          fontSize={'lg'}
+          fontSize={'md'}
           borderRadius={'full'}
-          px={3}
+          px={2}
           py={1}
           zIndex={1}
         >
           {quantity}
         </Badge>
       )}
-      <CardBody>
+      <CardBody p={3}>
         <Image
           src={`https://placehold.co/300x200?text=${encodeURIComponent(item.name)}`}
           alt={item.name}
           borderRadius={'lg'}
           cursor={'pointer'}
           onClick={() => onQuickCharge(item)}
-          _hover={{opacity: 0.8}}
+          h={'120px'}
+          w={'full'}
+          objectFit={'cover'}
+          transition={'all 0.2s'}
+          _hover={{opacity: 0.8, transform: 'scale(1.02)'}}
         />
-        <Stack mt={'6'} spacing={'3'}>
-          <VStack spacing={1} align={'start'}>
-            <Heading size={'md'}>{item.name}</Heading>
-            <Text color={'blue.600'} fontSize={'2xl'} fontWeight={'bold'}>
+        <Stack mt={3} spacing={2}>
+          <VStack spacing={0} align={'start'}>
+            <Heading size={'sm'}>{item.name}</Heading>
+            <Text color={'blue.600'} fontSize={'lg'} fontWeight={'bold'}>
               {item.price}€
             </Text>
           </VStack>
-          <HStack justify={'center'} spacing={4}>
+          <HStack justify={'center'} spacing={3}>
             <IconButton
               aria-label={'Decrease quantity'}
               icon={<MinusIcon />}
               onClick={() => onDecrement(item)}
               isDisabled={quantity === 0}
-              size={'lg'}
+              size={'md'}
+              variant={'ghost'}
+              borderRadius={'full'}
             />
-            <Text fontSize={'xl'} fontWeight={'bold'} minW={'40px'} textAlign={'center'}>
+            <Text fontSize={'md'} fontWeight={'bold'} minW={'30px'} textAlign={'center'}>
               {quantity}
             </Text>
             <IconButton
               aria-label={'Increase quantity'}
               icon={<AddIcon />}
               onClick={() => onIncrement(item)}
-              size={'lg'}
+              size={'md'}
+              variant={'ghost'}
+              borderRadius={'full'}
             />
           </HStack>
         </Stack>

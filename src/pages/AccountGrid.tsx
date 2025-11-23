@@ -1,8 +1,8 @@
 import {useDeferredValue, useState, useRef} from 'react';
 import {
+  Box,
   Center,
   Spinner,
-  VStack,
   SimpleGrid,
   Button,
   HStack,
@@ -29,35 +29,47 @@ export const AccountGrid = () => {
 
   return (
     <FocusableElementRefContext.Provider value={focusableElementRef}>
-      <VStack spacing={5}>
-        <HStack
-          w={'100%'}
-          paddingInline={'1vw'}
-          spacing={5}
-          alignItems={'center'}
+      <Box minH={'100vh'} bg={'gray.50'}>
+        <Box
+          as={'header'}
+          bg={'white'}
+          borderBottom={'1px solid'}
+          borderColor={'gray.200'}
+          boxShadow={'sm'}
+          px={8}
+          py={4}
+          position={'sticky'}
+          top={0}
+          zIndex={10}
         >
-          <AccountSearchInput
-            value={searchValue}
-            onChange={(newValue) => {
-              setSearchValue(newValue);
-            }}
-            ref={focusableElementRef}
-          />
-          <Button onClick={() => void logOut()}>Log out</Button>
-        </HStack>
-        <SimpleGrid columns={6} spacing={5}>
-          {accounts.map(({id, slack: {name, pictureUrl}, activity}) => (
-            <AccountCard
-              key={id}
-              id={id}
-              name={name}
-              pictureUrl={pictureUrl}
-              totalPaid={activity.totalPaid}
-              totalPurchased={activity.totalPurchased}
+          <HStack spacing={5} justify={'space-between'}>
+            <AccountSearchInput
+              value={searchValue}
+              onChange={(newValue) => {
+                setSearchValue(newValue);
+              }}
+              ref={focusableElementRef}
             />
-          ))}
-        </SimpleGrid>
-      </VStack>
+            <Button onClick={() => void logOut()} variant={'ghost'} size={'md'}>
+              Log out
+            </Button>
+          </HStack>
+        </Box>
+        <Box px={8} py={8}>
+          <SimpleGrid columns={{base: 2, md: 3, lg: 4, xl: 5}} spacing={8}>
+            {accounts.map(({id, slack: {name, pictureUrl}, activity}) => (
+              <AccountCard
+                key={id}
+                id={id}
+                name={name}
+                pictureUrl={pictureUrl}
+                totalPaid={activity.totalPaid}
+                totalPurchased={activity.totalPurchased}
+              />
+            ))}
+          </SimpleGrid>
+        </Box>
+      </Box>
       <HelpModal />
     </FocusableElementRefContext.Provider>
   );
