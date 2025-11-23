@@ -36,7 +36,7 @@ export async function chargePurchase(
 export async function chargePurchases(
   firestore: Firestore,
   accountId: string,
-  items: Array<{item: Item; quantity: number}>,
+  items: {item: Item; quantity: number}[],
 ): Promise<void> {
   const batch = writeBatch(firestore);
   const accountRef = doc(firestore, 'accounts', accountId);
