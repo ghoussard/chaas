@@ -20,7 +20,7 @@ export const ItemsProvider = ({firestore, children}: ItemsProviderProps) => {
         setItems(loadedItems);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         setError(err as Error);
         setIsLoading(false);
       });
