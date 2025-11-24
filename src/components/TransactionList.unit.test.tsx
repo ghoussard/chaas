@@ -13,6 +13,7 @@ const mockPurchaseTransaction: Transaction = {
     name: 'Coffee',
     price: 2.5,
     enabled: true,
+    picture: 'chaquip_logo.png',
   },
   timestamp: 1700000000000,
 };
