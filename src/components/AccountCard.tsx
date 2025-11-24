@@ -28,7 +28,7 @@ const getBalanceBadgeStyles = (balance: number) => {
   const b = Math.round(200 - intensity * 200);
 
   return {
-    bg: `rgb(${r}, ${g}, ${b})`,
+    bg: `rgb(${r.toString()}, ${g.toString()}, ${b.toString()})`,
     color: intensity > 0.5 ? 'white' : 'red.900',
   };
 };
