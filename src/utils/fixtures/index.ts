@@ -19,6 +19,7 @@ import {FirebaseError} from 'firebase/app';
 export enum Dataset {
   DEV = 'dev',
   TEST = 'test',
+  PROD = 'prod',
 }
 
 export const clearFirestoreData = async (firestore: Firestore) => {
