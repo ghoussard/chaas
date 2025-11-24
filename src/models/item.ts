@@ -3,4 +3,5 @@ export type Item = {
   name: string;
   price: number;
   enabled: boolean;
+  picture: string;
 };

@@ -124,8 +124,8 @@ for (const [slackId, user] of Object.entries(exportData.users)) {
     activity: {
       totalPurchased: 0,
       totalPaid: 0,
-      lastPurchaseTimestamp: null,
-      lastPaymentTimestamp: null,
+      lastPurchaseTimestamp: 0,
+      lastPaymentTimestamp: 0,
     },
   };
 
@@ -142,7 +142,7 @@ const items: Item[] = [];
 // First, collect all unique items from purchases (includes historical items)
 const itemsFromPurchases = new Map<
   string,
-  {name: string; price: number; enabled: boolean}
+  {name: string; price: number; enabled: boolean; picture: string}
 >();
 
 for (const [, purchase] of Object.entries(exportData.purchases)) {
@@ -153,17 +153,19 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
         name: name,
         price: purchase.item.price / 100, // cents to euros
         enabled: false, // default to disabled for historical items
+        picture: 'chaquip_logo.png', // default picture
       });
     }
   }
 }
 
-// Merge with items from items list, preserving enabled status
+// Merge with items from items list, preserving enabled status and picture
 for (const [, exportItem] of Object.entries(exportData.items)) {
   itemsFromPurchases.set(exportItem.name, {
     name: exportItem.name,
     price: exportItem.price / 100, // cents to euros
     enabled: exportItem.enabled,
+    picture: exportItem.picture || 'chaquip_logo.png',
   });
 }
 
@@ -177,6 +179,7 @@ for (const [name, itemData] of itemsFromPurchases) {
     name: itemData.name,
     price: itemData.price,
     enabled: itemData.enabled,
+    picture: itemData.picture,
   };
 
   items.push(item);
@@ -210,6 +213,12 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
     continue;
   }
 
+  const itemData = itemsFromPurchases.get(purchase.item.name);
+  if (!itemData) {
+    console.warn(`Warning: Item data not found for purchase ${purchase.id}: ${purchase.item.name}`);
+    continue;
+  }
+
   const transaction: Transaction = {
     id: purchase.id,
     type: 'purchase',
@@ -220,6 +229,7 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
       name: purchase.item.name,
       price: purchase.item.price / 100, // cents to euros
       enabled: purchase.item.enabled,
+      picture: itemData.picture,
     },
   };
 
