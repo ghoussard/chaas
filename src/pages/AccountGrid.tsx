@@ -148,7 +148,7 @@ export const AccountGrid = () => {
           </HStack>
         </Box>
         <Box px={8} py={8}>
-          <SimpleGrid columns={{base: 2, md: 3, lg: 4, xl: 5}} spacing={8}>
+          <SimpleGrid columns={{base: 2, md: 3, lg: 4, xl: 5, '2xl': 6}} spacing={8}>
             {sortedAccounts.map(({id, slack: {name, pictureUrl}, activity}) => (
               <AccountCard
                 key={id}
