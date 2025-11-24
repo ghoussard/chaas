@@ -296,18 +296,31 @@ export const AccountDrawer = ({
         >
           <VStack align={'start'} spacing={4}>
             <Heading size={'lg'}>{name}</Heading>
-            <Text
-              fontSize={'lg'}
-              fontWeight={'bold'}
-              color={balance >= 0 ? 'green.700' : 'red.700'}
-              bg={balance >= 0 ? 'green.100' : 'red.100'}
-              px={4}
-              py={2}
-              borderRadius={'full'}
-            >
-              Balance: {balance >= 0 ? '+' : ''}
-              {balance.toFixed(2)}€
-            </Text>
+            <Box display={'flex'} gap={3} flexWrap={'wrap'}>
+              <Text
+                fontSize={'lg'}
+                fontWeight={'bold'}
+                color={balance >= 0 ? 'green.700' : 'red.700'}
+                bg={balance >= 0 ? 'green.100' : 'red.100'}
+                px={4}
+                py={2}
+                borderRadius={'full'}
+              >
+                Balance: {balance >= 0 ? '+' : ''}
+                {balance.toFixed(2)}€
+              </Text>
+              <Text
+                fontSize={'lg'}
+                fontWeight={'bold'}
+                color={'blue.700'}
+                bg={'blue.100'}
+                px={4}
+                py={2}
+                borderRadius={'full'}
+              >
+                Total Paid: {totalPaid.toFixed(2)}€
+              </Text>
+            </Box>
           </VStack>
         </DrawerHeader>
 
