@@ -17,7 +17,15 @@
       "Bash(python3:*)",
       "Bash(yarn convert-fixtures:*)",
       "Bash(yarn lint:*)",
-      "Bash(yarn tsc:*)"
+      "Bash(yarn tsc:*)",
+      "Bash(yarn prettier:*)",
+      "Bash(yarn prettier:fix:*)",
+      "Bash(yarn lint:fix:*)",
+      "Bash(xargs kill:*)",
+      "Bash(xargs -I {} sed -i '' \"s/from ''''client\\/Model/from ''''Client\\/Model/g\" {})",
+      "Bash(xargs perl:*)",
+      "Bash(yarn build-web:*)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

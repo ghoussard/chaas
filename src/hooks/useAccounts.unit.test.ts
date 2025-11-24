@@ -18,6 +18,7 @@ const accounts: Account[] = [
       lastPurchaseTimestamp: 1700195501,
       lastPaymentTimestamp: 1710946962,
     },
+    isEmployee: true,
   },
   {
     id: 'd4e5f6a7-8b9c-1d2e-3f4a-5b6c7d8e9f0a',
@@ -33,6 +34,7 @@ const accounts: Account[] = [
       lastPurchaseTimestamp: 1662310314,
       lastPaymentTimestamp: 1713842769,
     },
+    isEmployee: true,
   },
 ];
 

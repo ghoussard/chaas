@@ -15,6 +15,7 @@ type ExportUser = {
     first_name: string;
     last_name: string;
     image_192: string;
+    email?: string;
     position?: string;
     team?: string;
     city?: string;
@@ -117,6 +118,11 @@ for (const [slackId, user] of Object.entries(exportData.users)) {
       ? `${user.profile.first_name} ${user.profile.last_name}`
       : user.name;
 
+  const isEmployee =
+    user.profile.email?.endsWith('@akeneo.com') ||
+    user.profile.email?.endsWith('@getakeneo.com') ||
+    false;
+
   const account: Account = {
     id: accountId,
     slack: {
@@ -131,6 +137,7 @@ for (const [slackId, user] of Object.entries(exportData.users)) {
       lastPurchaseTimestamp: 0,
       lastPaymentTimestamp: 0,
     },
+    isEmployee,
   };
 
   accounts.push(account);
