@@ -14,4 +14,5 @@ export type Account = {
     pictureUrl: string;
   };
   activity: AccountActivity;
+  isEmployee: boolean;
 };
