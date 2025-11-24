@@ -13,7 +13,7 @@ import {createFirebaseApp, Env} from '../src/utils/firebase';
 import {Account} from '../src/models';
 
 // Minimal Slack Member type definition for our needs
-interface Member {
+type Member = {
   id?: string;
   name?: string;
   deleted?: boolean;
@@ -22,7 +22,7 @@ interface Member {
     email?: string;
     image_192?: string;
   };
-}
+};
 
 // Validate token
 const token = process.env.SLACK_BOT_TOKEN;
@@ -57,9 +57,7 @@ const isActiveEmployee = (slackUser: Member | undefined): boolean => {
   const email = slackUser.profile?.email;
   if (!email) return false;
 
-  return (
-    email.endsWith('@akeneo.com') || email.endsWith('@getakeneo.com')
-  );
+  return email.endsWith('@akeneo.com') || email.endsWith('@getakeneo.com');
 };
 
 const determineAction = (
@@ -96,18 +94,9 @@ const determineAction = (
 };
 
 const applyActions = async (actions: AccountAction[]) => {
-  const updates = actions.filter((a) => a.type === 'UPDATE') as Extract<
-    AccountAction,
-    {type: 'UPDATE'}
-  >[];
-  const deletes = actions.filter((a) => a.type === 'DELETE') as Extract<
-    AccountAction,
-    {type: 'DELETE'}
-  >[];
-  const creates = actions.filter((a) => a.type === 'CREATE') as Extract<
-    AccountAction,
-    {type: 'CREATE'}
-  >[];
+  const updates = actions.filter((a) => a.type === 'UPDATE');
+  const deletes = actions.filter((a) => a.type === 'DELETE');
+  const creates = actions.filter((a) => a.type === 'CREATE');
 
   console.log('Applying changes...');
 
@@ -125,17 +114,18 @@ const applyActions = async (actions: AccountAction[]) => {
         const accountRef = doc(firestore, 'accounts', accountId);
 
         const fullName =
-          op.slackUser.profile?.email?.split('@')[0]?.replace(/[._]/g, ' ') ||
-          op.slackUser.name ||
+          op.slackUser.profile?.email?.split('@')[0]?.replace(/[._]/g, ' ') ??
+          op.slackUser.name ??
           'Unknown';
 
         const newAccount: Account = {
           id: accountId,
           slack: {
-            id: op.slackUser.id!,
+            id: op.slackUser.id ?? '',
             name: fullName,
-            username: op.slackUser.name || '',
-            pictureUrl: op.slackUser.profile?.image_192 || 'https://placehold.co/150',
+            username: op.slackUser.name ?? '',
+            pictureUrl:
+              op.slackUser.profile?.image_192 ?? 'https://placehold.co/150',
           },
           activity: {
             totalPurchased: 0,
@@ -167,7 +157,7 @@ const applyActions = async (actions: AccountAction[]) => {
         // Log the update
         const changeParts = [];
         if (op.changes.isEmployee !== undefined) {
-          changeParts.push(`isEmployee→${op.changes.isEmployee}`);
+          changeParts.push(`isEmployee→${String(op.changes.isEmployee)}`);
         }
         if (op.changes.pictureUrl) {
           changeParts.push('picture');
@@ -175,7 +165,8 @@ const applyActions = async (actions: AccountAction[]) => {
         console.log(
           `✓ Updated ${changeParts.join(', ')}: ${op.account.slack.name} (${op.account.slack.id})`,
         );
-      } else if (op.type === 'DELETE') {
+      } else {
+        // DELETE case
         const accountRef = doc(firestore, 'accounts', op.account.id);
         batch.delete(accountRef);
         console.log(
@@ -184,7 +175,9 @@ const applyActions = async (actions: AccountAction[]) => {
       }
     }
 
-    console.log(`Batch ${i + 1}/${batches} (${batchOps.length} operations)`);
+    console.log(
+      `Batch ${String(i + 1)}/${String(batches)} (${String(batchOps.length)} operations)`,
+    );
     await batch.commit();
   }
 };
@@ -222,8 +215,8 @@ const main = async () => {
   // Fetch Firestore accounts
   const accountsSnapshot = await getDocs(collection(firestore, 'accounts'));
 
-  console.log(`✓ Found ${allSlackMembers.length} Slack users`);
-  console.log(`✓ Found ${accountsSnapshot.size} accounts in Firestore`);
+  console.log(`✓ Found ${String(allSlackMembers.length)} Slack users`);
+  console.log(`✓ Found ${String(accountsSnapshot.size)} accounts in Firestore`);
 
   // Index Slack users by ID
   const slackUserMap = new Map<string, Member>();
@@ -238,7 +231,7 @@ const main = async () => {
     // Warn about missing email
     if (!member.profile?.email && !member.deleted) {
       console.warn(
-        `⚠ User ${member.id} (${member.name}) has no email, treating as non-employee`,
+        `⚠ User ${member.id ?? 'unknown'} (${member.name ?? 'unknown'}) has no email, treating as non-employee`,
       );
     }
   }
@@ -268,42 +261,51 @@ const main = async () => {
   // Summarize actions
   const toCreate = actions.filter((a) => a.type === 'CREATE');
   const toDelete = actions.filter((a) => a.type === 'DELETE');
-  const toUpdate = actions.filter((a) => a.type === 'UPDATE') as Extract<
-    AccountAction,
-    {type: 'UPDATE'}
-  >[];
-  const toUpdateEmployee = toUpdate.filter((a) => a.changes.isEmployee !== undefined);
-  const toUpdatePicture = toUpdate.filter((a) => a.changes.pictureUrl !== undefined);
+  const toUpdate = actions.filter((a) => a.type === 'UPDATE');
+  const toUpdateEmployee = toUpdate.filter(
+    (a) => a.changes.isEmployee !== undefined,
+  );
+  const toUpdatePicture = toUpdate.filter(
+    (a) => a.changes.pictureUrl !== undefined,
+  );
   const unchanged = actions.filter((a) => a.type === 'NO_CHANGE');
 
-  console.log(`→ ${toCreate.length} accounts to create (new employees)`);
-  console.log(`→ ${toDelete.length} accounts to delete (no Slack + no purchases)`);
-  console.log(`→ ${toUpdateEmployee.length} accounts to update (isEmployee changes)`);
-  console.log(`→ ${toUpdatePicture.length} accounts to update (picture URLs)`);
-  console.log(`→ ${unchanged.length} accounts unchanged\n`);
+  console.log(
+    `→ ${String(toCreate.length)} accounts to create (new employees)`,
+  );
+  console.log(
+    `→ ${String(toDelete.length)} accounts to delete (no Slack + no purchases)`,
+  );
+  console.log(
+    `→ ${String(toUpdateEmployee.length)} accounts to update (isEmployee changes)`,
+  );
+  console.log(
+    `→ ${String(toUpdatePicture.length)} accounts to update (picture URLs)`,
+  );
+  console.log(`→ ${String(unchanged.length)} accounts unchanged\n`);
 
   // Apply changes
-  const operationalActions = actions.filter(
-    (a) => a.type !== 'NO_CHANGE',
-  ) as Exclude<AccountAction, {type: 'NO_CHANGE'}>[];
+  const operationalActions = actions.filter((a) => a.type !== 'NO_CHANGE');
 
   if (operationalActions.length === 0) {
     console.log('No changes needed.');
   } else if (isDryRun) {
     console.log('🔍 DRY RUN - Changes identified but not applied:');
-    console.log(`   ${operationalActions.length} total operations would be performed`);
+    console.log(
+      `   ${String(operationalActions.length)} total operations would be performed`,
+    );
     console.log(`   Run with DRY_RUN=false to apply changes`);
   } else {
     await applyActions(operationalActions);
     console.log(
-      `\n✓ Complete! ${operationalActions.length} changes applied.`,
+      `\n✓ Complete! ${String(operationalActions.length)} changes applied.`,
     );
   }
 
   exit(0);
 };
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error('Error:', error);
   exit(1);
 });
