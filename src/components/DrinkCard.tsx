@@ -54,7 +54,7 @@ export const DrinkCard = ({
       )}
       <CardBody p={3}>
         <Image
-          src={`https://placehold.co/300x200?text=${encodeURIComponent(item.name)}`}
+          src={`/src/assets/${item.picture}`}
           alt={item.name}
           borderRadius={'lg'}
           cursor={'pointer'}
@@ -63,7 +63,7 @@ export const DrinkCard = ({
           }}
           h={'120px'}
           w={'full'}
-          objectFit={'cover'}
+          objectFit={'contain'}
           transition={'all 0.2s'}
           _hover={{opacity: 0.8, transform: 'scale(1.02)'}}
         />

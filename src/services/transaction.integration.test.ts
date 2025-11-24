@@ -54,6 +54,7 @@ const testItem: Item = {
   name: 'Coffee',
   price: 2.5,
   enabled: true,
+  picture: 'chaquip_logo.png',
 };
 
 describe('Transaction service', () => {
