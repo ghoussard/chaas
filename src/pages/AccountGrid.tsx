@@ -1,4 +1,4 @@
-import {useDeferredValue, useState, useRef, useMemo} from 'react';
+import {useDeferredValue, useState, useRef, useMemo, useCallback} from 'react';
 import {
   Box,
   Center,
@@ -27,6 +27,10 @@ export const AccountGrid = () => {
   const accounts = useAccounts(deferredSearchValue);
   const focusableElementRef = useRef<FocusableElement>(null);
   const {logOut} = useAuth();
+
+  const handleChargeSuccess = useCallback(() => {
+    setSearchValue('');
+  }, []);
 
   const sortedAccounts = useMemo(() => {
     if (accounts === null) return null;
@@ -157,6 +161,7 @@ export const AccountGrid = () => {
                 pictureUrl={pictureUrl}
                 totalPaid={activity.totalPaid}
                 totalPurchased={activity.totalPurchased}
+                onChargeSuccess={handleChargeSuccess}
               />
             ))}
           </SimpleGrid>
