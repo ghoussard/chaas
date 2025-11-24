@@ -11,7 +11,7 @@ import {
   AlertIcon,
 } from '@chakra-ui/react';
 import {useAuth} from '../hooks';
-import logo from '../assets/logo.png';
+import logo from '../assets/chaquip_logo.png';
 
 export const Login = () => {
   const [login, setLogin] = useState('');
