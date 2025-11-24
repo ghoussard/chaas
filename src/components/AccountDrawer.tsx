@@ -74,6 +74,7 @@ export const AccountDrawer = ({
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
   const [transactions, setTransactions] = useState<Transaction[] | null>(null);
   const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
+  const [transactionLimit, setTransactionLimit] = useState(10);
   const [transactionToDelete, setTransactionToDelete] =
     useState<Transaction | null>(null);
   const {
@@ -96,9 +97,12 @@ export const AccountDrawer = ({
         setPaymentAmount('');
       }
 
+      // Reset transaction limit when drawer opens
+      setTransactionLimit(10);
+
       // Load transactions
       setIsLoadingTransactions(true);
-      loadAccountTransactions(firestore, accountId)
+      loadAccountTransactions(firestore, accountId, 10)
         .then((loadedTransactions) => {
           setTransactions(loadedTransactions);
         })
@@ -241,18 +245,43 @@ export const AccountDrawer = ({
     [onDeleteDialogOpen],
   );
 
+  const handleLoadMore = useCallback(async () => {
+    setIsLoadingTransactions(true);
+    try {
+      const newLimit = transactionLimit + 10;
+      const loadedTransactions = await loadAccountTransactions(
+        firestore,
+        accountId,
+        newLimit,
+      );
+      setTransactions(loadedTransactions);
+      setTransactionLimit(newLimit);
+    } catch (error) {
+      toast({
+        title: 'Error loading more transactions',
+        description: error instanceof Error ? error.message : 'Unknown error',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setIsLoadingTransactions(false);
+    }
+  }, [transactionLimit, firestore, accountId, toast]);
+
   const handleConfirmDelete = useCallback(async () => {
     if (!transactionToDelete) return;
 
     try {
       await deleteTransaction(firestore, transactionToDelete);
 
-      // Refresh transactions
-      const updatedTransactions = await loadAccountTransactions(
+      // Refresh transactions with current limit
+      const loadedTransactions = await loadAccountTransactions(
         firestore,
         accountId,
+        transactionLimit,
       );
-      setTransactions(updatedTransactions);
+      setTransactions(loadedTransactions);
 
       toast({
         title: 'Transaction deleted',
@@ -272,7 +301,14 @@ export const AccountDrawer = ({
       setTransactionToDelete(null);
       onDeleteDialogClose();
     }
-  }, [transactionToDelete, firestore, accountId, toast, onDeleteDialogClose]);
+  }, [
+    transactionToDelete,
+    firestore,
+    accountId,
+    transactionLimit,
+    toast,
+    onDeleteDialogClose,
+  ]);
 
   const paymentAmountValue = parseFloat(paymentAmount) || 0;
   const newBalance = totalPaid + paymentAmountValue - totalPurchased;
@@ -462,6 +498,9 @@ export const AccountDrawer = ({
                   transactions={transactions}
                   isLoading={isLoadingTransactions}
                   onDelete={handleInitiateDelete}
+                  onLoadMore={() => {
+                    void handleLoadMore();
+                  }}
                 />
               </TabPanel>
             </TabPanels>

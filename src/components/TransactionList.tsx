@@ -7,6 +7,7 @@ import {
   Spinner,
   Center,
   IconButton,
+  Button,
 } from '@chakra-ui/react';
 import {DeleteIcon} from '@chakra-ui/icons';
 import {Transaction} from '../models';
@@ -15,6 +16,7 @@ export type TransactionListProps = {
   transactions: Transaction[] | null;
   isLoading: boolean;
   onDelete?: (transaction: Transaction) => void;
+  onLoadMore?: () => void;
 };
 
 const formatDate = (timestamp: number): string => {
@@ -32,8 +34,9 @@ export const TransactionList = ({
   transactions,
   isLoading,
   onDelete,
+  onLoadMore,
 }: TransactionListProps) => {
-  if (isLoading) {
+  if (isLoading && (!transactions || transactions.length === 0)) {
     return (
       <Center py={10}>
         <Spinner size={'xl'} />
@@ -118,6 +121,17 @@ export const TransactionList = ({
           </HStack>
         </Box>
       ))}
+      {onLoadMore && (
+        <Button
+          onClick={onLoadMore}
+          isLoading={isLoading}
+          colorScheme={'blue'}
+          variant={'outline'}
+          size={'md'}
+        >
+          Load More
+        </Button>
+      )}
     </VStack>
   );
 };

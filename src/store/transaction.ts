@@ -3,6 +3,7 @@ import {
   FirestoreDataConverter,
   collection,
   getDocs,
+  limit,
   orderBy,
   query,
   QueryDocumentSnapshot,
@@ -25,19 +26,24 @@ const transactionConverter: FirestoreDataConverter<Transaction> = {
 export async function loadAccountTransactions(
   firestore: Firestore,
   accountId: string,
+  limitCount?: number,
 ): Promise<Transaction[]> {
   const collectionReference = collection(
     firestore,
     TRANSACTION_COLLECTION_NAME,
   );
 
-  const querySnapshot = await getDocs(
-    query(
-      collectionReference,
-      where('account', '==', accountId),
-      orderBy('timestamp', 'desc'),
-    ).withConverter(transactionConverter),
+  let q = query(
+    collectionReference,
+    where('account', '==', accountId),
+    orderBy('timestamp', 'desc'),
   );
+
+  if (limitCount) {
+    q = query(q, limit(limitCount));
+  }
+
+  const querySnapshot = await getDocs(q.withConverter(transactionConverter));
 
   return querySnapshot.docs.map((document) => document.data());
 }
