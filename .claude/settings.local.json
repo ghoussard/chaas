@@ -12,7 +12,10 @@
       "Bash(yarn firebase emulators:exec:*)",
       "Bash(yarn test:integration:*)",
       "Bash(yarn lint)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(yarn convert-fixtures:*)"
     ],
     "deny": [],
     "ask": []
