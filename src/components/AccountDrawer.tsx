@@ -48,6 +48,7 @@ import {getFirestore} from 'firebase/firestore';
 export type AccountDrawerProps = {
   isOpen: boolean;
   onClose: () => void;
+  onChargeSuccess?: () => void;
   accountId: string;
   name: string;
   totalPaid: number;
@@ -57,6 +58,7 @@ export type AccountDrawerProps = {
 export const AccountDrawer = ({
   isOpen,
   onClose,
+  onChargeSuccess,
   accountId,
   name,
   totalPaid,
@@ -128,6 +130,7 @@ export const AccountDrawer = ({
       setIsCharging(true);
       try {
         await chargePurchase(firestore, accountId, item);
+        onChargeSuccess?.();
         onClose();
       } catch (error) {
         toast({
@@ -141,7 +144,7 @@ export const AccountDrawer = ({
         setIsCharging(false);
       }
     },
-    [firestore, accountId, onClose, toast],
+    [firestore, accountId, onChargeSuccess, onClose, toast],
   );
 
   const handleIncrement = useCallback((item: Item) => {
@@ -178,6 +181,7 @@ export const AccountDrawer = ({
     try {
       await chargePurchases(firestore, accountId, itemsToCharge);
       resetQuantities();
+      onChargeSuccess?.();
       onClose();
     } catch (error) {
       toast({
@@ -196,6 +200,7 @@ export const AccountDrawer = ({
     firestore,
     accountId,
     resetQuantities,
+    onChargeSuccess,
     onClose,
     toast,
   ]);
