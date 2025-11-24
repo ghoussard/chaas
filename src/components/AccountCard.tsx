@@ -1,5 +1,13 @@
 import {memo} from 'react';
-import {Avatar, Card, CardFooter, Text, Badge, useDisclosure, Box} from '@chakra-ui/react';
+import {
+  Avatar,
+  Card,
+  CardFooter,
+  Text,
+  Badge,
+  useDisclosure,
+  Box,
+} from '@chakra-ui/react';
 import {AccountDrawer} from './AccountDrawer';
 
 type AccountCardProps = {
