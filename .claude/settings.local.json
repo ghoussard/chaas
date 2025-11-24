@@ -15,7 +15,9 @@
       "Bash(git restore:*)",
       "Bash(cat:*)",
       "Bash(python3:*)",
-      "Bash(yarn convert-fixtures:*)"
+      "Bash(yarn convert-fixtures:*)",
+      "Bash(yarn lint:*)",
+      "Bash(yarn tsc:*)"
     ],
     "deny": [],
     "ask": []

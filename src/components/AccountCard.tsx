@@ -8,6 +8,7 @@ type AccountCardProps = {
   pictureUrl: string;
   totalPaid: number;
   totalPurchased: number;
+  onChargeSuccess?: () => void;
 };
 
 const getBalanceBadgeStyles = (balance: number) => {
@@ -39,6 +40,7 @@ export const AccountCard = memo(function AccountCard({
   pictureUrl,
   totalPaid,
   totalPurchased,
+  onChargeSuccess,
 }: AccountCardProps) {
   const {isOpen, onOpen, onClose} = useDisclosure();
   const debt = totalPaid - totalPurchased;
@@ -99,6 +101,7 @@ export const AccountCard = memo(function AccountCard({
       <AccountDrawer
         isOpen={isOpen}
         onClose={onClose}
+        onChargeSuccess={onChargeSuccess}
         accountId={id}
         name={name}
         totalPaid={totalPaid}
