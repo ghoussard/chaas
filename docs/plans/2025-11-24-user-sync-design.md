@@ -10,15 +10,18 @@ A TypeScript script that updates Firestore accounts based on current Slack works
 ## Requirements
 
 ### Employee Status Logic
+
 - **`isEmployee: true`** - Active Slack user with `@akeneo.com` or `@getakeneo.com` email
 - **Delete account** - Slack user deleted/disabled AND `totalPurchased === 0`
 - **`isEmployee: false`** - Slack user deleted/disabled BUT `totalPurchased > 0` (preserve purchase history)
 
 ### Picture Updates
+
 - Update `pictureUrl` only when Slack picture URL has changed
 - Use `image_192` field from Slack user profile
 
 ### Environment
+
 - Works against current Firebase configuration (DEV emulators or PROD)
 - Uses `SLACK_BOT_TOKEN` environment variable
 - Follows existing `bin/fixtures.ts` pattern
@@ -28,16 +31,19 @@ A TypeScript script that updates Firestore accounts based on current Slack works
 ### High-Level Flow
 
 1. **Initialize Services**
+
    - Create Firebase app using `Env.DEV`
    - Initialize Slack WebClient with token from env
    - Fail fast if token missing
 
 2. **Fetch Data**
+
    - Get all Slack users via `client.users.list()`
    - Get all Firestore accounts
    - Index Slack users by ID for O(1) lookup
 
 3. **Process Updates**
+
    - For each account, determine action: UPDATE / DELETE / NO_CHANGE
    - Check employee status based on Slack presence + email domain
    - Compare picture URLs
@@ -51,6 +57,7 @@ A TypeScript script that updates Firestore accounts based on current Slack works
 ## Core Logic
 
 ### Employee Status Check
+
 ```typescript
 const isActiveEmployee = (slackUser: User | undefined): boolean => {
   if (!slackUser || slackUser.deleted) return false;
@@ -63,11 +70,12 @@ const isActiveEmployee = (slackUser: User | undefined): boolean => {
 ```
 
 ### Action Determination
+
 ```typescript
 type AccountAction =
-  | { type: 'DELETE', reason: 'no-slack-no-purchases' }
-  | { type: 'UPDATE', changes: { isEmployee?: boolean, pictureUrl?: string } }
-  | { type: 'NO_CHANGE' };
+  | {type: 'DELETE'; reason: 'no-slack-no-purchases'}
+  | {type: 'UPDATE'; changes: {isEmployee?: boolean; pictureUrl?: string}}
+  | {type: 'NO_CHANGE'};
 
 const determineAction = (
   account: Account,
@@ -79,11 +87,11 @@ const determineAction = (
   // Deletion: not in Slack + no purchase history
   if (!slackUser || slackUser.deleted) {
     if (account.activity.totalPurchased === 0) {
-      return { type: 'DELETE', reason: 'no-slack-no-purchases' };
+      return {type: 'DELETE', reason: 'no-slack-no-purchases'};
     }
   }
 
-  const changes: { isEmployee?: boolean, pictureUrl?: string } = {};
+  const changes: {isEmployee?: boolean; pictureUrl?: string} = {};
 
   if (account.isEmployee !== isEmployee) {
     changes.isEmployee = isEmployee;
@@ -94,26 +102,29 @@ const determineAction = (
   }
 
   return Object.keys(changes).length > 0
-    ? { type: 'UPDATE', changes }
-    : { type: 'NO_CHANGE' };
+    ? {type: 'UPDATE', changes}
+    : {type: 'NO_CHANGE'};
 };
 ```
 
 ## Performance Strategy
 
 ### Data Collection
+
 - Fetch all data upfront using `Promise.all()` to avoid N+1 queries
 - Slack API handles pagination internally
 - Index Slack users by ID in Map for O(1) lookup
 - Use existing `activity.totalPurchased` field (no need to query transactions)
 
 ### Batch Operations
+
 - Use Firestore `writeBatch()` for atomic operations
 - Max 500 operations per batch
 - If >500 operations, create multiple batches sequentially
 - Each batch can contain both updates and deletes
 
 ### Example Output
+
 ```
 Fetching data...
 ✓ Found 127 Slack users
@@ -137,17 +148,20 @@ Complete! 39 changes applied.
 ## Error Handling
 
 ### Slack API Errors
+
 - Fail immediately if `SLACK_BOT_TOKEN` missing or invalid
 - Clear error if bot lacks required scopes (`users:read`, `users:read.email`)
 - Let rate limits bubble up (unlikely with single `users.list` call)
 
 ### Firestore Errors
+
 - Batch commit failures: Log which batch failed and exit
 - No partial application of changes
 - Network errors: Bubble up with stack trace
 - No retry logic (script is idempotent, can be re-run)
 
 ### Edge Cases
+
 - **Bot users**: Skip entirely (bots don't have employee status)
 - **Missing email**: Warn and treat as non-employee
 - **Missing `isEmployee` field**: Add during update (backward compatibility)
@@ -155,15 +169,18 @@ Complete! 39 changes applied.
 ## Implementation
 
 ### Files to Modify
+
 - `src/models/account.ts` - Add `isEmployee: boolean` field
 - `bin/update-users.ts` - New script file
 - `package.json` - Add `"update-users": "tsx bin/update-users.ts"` script
 
 ### Dependencies
+
 - Install `@slack/web-api` (official Slack SDK)
 - Already available: `firebase`, `firestore`, `tsx`
 
 ### Script Pattern
+
 ```typescript
 import {exit} from 'process';
 import {getFirestore} from 'firebase/firestore';
@@ -186,6 +203,7 @@ exit(0);
 ```
 
 ### Usage
+
 ```bash
 # Set token
 export SLACK_BOT_TOKEN=xoxb-your-token-here
@@ -200,5 +218,6 @@ firebase emulators:exec --project chaas-dev \
 ```
 
 ## Required Slack Bot Scopes
+
 - `users:read` - To call `users.list`
 - `users:read.email` - To access user email addresses for domain filtering

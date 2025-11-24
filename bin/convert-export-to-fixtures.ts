@@ -119,8 +119,8 @@ for (const [slackId, user] of Object.entries(exportData.users)) {
       : user.name;
 
   const isEmployee =
-    user.profile.email?.endsWith('@akeneo.com') ||
-    user.profile.email?.endsWith('@getakeneo.com') ||
+    user.profile.email?.endsWith('@akeneo.com') ??
+    user.profile.email?.endsWith('@getakeneo.com') ??
     false;
 
   const account: Account = {
