@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import {Image, Card, CardFooter, Text, Badge, useDisclosure} from '@chakra-ui/react';
+import {Avatar, Card, CardFooter, Text, Badge, useDisclosure, Box} from '@chakra-ui/react';
 import {AccountDrawer} from './AccountDrawer';
 
 type AccountCardProps = {
@@ -59,7 +59,22 @@ export const AccountCard = memo(function AccountCard({
           boxShadow: 'xl',
         }}
       >
-        <Image boxSize={300} objectFit={'cover'} src={pictureUrl} alt={name} />
+        <Box width={'100%'} aspectRatio={1} overflow={'hidden'}>
+          <Avatar
+            src={pictureUrl}
+            name={name}
+            size={'full'}
+            width={'100%'}
+            height={'100%'}
+            borderRadius={0}
+            sx={{
+              '& img': {
+                objectFit: 'cover',
+              },
+              fontSize: '4rem',
+            }}
+          />
+        </Box>
         <CardFooter
           justifyContent={'space-between'}
           alignItems={'center'}
