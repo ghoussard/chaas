@@ -27,3 +27,6 @@ dist-ssr
 # Firebase
 .firebaserc
 .emulators
+
+# prod fixtures
+src/utils/fixtures/datasets/prod/
