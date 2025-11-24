@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Export file types
-interface ExportUser {
+type ExportUser = {
   id: string; // Slack user ID
   name: string; // username
   profile: {
@@ -20,43 +20,43 @@ interface ExportUser {
     city?: string;
     first_day?: string;
   };
-}
+};
 
-interface ExportItem {
+type ExportItem = {
   enabled: boolean;
   name: string;
   order: number;
   picture: string;
   price: number; // in cents
   volume: number;
-}
+};
 
-interface ExportClient {
+type ExportClient = {
   id: string; // Slack user ID
   identifier: string;
   name: string;
   avatar: string;
   purchases: number;
   payments: number;
-}
+};
 
-interface ExportPurchase {
+type ExportPurchase = {
   id: string;
   time: number; // milliseconds
   canceled: boolean;
   client: ExportClient;
   item: ExportItem;
-}
+};
 
-interface ExportPayment {
+type ExportPayment = {
   id: string;
   time: number; // milliseconds
   amount: number; // in cents
   canceled: boolean;
   client: ExportClient;
-}
+};
 
-interface ExportData {
+type ExportData = {
   barels?: unknown;
   clientTabs?: unknown;
   drinkTypes?: unknown;
@@ -64,7 +64,7 @@ interface ExportData {
   items: Record<string, ExportItem>;
   purchases: Record<string, ExportPurchase>;
   payments: Record<string, ExportPayment>;
-}
+};
 
 // Get export file path from command line arguments
 const exportFilePath = process.argv[2];
@@ -89,15 +89,19 @@ if (!fs.existsSync(absoluteExportPath)) {
 console.log(`Reading export file: ${absoluteExportPath}\n`);
 
 // Read export file
-const exportData: ExportData = JSON.parse(
+const exportData = JSON.parse(
   fs.readFileSync(absoluteExportPath, 'utf-8'),
-);
+) as ExportData;
 
 console.log('Export data loaded:');
-console.log(`- Users: ${Object.keys(exportData.users).length}`);
-console.log(`- Items: ${Object.keys(exportData.items).length}`);
-console.log(`- Purchases: ${Object.keys(exportData.purchases).length}`);
-console.log(`- Payments: ${Object.keys(exportData.payments).length}`);
+console.log(`- Users: ${Object.keys(exportData.users).length.toString()}`);
+console.log(`- Items: ${Object.keys(exportData.items).length.toString()}`);
+console.log(
+  `- Purchases: ${Object.keys(exportData.purchases).length.toString()}`,
+);
+console.log(
+  `- Payments: ${Object.keys(exportData.payments).length.toString()}`,
+);
 
 // Step 1: Generate account mappings (Slack ID -> Account UUID)
 console.log('\n[1/5] Generating account mappings...');
@@ -132,7 +136,7 @@ for (const [slackId, user] of Object.entries(exportData.users)) {
   accounts.push(account);
 }
 
-console.log(`Generated ${accounts.length} accounts`);
+console.log(`Generated ${accounts.length.toString()} accounts`);
 
 // Step 2: Generate item mappings (Item Name -> Item UUID)
 console.log('\n[2/5] Generating item mappings...');
@@ -186,7 +190,7 @@ for (const [name, itemData] of itemsFromPurchases) {
 }
 
 console.log(
-  `Generated ${items.length} items (${Object.keys(exportData.items).length} current, ${items.length - Object.keys(exportData.items).length} historical)`,
+  `Generated ${items.length.toString()} items (${Object.keys(exportData.items).length.toString()} current, ${(items.length - Object.keys(exportData.items).length).toString()} historical)`,
 );
 
 // Step 3: Transform purchases
@@ -209,13 +213,17 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
 
   const itemId = itemNameToItemId.get(purchase.item.name);
   if (!itemId) {
-    console.warn(`Warning: Item not found for purchase ${purchase.id}: ${purchase.item.name}`);
+    console.warn(
+      `Warning: Item not found for purchase ${purchase.id}: ${purchase.item.name}`,
+    );
     continue;
   }
 
   const itemData = itemsFromPurchases.get(purchase.item.name);
   if (!itemData) {
-    console.warn(`Warning: Item data not found for purchase ${purchase.id}: ${purchase.item.name}`);
+    console.warn(
+      `Warning: Item data not found for purchase ${purchase.id}: ${purchase.item.name}`,
+    );
     continue;
   }
 
@@ -237,7 +245,7 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
 }
 
 console.log(
-  `Transformed ${transactions.length} purchases (skipped ${canceledPurchases} canceled, ${missingAccountPurchases} missing accounts)`,
+  `Transformed ${transactions.length.toString()} purchases (skipped ${canceledPurchases.toString()} canceled, ${missingAccountPurchases.toString()} missing accounts)`,
 );
 
 // Step 4: Transform payments
@@ -270,7 +278,7 @@ for (const [, payment] of Object.entries(exportData.payments)) {
 }
 
 console.log(
-  `Transformed ${transactions.length - initialTransactionCount} payments (skipped ${canceledPayments} canceled, ${missingAccountPayments} missing accounts)`,
+  `Transformed ${(transactions.length - initialTransactionCount).toString()} payments (skipped ${canceledPayments.toString()} canceled, ${missingAccountPayments.toString()} missing accounts)`,
 );
 
 // Step 5: Write fixture files
@@ -295,32 +303,36 @@ fs.writeFileSync(
   path.join(fixturesDir, 'accounts.json'),
   JSON.stringify(accounts, null, 2),
 );
-console.log(`✓ Written ${accounts.length} accounts to accounts.json`);
+console.log(
+  `✓ Written ${accounts.length.toString()} accounts to accounts.json`,
+);
 
 // Write items
 fs.writeFileSync(
   path.join(fixturesDir, 'items.json'),
   JSON.stringify(items, null, 2),
 );
-console.log(`✓ Written ${items.length} items to items.json`);
+console.log(`✓ Written ${items.length.toString()} items to items.json`);
 
 // Write transactions
 fs.writeFileSync(
   path.join(fixturesDir, 'transactions.json'),
   JSON.stringify(transactions, null, 2),
 );
-console.log(`✓ Written ${transactions.length} transactions to transactions.json`);
+console.log(
+  `✓ Written ${transactions.length.toString()} transactions to transactions.json`,
+);
 
 // Summary
 console.log('\n=== Conversion Complete ===');
-console.log(`Total accounts: ${accounts.length}`);
-console.log(`Total items: ${items.length}`);
-console.log(`Total transactions: ${transactions.length}`);
+console.log(`Total accounts: ${accounts.length.toString()}`);
+console.log(`Total items: ${items.length.toString()}`);
+console.log(`Total transactions: ${transactions.length.toString()}`);
 console.log(
-  `  - Purchases: ${transactions.filter((t) => t.type === 'purchase').length}`,
+  `  - Purchases: ${transactions.filter((t) => t.type === 'purchase').length.toString()}`,
 );
 console.log(
-  `  - Payments: ${transactions.filter((t) => t.type === 'payment').length}`,
+  `  - Payments: ${transactions.filter((t) => t.type === 'payment').length.toString()}`,
 );
 console.log('\nFixtures written to: src/utils/fixtures/datasets/prod/');
 console.log(
