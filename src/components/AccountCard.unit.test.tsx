@@ -44,8 +44,85 @@ describe('AccountCard component', () => {
       />,
     );
 
-    await user.click(getByTestId('account-card'));
+    await user.click(getByTestId(`account-card-${id}`));
 
     expect(getByText('Account of Luc Bernard')).toBeInTheDocument();
+  });
+
+  it('shows badge for positive balance (credit)', () => {
+    const {getByText, container} = renderWithChakra(
+      <AccountCard
+        id={id}
+        name={name}
+        pictureUrl={pictureUrl}
+        totalPaid={30}
+        totalPurchased={10}
+      />,
+    );
+
+    const badge = getByText('+20€');
+    expect(badge).toBeInTheDocument();
+    // Verify it's a badge element
+    expect(badge.closest('.chakra-badge')).toBeInTheDocument();
+  });
+
+  it('shows badge for negative balance (debt)', () => {
+    const {getByText} = renderWithChakra(
+      <AccountCard
+        id={id}
+        name={name}
+        pictureUrl={pictureUrl}
+        totalPaid={10}
+        totalPurchased={30}
+      />,
+    );
+
+    const badge = getByText('-20€');
+    expect(badge).toBeInTheDocument();
+    // Verify it's a badge element
+    expect(badge.closest('.chakra-badge')).toBeInTheDocument();
+  });
+
+  it('shows badge for zero balance', () => {
+    const {getByText} = renderWithChakra(
+      <AccountCard
+        id={id}
+        name={name}
+        pictureUrl={pictureUrl}
+        totalPaid={20}
+        totalPurchased={20}
+      />,
+    );
+
+    const badge = getByText('+0€');
+    expect(badge).toBeInTheDocument();
+    // Verify it's a badge element
+    expect(badge.closest('.chakra-badge')).toBeInTheDocument();
+  });
+
+  it('formats balance with + for credit and - for debt', () => {
+    const {getByText, rerender} = renderWithChakra(
+      <AccountCard
+        id={id}
+        name={name}
+        pictureUrl={pictureUrl}
+        totalPaid={50.5}
+        totalPurchased={25.25}
+      />,
+    );
+
+    expect(getByText('+25.25€')).toBeInTheDocument();
+
+    rerender(
+      <AccountCard
+        id={id}
+        name={name}
+        pictureUrl={pictureUrl}
+        totalPaid={10}
+        totalPurchased={35.75}
+      />,
+    );
+
+    expect(getByText('-25.75€')).toBeInTheDocument();
   });
 });
