@@ -58,4 +58,17 @@ describe('AccountSearchInput component', () => {
 
     expect(onChange).toBeCalledWith('Luc Bernardo');
   });
+
+  it('clears search on Escape key press', async () => {
+    const onChange = vi.fn();
+    const user = userEvent.setup();
+
+    const {getByTestId} = renderWithProviders(
+      <AccountSearchInput value={'Luc Bernard'} onChange={onChange} />,
+    );
+
+    await user.type(getByTestId('account-search-input'), '{Escape}');
+
+    expect(onChange).toBeCalledWith('');
+  });
 });
