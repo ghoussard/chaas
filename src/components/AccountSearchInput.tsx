@@ -42,6 +42,11 @@ export const AccountSearchInput = forwardRef<
       onChange={(e) => {
         onChange(e.target.value);
       }}
+      onKeyDown={(e) => {
+        if (e.key === 'Escape') {
+          onChange('');
+        }
+      }}
       bg={'white'}
       borderRadius={'12px'}
       border={'1px solid'}
