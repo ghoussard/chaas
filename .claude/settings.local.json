@@ -25,7 +25,9 @@
       "Bash(xargs -I {} sed -i '' \"s/from ''''client\\/Model/from ''''Client\\/Model/g\" {})",
       "Bash(xargs perl:*)",
       "Bash(yarn build-web:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(yarn vitest:*)",
+      "Bash(git rev-parse:*)"
     ],
     "deny": [],
     "ask": []

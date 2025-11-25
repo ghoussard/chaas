@@ -50,7 +50,7 @@ describe('AccountCard component', () => {
   });
 
   it('shows badge for positive balance (credit)', () => {
-    const {getByText, container} = renderWithChakra(
+    const {getByText} = renderWithChakra(
       <AccountCard
         id={id}
         name={name}
