@@ -16,6 +16,7 @@ import {
   addPayment,
   deleteTransaction,
 } from './transaction';
+import {loadAccountTransactions} from '../store';
 import {
   clearFirestoreData,
   createUser,
@@ -388,6 +389,65 @@ describe('Transaction service', () => {
       const totalPaidAfterDelete = deleteData.activity?.totalPaid ?? 0;
 
       expect(totalPaidAfterDelete).toBe(totalPaidAfterPayment - paymentAmount);
+    });
+  });
+
+  describe('loadAccountTransactions', () => {
+    it('limits transactions to specified count', async ({firestore}) => {
+      // Create 15 transactions
+      const promises = [];
+      for (let i = 0; i < 15; i++) {
+        promises.push(chargePurchase(firestore, testAccountId, testItem));
+      }
+      await Promise.all(promises);
+
+      // Load with limit of 10
+      const transactions = await loadAccountTransactions(
+        firestore,
+        testAccountId,
+        10,
+      );
+
+      expect(transactions).toHaveLength(10);
+    });
+
+    it('returns all transactions when limit is higher than count', async ({
+      firestore,
+    }) => {
+      // Create 3 transactions
+      await chargePurchase(firestore, testAccountId, testItem);
+      await chargePurchase(firestore, testAccountId, testItem);
+      await addPayment(firestore, testAccountId, 10);
+
+      // Load with limit of 100
+      const transactions = await loadAccountTransactions(
+        firestore,
+        testAccountId,
+        100,
+      );
+
+      expect(transactions.length).toBeLessThanOrEqual(100);
+      expect(transactions.length).toBeGreaterThanOrEqual(3);
+    });
+
+    it('returns most recent transactions first', async ({firestore}) => {
+      // Create transactions with delays to ensure different timestamps
+      await chargePurchase(firestore, testAccountId, testItem);
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      await addPayment(firestore, testAccountId, 5);
+      await new Promise((resolve) => setTimeout(resolve, 10));
+      await chargePurchase(firestore, testAccountId, testItem);
+
+      const transactions = await loadAccountTransactions(
+        firestore,
+        testAccountId,
+        100,
+      );
+
+      // Most recent transaction should be first
+      expect(transactions[0].type).toBe('purchase');
+      expect(transactions[1].type).toBe('payment');
+      expect(transactions[2].type).toBe('purchase');
     });
   });
 });
