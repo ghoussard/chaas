@@ -1,5 +1,6 @@
 import {describe, it, expect, vi, beforeAll} from 'vitest';
 import userEvent from '@testing-library/user-event';
+import {Firestore} from 'firebase/firestore';
 import {renderWithChakra} from '../utils/tests';
 import {AccountGrid} from './AccountGrid';
 import {Account} from '../models';
@@ -18,7 +19,8 @@ vi.mock('../hooks', async () => {
     useAuth: () => ({
       logOut: vi.fn(),
       isLoggedIn: true,
-      auth: {} as any,
+      isLoggingIn: false,
+      logIn: vi.fn(),
     }),
     useOnKeyboardShortcuts: vi.fn(),
     useFocusableElementRef: () => ({current: null}),
@@ -47,7 +49,7 @@ vi.mock('../services', () => ({
 }));
 
 vi.mock('firebase/firestore', () => ({
-  getFirestore: vi.fn(() => ({} as any)),
+  getFirestore: vi.fn(() => ({}) as Firestore),
 }));
 
 const mockAccounts: Account[] = [
@@ -108,7 +110,7 @@ const renderAccountGrid = () => {
 describe('AccountGrid sorting', () => {
   it('defaults to sorting by last transaction (most recent first)', async () => {
     const {useAccounts} = await import('../hooks');
-    (useAccounts as any).mockReturnValue(mockAccounts);
+    vi.mocked(useAccounts).mockReturnValue(mockAccounts);
 
     const {getAllByTestId} = renderAccountGrid();
 
@@ -122,7 +124,7 @@ describe('AccountGrid sorting', () => {
 
   it('sorts by debt (most debt first)', async () => {
     const {useAccounts} = await import('../hooks');
-    (useAccounts as any).mockReturnValue(mockAccounts);
+    vi.mocked(useAccounts).mockReturnValue(mockAccounts);
     const user = userEvent.setup();
 
     const {getAllByTestId, getByRole} = renderAccountGrid();
@@ -141,7 +143,7 @@ describe('AccountGrid sorting', () => {
 
   it('sorts by total paid (highest first)', async () => {
     const {useAccounts} = await import('../hooks');
-    (useAccounts as any).mockReturnValue(mockAccounts);
+    vi.mocked(useAccounts).mockReturnValue(mockAccounts);
     const user = userEvent.setup();
 
     const {getAllByTestId, getByRole} = renderAccountGrid();

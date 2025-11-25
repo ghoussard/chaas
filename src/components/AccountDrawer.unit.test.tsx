@@ -122,9 +122,11 @@ describe('AccountDrawer component', () => {
 
     // Positive balance (credit) - text is displayed as "Balance: +20.00€"
     expect(getByText(/Balance:/i)).toBeInTheDocument();
-    expect(getByText((content, element) => {
-      return element?.textContent === 'Balance: +20.00€';
-    })).toBeInTheDocument();
+    expect(
+      getByText((_content, element) => {
+        return element?.textContent === 'Balance: +20.00€';
+      }),
+    ).toBeInTheDocument();
 
     // Negative balance (debt)
     rerender(
@@ -140,8 +142,10 @@ describe('AccountDrawer component', () => {
       </FocusableElementRefContext.Provider>,
     );
 
-    expect(getByText((content, element) => {
-      return element?.textContent === 'Balance: -20.00€';
-    })).toBeInTheDocument();
+    expect(
+      getByText((_content, element) => {
+        return element?.textContent === 'Balance: -20.00€';
+      }),
+    ).toBeInTheDocument();
   });
 });

@@ -2,6 +2,7 @@ import {ReactNode} from 'react';
 import {describe, it, expect, vi, beforeEach} from 'vitest';
 import {render, screen} from '@testing-library/react';
 import {ChakraProvider} from '@chakra-ui/react';
+import {Firestore} from 'firebase/firestore';
 import {App} from './App';
 
 // Mock child components
@@ -17,7 +18,7 @@ vi.mock('./hooks', () => ({
 
 // Mock Firebase
 vi.mock('firebase/firestore', () => ({
-  getFirestore: vi.fn(() => ({} as any)),
+  getFirestore: vi.fn(() => ({}) as Firestore),
 }));
 
 // Mock contexts
@@ -44,7 +45,12 @@ describe('App initialization', () => {
 
   it('shows Login page when user is not logged in', async () => {
     const {useAuth} = await import('./hooks');
-    (useAuth as any).mockReturnValue({isLoggedIn: false});
+    vi.mocked(useAuth).mockReturnValue({
+      isLoggedIn: false,
+      isLoggingIn: false,
+      logIn: vi.fn(),
+      logOut: vi.fn(),
+    });
 
     renderApp();
 
@@ -54,7 +60,12 @@ describe('App initialization', () => {
 
   it('shows AccountGrid when user is logged in', async () => {
     const {useAuth} = await import('./hooks');
-    (useAuth as any).mockReturnValue({isLoggedIn: true});
+    vi.mocked(useAuth).mockReturnValue({
+      isLoggedIn: true,
+      isLoggingIn: false,
+      logIn: vi.fn(),
+      logOut: vi.fn(),
+    });
 
     renderApp();
 
@@ -67,7 +78,12 @@ describe('App initialization', () => {
     const {createStoreContextValue} = await import('./contexts');
     const {getFirestore} = await import('firebase/firestore');
 
-    (useAuth as any).mockReturnValue({isLoggedIn: true});
+    vi.mocked(useAuth).mockReturnValue({
+      isLoggedIn: true,
+      isLoggingIn: false,
+      logIn: vi.fn(),
+      logOut: vi.fn(),
+    });
 
     renderApp();
 

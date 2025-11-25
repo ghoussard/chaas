@@ -5,7 +5,10 @@ export type ShortcutHandlers = Record<string, () => void>;
 export const useOnKeyboardShortcuts = (handlers: ShortcutHandlers): void => {
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if ((!e.ctrlKey && !e.metaKey) || !Object.keys(handlers).includes(e.key)) {
+      if (
+        (!e.ctrlKey && !e.metaKey) ||
+        !Object.keys(handlers).includes(e.key)
+      ) {
         return;
       }
 
