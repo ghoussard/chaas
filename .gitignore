@@ -30,3 +30,6 @@ dist-ssr
 
 # prod fixtures
 src/utils/fixtures/datasets/prod/
+
+#AI
+.claude/settings.local.json
