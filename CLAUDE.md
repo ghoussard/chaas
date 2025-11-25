@@ -152,7 +152,7 @@ Type definitions in `src/models/`:
 
 ### Overview
 
-The app functions as a bar POS system for charging drinks and managing customer payments/credits. Core workflow: search customer → open drawer → charge drinks or add payment.
+The app functions as a bar POS system for charging drinks and managing customer payments/credits. Core workflow: search customer → open drawer → Charge Items or Pay.
 
 ### Items Management
 
@@ -188,11 +188,11 @@ addPayment(firestore, accountId, amount)        // Payment/credit
 
 **Structure:**
 
-- Two tabs: "Charge Drinks" (default) | "Add Payment"
+- Two tabs: "Charge Items" (default) | "Pay"
 - Balance display in header (green if positive credit, red if debt)
 - Props include `accountId`, `totalPaid`, `totalPurchased` for transaction processing
 
-**Charge Drinks Tab:**
+**Charge Items Tab:**
 
 - Displays `DrinkCard` components in 3-column grid
 - Two charging modes:
@@ -201,7 +201,7 @@ addPayment(firestore, accountId, amount)        // Payment/credit
 - Loading state shows spinner during transaction processing
 - Errors shown via Chakra toast, drawer stays open for retry
 
-**Add Payment Tab:**
+**Pay Tab:**
 
 - Input pre-fills with current debt amount (if exists)
 - Live "New balance" calculation as user types
