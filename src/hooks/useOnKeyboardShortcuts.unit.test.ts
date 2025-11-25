@@ -26,4 +26,20 @@ describe('useOnKeyboardShortcuts hook', () => {
 
     expect(secondShortcut).toBeCalled();
   });
+
+  it('catches keyboard shortcuts with Cmd key (metaKey)', async () => {
+    const user = userEvent.setup();
+
+    const shortcut = vi.fn();
+
+    renderHook(() => {
+      useOnKeyboardShortcuts({
+        f: shortcut,
+      });
+    });
+
+    await user.keyboard('{Meta>}{f}');
+
+    expect(shortcut).toBeCalled();
+  });
 });
