@@ -5,12 +5,12 @@
 
 ## Overview
 
-Add Point of Sale functionality to enable bartenders to charge drinks and add payments/credits to customer accounts. The app becomes a single-POS bar management system.
+Add Point of Sale functionality to enable bartenders to Charge Items and Pays/credits to customer accounts. The app becomes a single-POS bar management system.
 
 ## Requirements
 
 - Search customers by name (already exists)
-- Charge drinks to customers (few drinks only)
+- Charge Items to customers (few drinks only)
 - Add credits/payments to customers (support both paying off debt and prepaid credits)
 - Single POS operation (no concurrent access concerns)
 - Drinks managed through Firebase console (no in-app management)
@@ -23,8 +23,8 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 
 - Becomes the main POS interface
 - Two tabs using Chakra Tabs component:
-  - "Charge Drinks" (default, `index={0}`)
-  - "Add Payment" (`index={1}`)
+  - "Charge Items" (default, `index={0}`)
+  - "Pay" (`index={1}`)
 
 **New Components:**
 
@@ -57,7 +57,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 
 ## UI Design
 
-### Charge Drinks Tab
+### Charge Items Tab
 
 ```
 ┌─────────────────────────────────────┐
@@ -65,7 +65,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ├─────────────────────────────────────┤
 │ Balance: +20€  (or -15€ in red)     │
 ├─────────────────────────────────────┤
-│ [Charge Drinks] [Add Payment]       │
+│ [Charge Items] [Pay]       │
 ├─────────────────────────────────────┤
 │ ┌─────┐  ┌─────┐  ┌─────┐           │
 │ │Beer │  │Wine │  │Soft │           │
@@ -85,7 +85,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 - **Charge button**: Enabled only when total quantity > 0, writes all purchases as batch, closes drawer on success
 - **Error**: Show error toast, keep drawer open for retry
 
-### Add Payment Tab
+### Pay Tab
 
 ```
 ┌─────────────────────────────────────┐
@@ -93,7 +93,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 ├─────────────────────────────────────┤
 │ Balance: -15€                       │
 ├─────────────────────────────────────┤
-│ [Charge Drinks] [Add Payment]       │
+│ [Charge Items] [Pay]       │
 ├─────────────────────────────────────┤
 │                                     │
 │  Current debt: 15€                  │
@@ -105,7 +105,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 │                                     │
 │  New balance: 0€                    │
 │                                     │
-│         [Add Payment]               │
+│         [Pay]               │
 │                                     │
 └─────────────────────────────────────┘
 ```
@@ -114,7 +114,7 @@ Add Point of Sale functionality to enable bartenders to charge drinks and add pa
 
 - **Default value**: Pre-fills with current debt amount (`Math.abs(totalPurchased - totalPaid)`) if debt exists, otherwise empty
 - **Live calculation**: Show "New balance: X€" as user types (green if positive, red if negative)
-- **Add Payment button**: Writes Payment transaction, closes drawer on success
+- **Pay button**: Writes Payment transaction, closes drawer on success
 - **Validation**: Amount must be > 0
 - **Error**: Show toast, keep drawer open for retry
 
@@ -231,7 +231,7 @@ await batch.commit();
 
 1. **AccountDrawer.unit.test.tsx**
 
-   - Two tabs render, "Charge Drinks" is default
+   - Two tabs render, "Charge Items" is default
    - Balance displays correctly (color coding)
    - Drink cards render from mocked items
    - +/- buttons update quantities
@@ -269,8 +269,8 @@ await batch.commit();
 1. Create ItemsContext and ItemStore
 2. Create transaction service functions
 3. Update AccountDrawer with tabs
-4. Build Charge Drinks tab with DrinkCard components
-5. Build Add Payment tab
+4. Build Charge Items tab with DrinkCard components
+5. Build Pay tab
 6. Add balance display to drawer header
 7. Write tests
 8. Update CLAUDE.md with POS patterns

@@ -112,7 +112,7 @@ Complete visual redesign of the ChaasS bar POS application to achieve a modern, 
 - Subtle hover states
 - Accent color for active tab
 
-### 4. Account Drawer - Charge Drinks Tab
+### 4. Account Drawer - Charge Items Tab
 
 **Constraint:** Must show 9 drinks without scrolling (3x3 grid)
 
@@ -155,7 +155,7 @@ Complete visual redesign of the ChaasS bar POS application to achieve a modern, 
 - Charge button: ~48px
 - Total: ~548px (fits in drawer)
 
-### 5. Account Drawer - Add Payment Tab
+### 5. Account Drawer - Pay Tab
 
 **Layout:**
 
@@ -183,7 +183,7 @@ Complete visual redesign of the ChaasS bar POS application to achieve a modern, 
 - Rounded, padded, prominent
 - Show only when amount > 0
 
-**Add Payment Button:**
+**Pay Button:**
 
 - Full width, large
 - Gradient or solid with hover effect
@@ -244,7 +244,7 @@ Complete visual redesign of the ChaasS bar POS application to achieve a modern, 
 ## Success Criteria
 
 1. All screens have consistent visual language (shadows, corners, spacing)
-2. 9 drink cards visible without scrolling in Charge Drinks tab
+2. 9 drink cards visible without scrolling in Charge Items tab
 3. Smooth transitions on all interactive elements
 4. Better use of white space throughout
 5. Softer, more polished visual appearance

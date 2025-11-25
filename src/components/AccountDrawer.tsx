@@ -368,8 +368,8 @@ export const AccountDrawer = ({
         <DrawerBody>
           <Tabs defaultIndex={0} variant={'line'}>
             <TabList>
-              <Tab>Charge Drinks</Tab>
-              <Tab>Add Payment</Tab>
+              <Tab>Charge Items</Tab>
+              <Tab>Pay</Tab>
               <Tab>Transactions</Tab>
             </TabList>
 
@@ -493,7 +493,7 @@ export const AccountDrawer = ({
                         boxShadow: 'lg',
                       }}
                     >
-                      Add Payment
+                      Pay
                     </Button>
                   </VStack>
                 )}
