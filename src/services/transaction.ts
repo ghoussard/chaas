@@ -91,6 +91,18 @@ export async function addPayment(
   await batch.commit();
 }
 
+/**
+ * Deletes a transaction and reverses its impact on account balances.
+ *
+ * NOTE: This function does NOT update lastPurchaseTimestamp or lastPaymentTimestamp.
+ * Recalculating these would require querying all remaining transactions, which:
+ * - Breaks the atomic batch update pattern
+ * - Has significant performance cost
+ * - Is not critical for core functionality (timestamps are used for sorting only)
+ *
+ * If accurate timestamps after deletion are required, consider implementing a
+ * background job or accepting the trade-off that timestamps may be stale.
+ */
 export async function deleteTransaction(
   firestore: Firestore,
   transaction: Transaction,
