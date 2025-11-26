@@ -13,6 +13,8 @@ dist-ssr
 *.local
 *.tsbuildinfo
 
+.env
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -26,6 +28,7 @@ dist-ssr
 
 # Firebase
 .firebaserc
+.firebase
 .emulators
 
 # prod fixtures
