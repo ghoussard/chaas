@@ -54,7 +54,7 @@ export const DrinkCard = ({
       )}
       <CardBody p={3}>
         <Image
-          src={`/src/assets/${item.picture}`}
+          src={`/assets/${item.picture}`}
           alt={item.name}
           borderRadius={'lg'}
           cursor={'pointer'}
