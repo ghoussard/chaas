@@ -59,9 +59,19 @@ export const loadAccounts = async (firestore: Firestore, dataset: Dataset) => {
   const accounts = await getData<Account[]>('accounts', dataset);
 
   const accountsCollection = collection(firestore, 'accounts');
-  for (const customer of accounts) {
-    const document = doc(accountsCollection, customer.id);
-    await setDoc(document, customer);
+  const batchSize = 500; // Firestore batch limit
+  const batches = Math.ceil(accounts.length / batchSize);
+
+  for (let i = 0; i < batches; i++) {
+    const batch = writeBatch(firestore);
+    const batchAccounts = accounts.slice(i * batchSize, (i + 1) * batchSize);
+
+    for (const account of batchAccounts) {
+      const document = doc(accountsCollection, account.id);
+      batch.set(document, account);
+    }
+
+    await batch.commit();
   }
 };
 
@@ -69,9 +79,19 @@ export const loadItems = async (firestore: Firestore, dataset: Dataset) => {
   const items = await getData<Item[]>('items', dataset);
 
   const itemsCollection = collection(firestore, 'items');
-  for (const item of items) {
-    const document = doc(itemsCollection, item.id);
-    await setDoc(document, item);
+  const batchSize = 500; // Firestore batch limit
+  const batches = Math.ceil(items.length / batchSize);
+
+  for (let i = 0; i < batches; i++) {
+    const batch = writeBatch(firestore);
+    const batchItems = items.slice(i * batchSize, (i + 1) * batchSize);
+
+    for (const item of batchItems) {
+      const document = doc(itemsCollection, item.id);
+      batch.set(document, item);
+    }
+
+    await batch.commit();
   }
 };
 
@@ -82,9 +102,22 @@ export const loadTransactions = async (
   const transactions = await getData<Transaction[]>('transactions', dataset);
 
   const transactionsCollection = collection(firestore, 'transactions');
-  for (const transaction of transactions) {
-    const document = doc(transactionsCollection, transaction.id);
-    await setDoc(document, transaction);
+  const batchSize = 500; // Firestore batch limit
+  const batches = Math.ceil(transactions.length / batchSize);
+
+  for (let i = 0; i < batches; i++) {
+    const batch = writeBatch(firestore);
+    const batchTransactions = transactions.slice(
+      i * batchSize,
+      (i + 1) * batchSize,
+    );
+
+    for (const transaction of batchTransactions) {
+      const document = doc(transactionsCollection, transaction.id);
+      batch.set(document, transaction);
+    }
+
+    await batch.commit();
   }
 };
 
