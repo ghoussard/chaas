@@ -1,16 +1,6 @@
 {
   "indexes": [
     {
-      "collectionGroup": "accounts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "activity.totalPurchased",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "transactions",
       "queryScope": "COLLECTION",
       "fields": [
