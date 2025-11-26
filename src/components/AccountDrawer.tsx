@@ -168,6 +168,8 @@ export const AccountDrawer = ({
   }, []);
 
   const handleBatchCharge = useCallback(async () => {
+    if (items === null) return;
+
     const itemsToCharge = items
       .map((item) => ({
         item,
@@ -375,7 +377,7 @@ export const AccountDrawer = ({
 
             <TabPanels>
               <TabPanel p={4}>
-                {isCharging ? (
+                {isCharging || items === null ? (
                   <Center py={10}>
                     <Spinner size={'xl'} />
                   </Center>

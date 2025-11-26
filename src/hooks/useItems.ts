@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import {Item} from '../models';
 import {ItemsContext} from '../contexts';
 
-export const useItems = (): Item[] => {
+export const useItems = (): Item[] | null => {
   const {items, isLoading, error} = useContext(ItemsContext);
 
   if (error) {
@@ -10,7 +10,7 @@ export const useItems = (): Item[] => {
   }
 
   if (isLoading || items === null) {
-    throw new Error('Items are still loading');
+    return null;
   }
 
   return items;
