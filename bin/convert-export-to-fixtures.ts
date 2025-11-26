@@ -200,11 +200,22 @@ console.log(
   `Generated ${items.length.toString()} items (${Object.keys(exportData.items).length.toString()} current, ${(items.length - Object.keys(exportData.items).length).toString()} historical)`,
 );
 
-// Step 3: Transform purchases
+// Step 3: Transform purchases and track account activity
 console.log('\n[3/5] Transforming purchases...');
 const transactions: Transaction[] = [];
 let canceledPurchases = 0;
 let missingAccountPurchases = 0;
+
+// Track activity for each account
+const accountActivity = new Map<
+  string,
+  {
+    totalPurchased: number;
+    totalPaid: number;
+    lastPurchaseTimestamp: number;
+    lastPaymentTimestamp: number;
+  }
+>();
 
 for (const [, purchase] of Object.entries(exportData.purchases)) {
   if (purchase.canceled) {
@@ -249,13 +260,27 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
   };
 
   transactions.push(transaction);
+
+  // Update account activity for purchases
+  const activity = accountActivity.get(accountId) || {
+    totalPurchased: 0,
+    totalPaid: 0,
+    lastPurchaseTimestamp: 0,
+    lastPaymentTimestamp: 0,
+  };
+  activity.totalPurchased += purchase.item.price / 100; // cents to euros
+  activity.lastPurchaseTimestamp = Math.max(
+    activity.lastPurchaseTimestamp,
+    purchase.time,
+  );
+  accountActivity.set(accountId, activity);
 }
 
 console.log(
   `Transformed ${transactions.length.toString()} purchases (skipped ${canceledPurchases.toString()} canceled, ${missingAccountPurchases.toString()} missing accounts)`,
 );
 
-// Step 4: Transform payments
+// Step 4: Transform payments and update account activity
 console.log('\n[4/5] Transforming payments...');
 let canceledPayments = 0;
 let missingAccountPayments = 0;
@@ -282,14 +307,38 @@ for (const [, payment] of Object.entries(exportData.payments)) {
   };
 
   transactions.push(transaction);
+
+  // Update account activity for payments
+  const activity = accountActivity.get(accountId) || {
+    totalPurchased: 0,
+    totalPaid: 0,
+    lastPurchaseTimestamp: 0,
+    lastPaymentTimestamp: 0,
+  };
+  activity.totalPaid += payment.amount / 100; // cents to euros
+  activity.lastPaymentTimestamp = Math.max(
+    activity.lastPaymentTimestamp,
+    payment.time,
+  );
+  accountActivity.set(accountId, activity);
 }
 
 console.log(
   `Transformed ${(transactions.length - initialTransactionCount).toString()} payments (skipped ${canceledPayments.toString()} canceled, ${missingAccountPayments.toString()} missing accounts)`,
 );
 
-// Step 5: Write fixture files
-console.log('\n[5/5] Writing fixture files...');
+// Step 5: Update accounts with calculated activity
+console.log('\n[5/6] Updating accounts with activity data...');
+for (const account of accounts) {
+  const activity = accountActivity.get(account.id);
+  if (activity) {
+    account.activity = activity;
+  }
+}
+console.log(`Updated ${accountActivity.size.toString()} accounts with activity data`);
+
+// Step 6: Write fixture files
+console.log('\n[6/6] Writing fixture files...');
 const fixturesDir = path.join(
   __dirname,
   '..',
@@ -321,14 +370,47 @@ fs.writeFileSync(
 );
 console.log(`✓ Written ${items.length.toString()} items to items.json`);
 
-// Write transactions
-fs.writeFileSync(
-  path.join(fixturesDir, 'transactions.json'),
-  JSON.stringify(transactions, null, 2),
-);
-console.log(
-  `✓ Written ${transactions.length.toString()} transactions to transactions.json`,
-);
+// Group transactions by account
+console.log('Grouping transactions by account...');
+const transactionsByAccount = new Map<string, Transaction[]>();
+
+for (const transaction of transactions) {
+  const accountTransactions = transactionsByAccount.get(transaction.account) || [];
+  accountTransactions.push(transaction);
+  transactionsByAccount.set(transaction.account, accountTransactions);
+}
+
+// Sort accounts by transaction count (descending) for balanced distribution
+const accountsWithCounts = Array.from(transactionsByAccount.entries())
+  .map(([accountId, txns]) => ({
+    accountId,
+    transactions: txns,
+    count: txns.length,
+  }))
+  .sort((a, b) => b.count - a.count);
+
+console.log(`Grouped into ${accountsWithCounts.length.toString()} accounts`);
+
+// Distribute accounts across 10 files using round-robin
+const numberOfFiles = 10;
+const fileTransactions: Transaction[][] = Array.from({length: numberOfFiles}, () => []);
+
+accountsWithCounts.forEach((account, index) => {
+  const fileIndex = index % numberOfFiles;
+  fileTransactions[fileIndex].push(...account.transactions);
+});
+
+// Write 10 transaction files
+for (let i = 0; i < numberOfFiles; i++) {
+  const fileName = `transactions-${(i + 1).toString()}.json`;
+  fs.writeFileSync(
+    path.join(fixturesDir, fileName),
+    JSON.stringify(fileTransactions[i], null, 2),
+  );
+  console.log(
+    `✓ Written ${fileTransactions[i].length.toString()} transactions to ${fileName}`,
+  );
+}
 
 // Summary
 console.log('\n=== Conversion Complete ===');
@@ -342,7 +424,12 @@ console.log(
   `  - Payments: ${transactions.filter((t) => t.type === 'payment').length.toString()}`,
 );
 console.log('\nFixtures written to: src/utils/fixtures/datasets/prod/');
+console.log('  - 1 accounts.json file');
+console.log('  - 1 items.json file');
+console.log('  - 10 transactions-*.json files (grouped by account)');
 console.log(
-  '\nNote: Account activity totals are initialized to 0 and should be recalculated',
+  '\nNote: Account activity has been calculated from the export data.',
 );
-console.log('by calling updateAccountActivity() when loading fixtures.');
+console.log(
+  'If you load only a subset of transaction files, activity may not match.',
+);
