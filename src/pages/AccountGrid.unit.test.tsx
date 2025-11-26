@@ -127,11 +127,11 @@ describe('AccountGrid sorting', () => {
     vi.mocked(useAccounts).mockReturnValue(mockAccounts);
     const user = userEvent.setup();
 
-    const {getAllByTestId, getByRole} = renderAccountGrid();
+    const {getAllByTestId, getByRole, findByRole} = renderAccountGrid();
 
     // Open sort menu and select "Debt"
     await user.click(getByRole('button', {name: 'Last Transaction'}));
-    await user.click(getByRole('menuitem', {name: 'Debt'}));
+    await user.click(await findByRole('menuitem', {name: 'Debt'}));
 
     const cards = getAllByTestId(/^account-card-/);
 
@@ -146,11 +146,11 @@ describe('AccountGrid sorting', () => {
     vi.mocked(useAccounts).mockReturnValue(mockAccounts);
     const user = userEvent.setup();
 
-    const {getAllByTestId, getByRole} = renderAccountGrid();
+    const {getAllByTestId, getByRole, findByRole} = renderAccountGrid();
 
     // Open sort menu and select "Total Paid"
     await user.click(getByRole('button', {name: 'Last Transaction'}));
-    await user.click(getByRole('menuitem', {name: 'Total Paid'}));
+    await user.click(await findByRole('menuitem', {name: 'Total Paid'}));
 
     const cards = getAllByTestId(/^account-card-/);
 
