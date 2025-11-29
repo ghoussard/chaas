@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Create .env file
+        run: echo "${{ secrets.ENV_FILE_DEV }}" > .env
+
       - name: Build
         run: yarn build
 
@@ -52,6 +55,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Create .env file
+        run: echo "${{ secrets.ENV_FILE_PROD }}" > .env
 
       - name: Build
         run: yarn build
