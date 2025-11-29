@@ -60,6 +60,26 @@ const testItem: Item = {
 
 describe('Transaction service', () => {
   describe('chargePurchase', () => {
+    it('creates a purchase transaction with UUID format', async ({firestore}) => {
+      await chargePurchase(firestore, testAccountId, testItem);
+
+      const transactions = await getDocs(
+        query(
+          collection(firestore, 'transactions'),
+          where('account', '==', testAccountId),
+          where('type', '==', 'purchase'),
+        ),
+      );
+      const lastTransaction = transactions.docs[
+        transactions.docs.length - 1
+      ].data() as Transaction;
+
+      // Verify ID is in UUID format (8-4-4-4-12 hex chars)
+      const uuidRegex =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      expect(lastTransaction.id).toMatch(uuidRegex);
+    });
+
     it('creates a purchase transaction', async ({firestore}) => {
       const initialTransactions = await getDocs(
         query(
@@ -182,6 +202,26 @@ describe('Transaction service', () => {
   });
 
   describe('addPayment', () => {
+    it('creates a payment transaction with UUID format', async ({firestore}) => {
+      await addPayment(firestore, testAccountId, 10);
+
+      const transactions = await getDocs(
+        query(
+          collection(firestore, 'transactions'),
+          where('account', '==', testAccountId),
+          where('type', '==', 'payment'),
+        ),
+      );
+      const lastTransaction = transactions.docs[
+        transactions.docs.length - 1
+      ].data() as Transaction;
+
+      // Verify ID is in UUID format (8-4-4-4-12 hex chars)
+      const uuidRegex =
+        /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      expect(lastTransaction.id).toMatch(uuidRegex);
+    });
+
     it('creates a payment transaction', async ({firestore}) => {
       const initialTransactions = await getDocs(
         query(
