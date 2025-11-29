@@ -17,6 +17,7 @@ Add a Firebase Cloud Function that can be triggered from the UI to sync Slack wo
 ## Architecture: Callable Function Approach
 
 We chose the Firebase Callable Function approach because:
+
 - Simplest implementation for synchronous operations
 - Direct request/response pattern fits the use case
 - Built-in authentication handling via Firebase SDK
@@ -36,6 +37,7 @@ We chose the Firebase Callable Function approach because:
 Since the project currently has no Cloud Functions, we need to initialize the functions infrastructure.
 
 **Project Structure:**
+
 ```
 functions/
 ├── package.json          # Node.js dependencies for functions
@@ -48,18 +50,21 @@ functions/
 ```
 
 **Dependencies:**
+
 - `firebase-functions` - Cloud Functions SDK
 - `firebase-admin` - Admin SDK for Firestore/Auth access
 - `@slack/web-api` - Slack API client
 - TypeScript tooling (`typescript`, `@types/node`)
 
 **Configuration:**
+
 - Update `firebase.json` to include functions config
 - Configure `SLACK_BOT_TOKEN` environment variable via Firebase config
 - Set up separate dev/prod function deployments
 
 **Code Reuse:**
 The existing `bin/update-users.ts` script will be refactored into a reusable module in `functions/src/shared/updateUsersLogic.ts`. This allows:
+
 1. Firebase callable function to use it (for UI-triggered syncs)
 2. Potential scheduled function to use it (for automatic daily syncs)
 3. Original bin script to use it (for manual CLI usage)
@@ -67,10 +72,11 @@ The existing `bin/update-users.ts` script will be refactored into a reusable mod
 ### 2. The Firebase Callable Function
 
 **Function Signature:**
+
 ```typescript
 // functions/src/updateUsers.ts
-import { onCall, HttpsError } from 'firebase-functions/v2/https';
-import { executeUpdateUsers } from './shared/updateUsersLogic';
+import {onCall, HttpsError} from 'firebase-functions/v2/https';
+import {executeUpdateUsers} from './shared/updateUsersLogic';
 
 export const updateUsers = onCall(async (request) => {
   // Authentication check
@@ -79,7 +85,7 @@ export const updateUsers = onCall(async (request) => {
   }
 
   // Execute the sync logic with DRY_RUN=false
-  const results = await executeUpdateUsers({ dryRun: false });
+  const results = await executeUpdateUsers({dryRun: false});
 
   // Return detailed results
   return results;
@@ -87,6 +93,7 @@ export const updateUsers = onCall(async (request) => {
 ```
 
 **Results Format:**
+
 ```typescript
 {
   summary: {
@@ -127,6 +134,7 @@ export const updateUsers = onCall(async (request) => {
 ```
 
 **Error Handling:**
+
 - **Unauthenticated requests**: Throw `HttpsError('unauthenticated')`
 - **Slack API failures**: Return error with descriptive message
 - **Firestore write failures**: Return partial results + error details
@@ -134,6 +142,7 @@ export const updateUsers = onCall(async (request) => {
 - All errors logged to Cloud Functions logs for debugging
 
 **Security:**
+
 - Built-in authentication check via Firebase SDK
 - User token verified automatically by callable function framework
 - No additional authorization needed (any authenticated user allowed)
@@ -145,6 +154,7 @@ export const updateUsers = onCall(async (request) => {
 Add to `AccountGrid` page (`src/pages/AccountGrid.tsx`), positioned prominently in a toolbar area above the account cards grid.
 
 **Component State:**
+
 ```typescript
 const [isUpdating, setIsUpdating] = useState(false);
 const [results, setResults] = useState<SyncResults | null>(null);
@@ -168,11 +178,13 @@ const handleUpdateUsers = async () => {
 **User Experience Flow:**
 
 1. **Initial State**
+
    - Button shows "Sync Users from Slack" with refresh icon
    - Enabled for all authenticated users
    - Styled to match existing Chakra UI components
 
 2. **During Execution** (5-15 seconds typically)
+
    - Button disabled with spinner
    - Shows "Syncing..." text
    - User cannot trigger multiple syncs simultaneously
@@ -185,10 +197,12 @@ const handleUpdateUsers = async () => {
 **Results Display (Modal):**
 
 **Header:**
+
 - Title: "User Sync Results"
 - Timestamp: When the sync was executed
 
 **Summary Section:**
+
 - Color-coded cards/badges showing counts:
   - Green: "3 Created"
   - Blue: "5 Updated"
@@ -198,6 +212,7 @@ const handleUpdateUsers = async () => {
 **Detailed Lists (Expandable Sections):**
 
 **Created Users:**
+
 ```
 [Avatar] John Doe
 john@akeneo.com
@@ -209,6 +224,7 @@ New Slack member
 ```
 
 **Updated Users:**
+
 ```
 [Avatar] Bob Wilson
 • Profile picture updated
@@ -219,6 +235,7 @@ New Slack member
 ```
 
 **Deleted Users:**
+
 ```
 [Avatar] Tom Brown
 Inactive, no purchases
@@ -228,10 +245,12 @@ Not in Slack workspace, no purchases
 ```
 
 **Footer:**
+
 - "Close" button to dismiss modal
 - Account grid refreshes automatically when modal closes
 
 **Styling:**
+
 - Use Chakra UI components: `Button`, `Modal`, `ModalOverlay`, `ModalContent`, `Badge`, `List`, `ListItem`, `Avatar`
 - Color scheme:
   - Green badges/accents for created users
@@ -241,6 +260,7 @@ Not in Slack workspace, no purchases
 - Consistent with existing AccountGrid design
 
 **Error Handling:**
+
 - Show error toast (Chakra UI `useToast`) for failures
 - Display user-friendly error messages
 - Preserve error details for debugging
@@ -248,16 +268,19 @@ Not in Slack workspace, no purchases
 ## Deployment Strategy
 
 **Development:**
+
 1. Test locally using Firebase emulators
 2. Deploy to dev environment first
 3. Verify function works with dev Slack workspace
 
 **Production:**
+
 1. Configure production `SLACK_BOT_TOKEN` via Firebase config
 2. Deploy functions alongside existing hosting deployment
 3. Update CI/CD pipeline to include function deployment
 
 **Environment Variables:**
+
 - Dev: Use test Slack workspace token
 - Prod: Use production Slack workspace token
 - Both stored securely in Firebase environment config
@@ -265,16 +288,19 @@ Not in Slack workspace, no purchases
 ## Testing Strategy
 
 **Unit Tests:**
+
 - Test `updateUsersLogic` module independently
 - Mock Slack API and Firestore calls
 - Verify correct CREATE/UPDATE/DELETE logic
 
 **Integration Tests:**
+
 - Test callable function with test auth context
 - Verify results format matches expected structure
 - Test error handling paths
 
 **Manual Testing:**
+
 - Test in Firebase emulator with mock Slack data
 - Verify UI shows loading states correctly
 - Verify results modal displays all details
