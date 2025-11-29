@@ -262,7 +262,7 @@ for (const [, purchase] of Object.entries(exportData.purchases)) {
   transactions.push(transaction);
 
   // Update account activity for purchases
-  const activity = accountActivity.get(accountId) || {
+  const activity = accountActivity.get(accountId) ?? {
     totalPurchased: 0,
     totalPaid: 0,
     lastPurchaseTimestamp: 0,
@@ -309,7 +309,7 @@ for (const [, payment] of Object.entries(exportData.payments)) {
   transactions.push(transaction);
 
   // Update account activity for payments
-  const activity = accountActivity.get(accountId) || {
+  const activity = accountActivity.get(accountId) ?? {
     totalPurchased: 0,
     totalPaid: 0,
     lastPurchaseTimestamp: 0,
@@ -335,7 +335,9 @@ for (const account of accounts) {
     account.activity = activity;
   }
 }
-console.log(`Updated ${accountActivity.size.toString()} accounts with activity data`);
+console.log(
+  `Updated ${accountActivity.size.toString()} accounts with activity data`,
+);
 
 // Step 6: Write fixture files
 console.log('\n[6/6] Writing fixture files...');
@@ -375,7 +377,8 @@ console.log('Grouping transactions by account...');
 const transactionsByAccount = new Map<string, Transaction[]>();
 
 for (const transaction of transactions) {
-  const accountTransactions = transactionsByAccount.get(transaction.account) || [];
+  const accountTransactions =
+    transactionsByAccount.get(transaction.account) ?? [];
   accountTransactions.push(transaction);
   transactionsByAccount.set(transaction.account, accountTransactions);
 }
@@ -393,7 +396,10 @@ console.log(`Grouped into ${accountsWithCounts.length.toString()} accounts`);
 
 // Distribute accounts across 10 files using round-robin
 const numberOfFiles = 10;
-const fileTransactions: Transaction[][] = Array.from({length: numberOfFiles}, () => []);
+const fileTransactions: Transaction[][] = Array.from(
+  {length: numberOfFiles},
+  () => [],
+);
 
 accountsWithCounts.forEach((account, index) => {
   const fileIndex = index % numberOfFiles;

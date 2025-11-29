@@ -102,26 +102,7 @@ export const loadTransactions = async (
 ) => {
   const transactionsCollection = collection(firestore, 'transactions');
 
-  // Determine which files to load
-  const filesToLoad: number[] = [];
-  if (batchNumber !== undefined) {
-    // Load specific batch (1-10)
-    if (batchNumber < 1 || batchNumber > 10) {
-      throw new Error('batchNumber must be between 1 and 10');
-    }
-    filesToLoad.push(batchNumber);
-  } else {
-    // Load all 10 batches
-    filesToLoad.push(...Array.from({length: 10}, (_, i) => i + 1));
-  }
-
-  // Load and write each file
-  for (const fileNum of filesToLoad) {
-    const transactions = await getData<Transaction[]>(
-      `transactions-${fileNum}`,
-      dataset,
-    );
-
+  const writeTransactionsToFirestore = async (transactions: Transaction[]) => {
     const batchSize = 500; // Firestore batch limit
     const batches = Math.ceil(transactions.length / batchSize);
 
@@ -139,6 +120,37 @@ export const loadTransactions = async (
 
       await batch.commit();
     }
+  };
+
+  // If batchNumber is specified, load that specific batch
+  if (batchNumber !== undefined) {
+    if (batchNumber < 1 || batchNumber > 10) {
+      throw new Error('batchNumber must be between 1 and 10');
+    }
+    const transactions = await getData<Transaction[]>(
+      `transactions-${batchNumber.toString()}`,
+      dataset,
+    );
+    await writeTransactionsToFirestore(transactions);
+    return;
+  }
+
+  // Try to load single transactions.json file first
+  try {
+    const transactions = await getData<Transaction[]>('transactions', dataset);
+    await writeTransactionsToFirestore(transactions);
+    return;
+  } catch {
+    // Single file doesn't exist, fall back to batched files
+  }
+
+  // Load all 10 batches
+  for (let i = 1; i <= 10; i++) {
+    const transactions = await getData<Transaction[]>(
+      `transactions-${i.toString()}`,
+      dataset,
+    );
+    await writeTransactionsToFirestore(transactions);
   }
 };
 
