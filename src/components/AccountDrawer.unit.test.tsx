@@ -1,15 +1,18 @@
 import {createRef, ReactNode} from 'react';
-import {describe, it, expect, vi} from 'vitest';
+import {describe, it, expect, vi, beforeEach} from 'vitest';
 import userEvent from '@testing-library/user-event';
 import {renderWithChakra} from '../utils/tests';
 import {FocusableElementRefContext} from '../contexts';
 import {AccountDrawer} from './AccountDrawer';
+import {Item} from '../models';
+
+const mockUseItems = vi.fn<() => Item[] | null>(() => []);
 
 vi.mock('../hooks', async () => {
   const actual = await vi.importActual('../hooks');
   return {
     ...actual,
-    useItems: () => [],
+    useItems: () => mockUseItems(),
   };
 });
 
@@ -43,6 +46,9 @@ const totalPaid = 20;
 const totalPurchased = 10;
 
 describe('AccountDrawer component', () => {
+  beforeEach(() => {
+    mockUseItems.mockReturnValue([]);
+  });
   it('is closed', () => {
     const {queryByText} = renderWithProviders(
       <AccountDrawer
@@ -147,5 +153,23 @@ describe('AccountDrawer component', () => {
         return element?.textContent === 'Balance: -20.00€';
       }),
     ).toBeInTheDocument();
+  });
+
+  it('shows loading spinner when items are loading', () => {
+    mockUseItems.mockReturnValueOnce(null);
+
+    const {getByText} = renderWithProviders(
+      <AccountDrawer
+        isOpen={true}
+        accountId={accountId}
+        name={name}
+        totalPaid={totalPaid}
+        totalPurchased={totalPurchased}
+        onClose={vi.fn()}
+      />,
+    );
+
+    // Should show a loading spinner in the Charge Items tab
+    expect(getByText('Loading...')).toBeInTheDocument();
   });
 });

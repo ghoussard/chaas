@@ -8,7 +8,6 @@ import {
   loadAccounts,
   loadItems,
   loadTransactions,
-  updateAccountActivity,
 } from '../src/utils/fixtures';
 
 const app = createFirebaseApp(Env.DEV);
@@ -19,6 +18,5 @@ await createUser(auth, 'michel@chaquip.com', 'michel');
 await loadAccounts(firestore, Dataset.PROD);
 await loadItems(firestore, Dataset.PROD);
 await loadTransactions(firestore, Dataset.PROD);
-await updateAccountActivity(firestore);
 
 exit(0);

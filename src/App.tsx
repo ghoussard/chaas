@@ -2,9 +2,18 @@ import {useAuth} from './hooks';
 import {AccountGrid, Login} from './pages';
 import {StoreContext, createStoreContextValue, ItemsProvider} from './contexts';
 import {getFirestore} from 'firebase/firestore';
+import {Center, Spinner} from '@chakra-ui/react';
 
 export const App = () => {
-  const {isLoggedIn} = useAuth();
+  const {isLoggedIn, isAuthLoading} = useAuth();
+
+  if (isAuthLoading) {
+    return (
+      <Center h={'100vh'}>
+        <Spinner size={'xl'} />
+      </Center>
+    );
+  }
 
   if (!isLoggedIn) {
     return <Login />;

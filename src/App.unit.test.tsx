@@ -48,6 +48,7 @@ describe('App initialization', () => {
     vi.mocked(useAuth).mockReturnValue({
       isLoggedIn: false,
       isLoggingIn: false,
+      isAuthLoading: false,
       logIn: vi.fn(),
       logOut: vi.fn(),
     });
@@ -63,6 +64,7 @@ describe('App initialization', () => {
     vi.mocked(useAuth).mockReturnValue({
       isLoggedIn: true,
       isLoggingIn: false,
+      isAuthLoading: false,
       logIn: vi.fn(),
       logOut: vi.fn(),
     });
@@ -81,6 +83,7 @@ describe('App initialization', () => {
     vi.mocked(useAuth).mockReturnValue({
       isLoggedIn: true,
       isLoggingIn: false,
+      isAuthLoading: false,
       logIn: vi.fn(),
       logOut: vi.fn(),
     });
@@ -92,5 +95,21 @@ describe('App initialization', () => {
 
     // Verify StoreContext was created with firestore
     expect(createStoreContextValue).toHaveBeenCalledWith(expect.anything());
+  });
+
+  it('shows loading spinner while auth state is loading', async () => {
+    const {useAuth} = await import('./hooks');
+    vi.mocked(useAuth).mockReturnValue({
+      isLoggedIn: false,
+      isLoggingIn: false,
+      isAuthLoading: true,
+      logIn: vi.fn(),
+      logOut: vi.fn(),
+    });
+
+    renderApp();
+
+    expect(screen.queryByText('Login Page')).not.toBeInTheDocument();
+    expect(screen.queryByText('Account Grid Page')).not.toBeInTheDocument();
   });
 });

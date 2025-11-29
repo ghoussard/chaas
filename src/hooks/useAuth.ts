@@ -9,6 +9,7 @@ import {
 type AuthResult = {
   isLoggedIn: boolean;
   isLoggingIn: boolean;
+  isAuthLoading: boolean;
   logIn: (login: string, password: string) => Promise<void>;
   logOut: () => Promise<void>;
 };
@@ -16,6 +17,7 @@ type AuthResult = {
 export const useAuth = (): AuthResult => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
   const auth = useContext(AuthContext);
 
   if (auth === null) {
@@ -26,6 +28,7 @@ export const useAuth = (): AuthResult => {
     () =>
       onAuthStateChanged(auth, (user) => {
         setIsLoggedIn(user !== null);
+        setIsAuthLoading(false);
       }),
     [auth],
   );
@@ -49,6 +52,7 @@ export const useAuth = (): AuthResult => {
   return {
     isLoggedIn,
     isLoggingIn,
+    isAuthLoading,
     logIn,
     logOut,
   };

@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently yarn:emulators vite",
+    "prod": "vite",
     "build": "tsc -b && vite build",
     "emulators": "firebase emulators:start --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators",
-    "fixtures": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'tsx bin/fixtures.ts'",
-    "fixtures:prod": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'tsx bin/fixtures-prod.ts'",
-    "convert-fixtures": "tsx bin/convert-export-to-fixtures.ts",
-    "update-users": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'tsx bin/update-users.ts'",
-    "update-users:prod": "tsx bin/update-users.ts",
+    "fixtures": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'vite-node bin/fixtures.ts'",
+    "fixtures:preprod": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'vite-node bin/fixtures-prod.ts'",
+    "fixtures:prod": "vite-node bin/fixtures-prod.ts",
+    "convert-fixtures": "vite-node bin/convert-export-to-fixtures.ts",
+    "update-users": "firebase emulators:exec --project chaas-dev --only firestore,auth --import .emulators --export-on-exit .emulators 'vite-node bin/update-users.ts'",
+    "update-users:prod": "vite-node bin/update-users.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
@@ -56,6 +58,8 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
+    "vite-node": "^5.2.0",
+    "vite-plugin-static-copy": "^3.1.4",
     "vitest": "^2.1.2"
   }
 }
