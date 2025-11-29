@@ -40,6 +40,10 @@ jobs:
     name: Deploy to Dev
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
     environment:
       name: dev
       url: https://chaquip-dev-f52f4.web.app
