@@ -1,0 +1,70 @@
+name: Dev Deployment
+
+on: pull_request
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install firebase-tools
+        run: yarn global add firebase-tools
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run Prettier
+        run: yarn prettier
+
+      - name: Run Linter
+        run: yarn lint
+
+      - name: Run Unit Tests
+        run: yarn test:unit
+
+      - name: Run Integration Tests
+        run: yarn test:integration
+
+      - name: Build
+        run: yarn build
+
+  deploy:
+    name: Deploy to Dev
+    needs: test
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: https://chaquip-dev-f52f4.web.app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Create .env file
+        run: echo "${{ secrets.ENV_FILE_DEV }}" > .env
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to Firebase Dev
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
+          projectId: ${{ secrets.FIREBASE_PROJECT_ID_DEV }}
+          channelId: live

@@ -1,17 +1,14 @@
-name: Deploy
+name: Production Deployment
 
 on:
   push:
     branches:
-      - '**'
+      - main
 
 jobs:
-  deploy-dev:
-    name: Deploy to Dev
-    if: github.ref != 'refs/heads/main'
+  test:
+    name: Run Tests
     runs-on: ubuntu-latest
-    environment:
-      name: dev
     steps:
       - uses: actions/checkout@v4
 
@@ -21,26 +18,30 @@ jobs:
           cache: yarn
           cache-dependency-path: yarn.lock
 
+      - name: Install firebase-tools
+        run: yarn global add firebase-tools
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Create .env file
-        run: echo "${{ secrets.ENV_FILE_DEV }}" > .env
+      - name: Run Prettier
+        run: yarn prettier
+
+      - name: Run Linter
+        run: yarn lint
+
+      - name: Run Unit Tests
+        run: yarn test:unit
+
+      - name: Run Integration Tests
+        run: yarn test:integration
 
       - name: Build
         run: yarn build
 
-      - name: Deploy to Firebase Dev
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEV }}
-          projectId: ${{ secrets.FIREBASE_PROJECT_ID_DEV }}
-          channelId: live
-
-  deploy-prod:
+  deploy:
     name: Deploy to Production
-    if: github.ref == 'refs/heads/main'
+    needs: test
     runs-on: ubuntu-latest
     environment:
       name: prod
