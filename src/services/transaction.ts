@@ -1,10 +1,4 @@
-import {
-  Firestore,
-  collection,
-  doc,
-  writeBatch,
-  increment,
-} from 'firebase/firestore';
+import {Firestore, doc, writeBatch, increment} from 'firebase/firestore';
 import {Item, Transaction} from '../models';
 
 export async function chargePurchase(
@@ -13,12 +7,13 @@ export async function chargePurchase(
   item: Item,
 ): Promise<void> {
   const batch = writeBatch(firestore);
-  const transactionRef = doc(collection(firestore, 'transactions'));
+  const transactionId = crypto.randomUUID();
+  const transactionRef = doc(firestore, 'transactions', transactionId);
   const accountRef = doc(firestore, 'accounts', accountId);
   const timestamp = Date.now();
 
   batch.set(transactionRef, {
-    id: transactionRef.id,
+    id: transactionId,
     type: 'purchase',
     item,
     account: accountId,
@@ -45,9 +40,10 @@ export async function chargePurchases(
 
   for (const {item, quantity} of items) {
     for (let i = 0; i < quantity; i++) {
-      const transactionRef = doc(collection(firestore, 'transactions'));
+      const transactionId = crypto.randomUUID();
+      const transactionRef = doc(firestore, 'transactions', transactionId);
       batch.set(transactionRef, {
-        id: transactionRef.id,
+        id: transactionId,
         type: 'purchase',
         item,
         account: accountId,
@@ -71,12 +67,13 @@ export async function addPayment(
   amount: number,
 ): Promise<void> {
   const batch = writeBatch(firestore);
-  const transactionRef = doc(collection(firestore, 'transactions'));
+  const transactionId = crypto.randomUUID();
+  const transactionRef = doc(firestore, 'transactions', transactionId);
   const accountRef = doc(firestore, 'accounts', accountId);
   const timestamp = Date.now();
 
   batch.set(transactionRef, {
-    id: transactionRef.id,
+    id: transactionId,
     type: 'payment',
     account: accountId,
     amount,
