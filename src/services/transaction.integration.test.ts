@@ -60,7 +60,9 @@ const testItem: Item = {
 
 describe('Transaction service', () => {
   describe('chargePurchase', () => {
-    it('creates a purchase transaction with UUID format', async ({firestore}) => {
+    it('creates a purchase transaction with UUID format', async ({
+      firestore,
+    }) => {
       await chargePurchase(firestore, testAccountId, testItem);
 
       const transactions = await getDocs(
@@ -202,7 +204,9 @@ describe('Transaction service', () => {
   });
 
   describe('addPayment', () => {
-    it('creates a payment transaction with UUID format', async ({firestore}) => {
+    it('creates a payment transaction with UUID format', async ({
+      firestore,
+    }) => {
       await addPayment(firestore, testAccountId, 10);
 
       const transactions = await getDocs(

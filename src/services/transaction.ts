@@ -1,9 +1,4 @@
-import {
-  Firestore,
-  doc,
-  writeBatch,
-  increment,
-} from 'firebase/firestore';
+import {Firestore, doc, writeBatch, increment} from 'firebase/firestore';
 import {Item, Transaction} from '../models';
 
 export async function chargePurchase(
